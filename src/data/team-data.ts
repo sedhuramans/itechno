@@ -291,14 +291,14 @@ export const eventSections: EventSection[] = [
         initials: "BM"
       },
       {
-        name: "Nouresh",
+        name: "Nourash S B",
         role: "Event Coordinator",
         department: "Free Fire – Squad Battle",
         departments: ["FREE FIRE – SQUAD BATTLE"],
         badge: "EVENT COORDINATOR",
         bio: "Coordinator responsible for supporting the Free Fire – Squad Battle event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788527500/file_000000004d10821193685597bc040153.png",
-        initials: "NR"
+        initials: "NS"
       },
       {
         name: "Divakar",

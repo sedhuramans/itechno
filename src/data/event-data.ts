@@ -218,7 +218,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: 'As Scheduled',
     teamSize: 'Squad',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Mohamed Afsar', 'Balaji Meshak Jebastine', 'Nouresh', 'Divakar', 'Sybudheen K'],
+    coordinators: ['Mohamed Afsar', 'Balaji Meshak Jebastine', 'Nourash S B', 'Divakar', 'Sybudheen K'],
     description: 'Free Fire – Squad Battle is an esports gaming competition where squads compete in intense Free Fire tournament matches.',
     rules: [
       'Team Size: Squad.',
