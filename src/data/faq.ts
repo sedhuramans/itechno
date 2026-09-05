@@ -22,7 +22,7 @@ export const participationRules: FAQItem[] = [
     id: "pr3",
     category: "Participation Rules",
     question: "3. Specified Event Team Sizes",
-    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (4 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and Reel Creation (2–3 participants)."
+    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (4 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (2–3 participants)."
   }
 ];
 
@@ -36,8 +36,8 @@ export const generalGuidelines: FAQItem[] = [
   {
     id: "g2",
     category: "General Rules",
-    question: "2. College Identification",
-    answer: "Participants must carry their valid original college ID card at all times during the festival."
+    question: "2. Student Identification",
+    answer: "Participants must carry their valid original college or school ID card at all times during the festival."
   },
   {
     id: "g3",
@@ -94,13 +94,13 @@ export const faqData: FAQItem[] = [
     id: "f1",
     category: "Overview",
     question: "What is Itechno 2026?",
-    answer: "Itechno 2026 is the premier Inter-College Technical Festival hosted by Takshashila University, bringing together students to compete across web development, debugging, tech quizzes, visual puzzles, gaming, speaking, and reel creation."
+    answer: "Itechno 2026 is the premier Inter-College Technical Festival hosted by Takshashila University, bringing together students to compete across web development, debugging, tech quizzes, visual puzzles, gaming, speaking, and VIRAL MINDS."
   },
   {
     id: "f2",
     category: "Eligibility",
     question: "Who can participate in Itechno '26?",
-    answer: "Students currently enrolled in recognized colleges, institutes, and universities with a valid student photo ID card are eligible to participate."
+    answer: "Students currently enrolled in recognized schools, colleges, institutes, and universities with a valid student photo ID card are eligible to participate. School students are also welcome to participate!"
   },
   {
     id: "f3",

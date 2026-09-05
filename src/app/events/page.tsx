@@ -91,9 +91,9 @@ export default function EventsPage() {
         <div className="pt-2 flex justify-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-orbitron text-yellow-400 hover:text-yellow-300 transition-colors bg-yellow-950/20 px-4 py-2 rounded-xl border border-yellow-500/30"
+            className="inline-flex items-center gap-2 text-xs font-orbitron text-yellow-300 hover:text-yellow-100 transition-all bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-500/20 hover:to-blue-500/20 px-4 py-2 rounded-xl border border-yellow-500/30 hover:border-blue-400/50 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Home
+            <ArrowLeft className="w-4 h-4 text-yellow-400" /> Back to Home
           </Link>
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function EventsPage() {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2.5 rounded-xl font-orbitron text-xs font-semibold tracking-wider transition-all duration-300 ${
                 selectedCategory === cat.id
-                  ? "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
+                  ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
                   : "bg-[#05070e]/80 text-slate-300 border border-yellow-500/20 hover:border-yellow-400/50 hover:text-yellow-300"
               }`}
             >
@@ -213,7 +213,7 @@ export default function EventsPage() {
                 <div className="pt-4 border-t border-yellow-500/20 flex items-center justify-between gap-3">
                   <button
                     onClick={() => setActiveModalEvent(event)}
-                    className="flex-1 py-2.5 px-3 rounded-xl border border-yellow-500/40 bg-yellow-950/20 hover:bg-yellow-500/20 text-yellow-300 hover:text-yellow-200 text-xs font-orbitron font-semibold transition-all flex items-center justify-center gap-1.5"
+                    className="flex-1 py-2.5 px-3 rounded-xl border-2 border-yellow-400/70 bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-400/20 hover:to-blue-600/20 text-yellow-300 hover:text-yellow-200 text-xs font-orbitron font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>RULES & INFO</span>
@@ -223,10 +223,11 @@ export default function EventsPage() {
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-400 text-black text-xs font-orbitron font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all flex items-center justify-center gap-1.5 hover:scale-105"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black text-xs font-orbitron font-bold shadow-[0_0_18px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-300 flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95 overflow-hidden relative group"
                   >
+                    <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 pointer-events-none" />
                     <span>REGISTER</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </div>

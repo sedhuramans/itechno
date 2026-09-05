@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import CountdownTimer from "../CountdownTimer";
 import { Sparkles, ExternalLink, Calendar, MapPin } from "lucide-react";
 
@@ -102,24 +103,35 @@ const LandingSection = () => {
           </div>
         </motion.div>
 
-        {/* Primary REGISTER NOW Call To Action Button */}
+        {/* Primary CTA Buttons: Register Now (Left) + Events (Right) Side-by-Side on all screens */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="mb-10 sm:mb-12"
+          className="mb-10 sm:mb-12 flex flex-row items-stretch justify-center gap-2.5 sm:gap-4 w-full max-w-xl px-2"
         >
+          {/* Register Now */}
           <a
             href={googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2.5 sm:gap-3 px-6 sm:px-12 py-3.5 sm:py-4 rounded-xl font-orbitron font-bold text-sm sm:text-xl text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.65)] hover:shadow-[0_0_60px_rgba(59,130,246,0.85)] hover:scale-105 active:scale-95 overflow-hidden"
+            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-10 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-xs sm:text-lg md:text-xl text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:shadow-[0_0_40px_rgba(212,175,55,0.65)] hover:shadow-[0_0_60px_rgba(59,130,246,0.85)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
           >
             <span className="absolute inset-0 bg-white/25 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
-            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-black animate-spin" style={{ animationDuration: '4s' }} />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-black shrink-0 animate-spin" style={{ animationDuration: '4s' }} />
             <span>REGISTER NOW</span>
-            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
+
+          {/* Events */}
+          <Link
+            href="/events"
+            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-8 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-xs sm:text-lg md:text-xl text-yellow-300 border-2 border-yellow-400/60 bg-gradient-to-r from-yellow-950/40 via-blue-950/30 to-slate-950/60 backdrop-blur-md hover:border-yellow-300 hover:text-yellow-200 hover:bg-yellow-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.25)] sm:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_45px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
+          >
+            <span className="absolute inset-0 bg-yellow-400/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
+            <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
+            <span>EVENTS</span>
+          </Link>
         </motion.div>
 
         {/* Timer Container with Gold & Sapphire Frame */}

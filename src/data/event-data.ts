@@ -245,7 +245,7 @@ export const ItechnoEventsData: EventDataType[] = [
   },
   {
     id: 'reel-creation',
-    title: 'REEL CREATION',
+    title: 'VIRAL MINDS',
     category: 'Creative Media Challenge',
     image: 'https://res.cloudinary.com/k78tbfel/image/upload/v1788616724/llgkrkcdqflkrkkx1adm.jpg',
     buttonText: 'Register Now',

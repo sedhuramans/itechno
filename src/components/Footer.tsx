@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-6">
-              The premier Inter-College Technical Festival hosted at Takshashila University. Experience competitive web development, debugging, tech quizzes, visual puzzles, gaming squad matches, and reel creation.
+              The premier Inter-College Technical Festival hosted at Takshashila University. Experience competitive web development, debugging, tech quizzes, visual puzzles, gaming squad matches, and VIRAL MINDS.
             </p>
 
             <div className="flex flex-col items-center md:items-start gap-2">

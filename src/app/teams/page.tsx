@@ -139,14 +139,6 @@ const TeamsPage: React.FC = () => {
               <span>Explore Leadership &amp; Divisions</span>
               <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
             </a>
-
-            <a
-              href="#gallery"
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 hover:bg-cyan-950/60 border border-white/10 hover:border-cyan-400/50 text-xs font-kodeMono text-cyan-400 hover:text-cyan-300 transition-all"
-            >
-              <Images className="w-3.5 h-3.5" />
-              <span>Jump to Event Gallery</span>
-            </a>
           </div>
         </section>
 

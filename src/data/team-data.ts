@@ -325,7 +325,7 @@ export const eventSections: EventSection[] = [
   {
     id: "reel-creation",
     number: "07",
-    title: "REEL CREATION",
+    title: "VIRAL MINDS",
     category: "Creative",
     description: "Cinematography, viral storytelling, dynamic video editing, and fest highlights.",
     iconName: "Film",
@@ -334,30 +334,30 @@ export const eventSections: EventSection[] = [
       {
         name: "Sumanraj",
         role: "Event Coordinator",
-        department: "Reel Creation",
-        departments: ["REEL CREATION", "CREATIVE MEDIA"],
+        department: "VIRAL MINDS",
+        departments: ["VIRAL MINDS", "CREATIVE MEDIA"],
         badge: "EVENT COORDINATOR",
-        bio: "Coordinator responsible for supporting the Reel Creation event and participant experience.",
+        bio: "Coordinator responsible for supporting the VIRAL MINDS event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788445311/WhatsApp_Image_2026-09-02_at_23.01.18.jpg",
         initials: "SR"
       },
       {
         name: "Sanjay",
         role: "Event Coordinator",
-        department: "Reel Creation",
-        departments: ["REEL CREATION"],
+        department: "VIRAL MINDS",
+        departments: ["VIRAL MINDS"],
         badge: "EVENT COORDINATOR",
-        bio: "Coordinator responsible for supporting the Reel Creation event and participant experience.",
+        bio: "Coordinator responsible for supporting the VIRAL MINDS event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788445311/WhatsApp_Image_2026-09-03_at_09.02.40.jpg",
         initials: "SJ"
       },
       {
         name: "Younis",
         role: "Event Coordinator",
-        department: "Reel Creation",
-        departments: ["REEL CREATION"],
+        department: "VIRAL MINDS",
+        departments: ["VIRAL MINDS"],
         badge: "EVENT COORDINATOR",
-        bio: "Coordinator responsible for supporting the Reel Creation event and participant experience.",
+        bio: "Coordinator responsible for supporting the VIRAL MINDS event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788509966/WhatsApp_Image_2026-09-04_at_13.48.04.jpg",
         initials: "YN"
       }
