@@ -8,11 +8,9 @@ import {
   Mail,
   Linkedin,
   MapPin,
-  Calendar,
   ExternalLink,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
   MessageSquare,
 } from "lucide-react";
 import { chiefDirectors } from "@/data/team-data";
