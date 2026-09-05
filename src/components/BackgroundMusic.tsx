@@ -100,6 +100,10 @@ export default function BackgroundMusic() {
     }
   };
 
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/itechno" : "";
+  const audioSrc = `${basePath}/background-music.mp3`;
+
   if (!isMounted) return null;
 
   return (
@@ -108,8 +112,11 @@ export default function BackgroundMusic() {
         ref={audioRef}
         loop
         preload="auto"
-        src="/background-music.mp3"
-      />
+        src={audioSrc}
+      >
+        <source src={audioSrc} type="audio/mpeg" />
+        <source src="/background-music.mp3" type="audio/mpeg" />
+      </audio>
       
       {/* Floating Sound Control Widget */}
       <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2">
