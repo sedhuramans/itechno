@@ -100,8 +100,8 @@ export default function BackgroundMusic() {
     }
   };
 
-  const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/itechno" : "";
+  const isGitHubPages = process.env.GITHUB_ACTIONS === "true" || process.env.NEXT_PUBLIC_DEPLOY_TARGET === "gh-pages";
+  const basePath = isGitHubPages ? "/itechno" : "";
   const audioSrc = `${basePath}/background-music.mp3`;
 
   if (!isMounted) return null;

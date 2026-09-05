@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
+// Only apply '/itechno' basePath when deploying specifically to GitHub Pages
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true' || process.env.NEXT_PUBLIC_DEPLOY_TARGET === 'gh-pages';
+const basePath = isGitHubPages ? '/itechno' : '';
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/itechno' : '',
+  basePath: basePath,
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -23,3 +25,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
