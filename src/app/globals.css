@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 65%, rgba(37, 99, 235, 0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(10, 16, 30, 0.6) 0%, transparent 70%),
+    #030508;
+  background-color: #030508;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    display: none;
+  }
+}
+
+/* Luxury Tech Micro-grid and Noise Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+@layer base {
+  :root {
+    /* Luxury Tech: Obsidian Black Base */
+    --background: 224 71% 2%;
+    --foreground: 210 40% 98%;
+
+    /* Deep Corporate Obsidian Surface */
+    --secondary-bg: 222 47% 6%;
+
+    --card: 224 71% 3%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 3%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Metallic Luxury Imperial Gold */
+    --primary: 43 74% 52%;
+    --primary-foreground: 224 71% 2%;
+
+    --secondary: 222 47% 10%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 47% 10%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Tech Sapphire Blue Accent */
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Champagne Gold Highlight */
+    --highlight: 45 93% 68%;
+    --highlight-foreground: 224 71% 2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Subtle Gold/Blue Tinted Obsidian Borders */
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 43 74% 52%;
+    
+    --radius: 0.65rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.black-gradient {
+  background: linear-gradient(135deg, #0d1322 0%, #030508 100%);
+}
+
+.glass-morphism {
+  background: rgba(7, 11, 20, 0.75);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-morphism-blue {
+  background: rgba(7, 11, 22, 0.75);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+/* Luxury Tech Tri-Color Gradient: Gold -> Diamond White -> Sapphire Blue */
+.text-gradient {
+  background: linear-gradient(135deg, #F5D77F 0%, #FFFFFF 50%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF0B8 0%, #D4AF37 50%, #B38F4D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-blue-gradient {
+  background: linear-gradient(135deg, #93C5FD 0%, #3B82F6 50%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Luxury Glow Effects */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.glow-blue:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.45);
+  border-color: rgba(59, 130, 246, 0.7);
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
