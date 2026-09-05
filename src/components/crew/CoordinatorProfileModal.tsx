@@ -220,14 +220,14 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
 
               {/* Large Profile Image Frame */}
               <div className="relative flex flex-col items-center text-center">
-                <div className="relative mb-6">
+                <div className="relative mb-4 sm:mb-6">
                   {/* Glowing halo behind profile image */}
                   <div
-                    className={`absolute -inset-4 rounded-3xl bg-gradient-to-r ${colorMap.gradientBorder} opacity-60 blur-xl animate-pulse`}
+                    className={`absolute -inset-3 sm:-inset-4 rounded-3xl bg-gradient-to-r ${colorMap.gradientBorder} opacity-60 blur-xl animate-pulse`}
                   />
 
                   <div
-                    className={`relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-2xl p-1 bg-gradient-to-tr ${colorMap.gradientBorder} shadow-[0_0_35px_rgba(0,0,0,0.8)] overflow-hidden`}
+                    className={`relative w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-2xl p-1 bg-gradient-to-tr ${colorMap.gradientBorder} shadow-[0_0_35px_rgba(0,0,0,0.8)] overflow-hidden`}
                   >
                     <div className="relative w-full h-full rounded-[14px] overflow-hidden bg-[#03050a]">
                       {hasImage ? (
@@ -235,7 +235,7 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
                           src={member.image!}
                           alt={member.name}
                           fill
-                          sizes="(max-width: 640px) 210px, 230px"
+                          sizes="(max-width: 640px) 144px, 230px"
                           priority
                           className="object-cover object-top hover:scale-105 transition-transform duration-700"
                           onError={() => setImageError(true)}
@@ -244,10 +244,10 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
                         <div
                           className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-[#070e1c] to-[#020408] ${colorMap.accentText}`}
                         >
-                          <span className="font-orbitron font-black text-5xl sm:text-6xl tracking-tight">
+                          <span className="font-orbitron font-black text-3xl xs:text-4xl sm:text-6xl tracking-tight">
                             {initials}
                           </span>
-                          <span className="text-[10px] font-kodeMono text-slate-400 tracking-widest mt-2 uppercase">
+                          <span className="text-[9px] sm:text-[10px] font-kodeMono text-slate-400 tracking-widest mt-1 sm:mt-2 uppercase">
                             OFFICIAL CREW
                           </span>
                         </div>

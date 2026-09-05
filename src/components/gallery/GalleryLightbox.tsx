@@ -223,22 +223,22 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             </motion.div>
           </div>
 
-          {/* Large Floating Previous Button (‹) */}
+          {/* Large Floating Previous Button (‹) - Visible on tablet/desktop, mobile uses touch swipe & bottom controls */}
           <button
             type="button"
             onClick={handlePrev}
             aria-label="Previous image"
-            className="fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-2xl bg-[#050814]/85 hover:bg-cyan-950/90 border border-white/15 hover:border-cyan-400/80 text-white hover:text-cyan-300 shadow-[0_0_30px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95"
+            className="hidden sm:flex fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-2xl bg-[#050814]/85 hover:bg-cyan-950/90 border border-white/15 hover:border-cyan-400/80 text-white hover:text-cyan-300 shadow-[0_0_30px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95"
           >
             <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
           </button>
 
-          {/* Large Floating Next Button (›) */}
+          {/* Large Floating Next Button (›) - Visible on tablet/desktop, mobile uses touch swipe & bottom controls */}
           <button
             type="button"
             onClick={handleNext}
             aria-label="Next image"
-            className="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-2xl bg-[#050814]/85 hover:bg-cyan-950/90 border border-white/15 hover:border-cyan-400/80 text-white hover:text-cyan-300 shadow-[0_0_30px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95"
+            className="hidden sm:flex fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-2xl bg-[#050814]/85 hover:bg-cyan-950/90 border border-white/15 hover:border-cyan-400/80 text-white hover:text-cyan-300 shadow-[0_0_30px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95"
           >
             <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
           </button>

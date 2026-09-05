@@ -34,7 +34,7 @@ const CountdownTimer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 px-2">
+    <div className="flex items-center justify-center gap-1.5 xs:gap-2.5 sm:gap-4 md:gap-8 px-1 sm:px-2 max-w-full">
       <TimeUnit
         label="DAYS"
         value={timeLeft.days}
@@ -81,14 +81,14 @@ const TimeUnit = ({
   accentColor: string;
 }) => {
   return (
-    <div className="flex flex-col items-center group">
+    <div className="flex flex-col items-center group flex-1 max-w-[80px] sm:max-w-[100px] md:max-w-[120px]">
       {/* Label with Luxury Tech feel */}
-      <span className={`text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.25em] font-kodeMono ${accentColor} mb-2.5 sm:mb-3 group-hover:text-white transition-colors`}>
+      <span className={`text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.15em] sm:tracking-[0.25em] font-kodeMono ${accentColor} mb-1.5 sm:mb-2.5 md:mb-3 group-hover:text-white transition-colors`}>
         {label}
       </span>
 
       <div
-        className={`relative w-16 h-20 sm:w-20 sm:h-24 md:w-28 md:h-32 flex items-center justify-center bg-[#050811] border-2 ${borderColor} rounded-xl overflow-hidden shadow-2xl ${glowColor}`}
+        className={`relative w-full aspect-[4/5] max-h-16 sm:max-h-24 md:max-h-32 flex items-center justify-center bg-[#050811] border sm:border-2 ${borderColor} rounded-lg sm:rounded-xl overflow-hidden shadow-2xl ${glowColor}`}
       >
         {/* Decorative Luxury Lines */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent" />
@@ -100,11 +100,11 @@ const TimeUnit = ({
         <AnimatePresence mode="popLayout">
           <motion.span
             key={value}
-            initial={{ y: 15, opacity: 0 }}
+            initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -15, opacity: 0 }}
+            exit={{ y: -12, opacity: 0 }}
             transition={{ duration: 0.3, ease: "circOut" }}
-            className="text-3xl sm:text-4xl md:text-6xl font-orbitron font-black text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+            className="text-xl xs:text-2xl sm:text-4xl md:text-6xl font-orbitron font-black text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
           >
             {value.toString().padStart(2, "0")}
           </motion.span>

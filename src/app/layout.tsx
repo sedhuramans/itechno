@@ -42,6 +42,13 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#030508",
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Itechno 2026 | Takshashila University",

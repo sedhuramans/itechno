@@ -22,13 +22,13 @@ export default function HomeContactSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-full h-[400px] bg-gradient-to-r from-amber-500/10 via-blue-600/15 to-amber-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/40 text-amber-300 font-kodeMono text-[10px] sm:text-xs uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(245,158,11,0.25)] backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-amber-500/40 bg-amber-950/40 text-amber-300 font-kodeMono text-[9px] sm:text-xs uppercase tracking-widest mb-3 sm:mb-4 shadow-[0_0_15px_rgba(245,158,11,0.25)] backdrop-blur-md">
+          <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-amber-400 animate-ping" />
           <span>DIRECT EVENT SUPPORT &amp; LEADERSHIP</span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-white to-blue-400 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-white to-blue-400 tracking-tight">
           CONTACT &amp; DIRECTORS
         </h2>
 
