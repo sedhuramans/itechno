@@ -250,7 +250,7 @@ export const eventSections: EventSection[] = [
         initials: "FJ"
       },
       {
-        name: "Mohan Harish",
+        name: "Mohan",
         role: "Event Coordinator",
         department: "Pictonary",
         departments: ["PICTONARY"],

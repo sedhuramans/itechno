@@ -183,7 +183,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: 'Time-Limited',
     teamSize: 'Duo / 2 Participants',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Aafiya', 'Farjana', 'Mohan Harish'],
+    coordinators: ['Aafiya', 'Farjana', 'Mohan'],
     description: 'Pictionary is a visual technology puzzle challenge where participants identify a tech word or concept by connecting 4+ pictures (e.g., Cloud + Server + Storage + Internet = Cloud Computing).',
     rules: [
       'Team Size: Duo / 2 Participants per team.',
