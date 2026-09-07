@@ -98,6 +98,35 @@ export default function EventsPage() {
         </div>
       </div>
 
+      {/* Registration & Payment Notice Banner */}
+      <div className="max-w-5xl mx-auto mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-slate-950/80 to-blue-950/50 border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.18)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="flex items-center gap-3.5">
+          <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-2xl shrink-0">
+            💰
+          </div>
+          <div>
+            <div className="text-emerald-300 font-orbitron font-bold text-sm sm:text-base tracking-wide flex items-center justify-center sm:justify-start gap-2">
+              <span>Payment: ₹100 per head</span>
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-kodeMono uppercase font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                All Events
+              </span>
+            </div>
+            <p className="text-slate-300 text-xs sm:text-sm font-spaceGrotesk mt-0.5">
+              Each participant in the team needs to pay ₹100
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://forms.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-black font-orbitron font-bold text-xs shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all shrink-0 hover:scale-105 active:scale-95 flex items-center gap-2"
+        >
+          <span>REGISTER NOW</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
+
       {/* Controls: Search & Category Tabs */}
       <div className="max-w-6xl mx-auto mb-12 space-y-6">
         {/* Search Bar */}
@@ -201,6 +230,19 @@ export default function EventsPage() {
                       <span className="text-yellow-300 font-bold">{event.prizePool}</span>
                     </div>
 
+                    {/* Payment Detail Row */}
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-gradient-to-r from-emerald-950/50 to-slate-950/70 border border-emerald-500/30 shadow-[0_0_12px_rgba(16,185,129,0.12)]">
+                      <span className="text-base shrink-0 leading-none">💰</span>
+                      <div>
+                        <div className="text-emerald-300 font-bold font-orbitron text-xs">
+                          Payment: ₹100 per head
+                        </div>
+                        <div className="text-[11px] text-slate-300 font-spaceGrotesk mt-0.5">
+                          Each participant in the team needs to pay ₹100
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="flex items-center gap-2 text-slate-300">
                       <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
                       <span className="text-slate-400">Venue:</span>
@@ -277,8 +319,23 @@ export default function EventsPage() {
               {activeModalEvent.description}
             </p>
 
+            {/* Payment Highlight Box */}
+            <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-emerald-900/20 to-slate-950/90 border border-emerald-500/40 mb-6 shadow-[0_0_25px_rgba(16,185,129,0.2)]">
+              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-2xl shrink-0">
+                💰
+              </div>
+              <div>
+                <h4 className="text-emerald-300 font-bold font-orbitron text-sm sm:text-base">
+                  Payment: ₹100 per head
+                </h4>
+                <p className="text-slate-300 text-xs font-spaceGrotesk mt-0.5">
+                  Each participant in the team needs to pay ₹100
+                </p>
+              </div>
+            </div>
+
             {/* Key Event Details Box */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-slate-950/80 border border-yellow-500/20 mb-8 text-xs font-kodeMono">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 p-4 rounded-2xl bg-slate-950/80 border border-yellow-500/20 mb-8 text-xs font-kodeMono">
               <div>
                 <span className="text-slate-400 block mb-1">Time Limit:</span>
                 <span className="text-yellow-300 font-bold text-sm">{activeModalEvent.time}</span>
@@ -292,8 +349,12 @@ export default function EventsPage() {
                 <span className="text-yellow-300 font-bold text-sm">{activeModalEvent.prizePool}</span>
               </div>
               <div>
+                <span className="text-slate-400 block mb-1">Reg. Fee:</span>
+                <span className="text-emerald-400 font-bold text-sm">₹100 / head</span>
+              </div>
+              <div className="col-span-2 sm:col-span-1">
                 <span className="text-slate-400 block mb-1">Venue:</span>
-                <span className="text-slate-200 font-medium text-sm">{activeModalEvent.location}</span>
+                <span className="text-slate-200 font-medium text-sm truncate block">{activeModalEvent.location}</span>
               </div>
             </div>
 

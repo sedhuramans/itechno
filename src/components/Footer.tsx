@@ -1,4 +1,4 @@
-import { MapPin, Sparkles, ExternalLink, Calendar } from "lucide-react";
+import { MapPin, Sparkles, ExternalLink, Calendar, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -90,8 +90,17 @@ const Footer: React.FC = () => {
             </h3>
             <div className="space-y-3 mb-6 text-sm text-slate-200 font-kodeMono">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-yellow-400" />
+                <Calendar className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                 <span>Date: September 29, 2026</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                <a
+                  href="mailto:itechno730@gmail.com"
+                  className="hover:text-yellow-300 transition-colors break-all"
+                >
+                  itechno730@gmail.com
+                </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />

@@ -206,10 +206,10 @@ export default function HomeContactSection() {
                 OFFICIAL FESTIVAL EMAIL
               </span>
               <a
-                href="mailto:itechno2k@gmail.com"
+                href="mailto:itechno730@gmail.com"
                 className="text-sm font-inter text-slate-200 hover:text-white transition-colors font-medium break-all"
               >
-                itechno2k@gmail.com
+                itechno730@gmail.com
               </a>
             </div>
           </div>

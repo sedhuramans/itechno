@@ -27,6 +27,7 @@ const ContactForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -39,22 +40,32 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
-      const formBody = new FormData();
-      formBody.append('name', formData.name);
-      formBody.append('email', formData.email);
-      formBody.append('phone', formData.phone);
-      formBody.append('subject', formData.subject);
-      formBody.append('message', formData.message);
-
-      const response = await fetch('https://formsubmit.co/ajax/itechno2k@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/itechno730@gmail.com', {
         method: 'POST',
-        body: formBody,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          _captcha: 'false',
+          _template: 'table',
+          _subject: `ITECHNO '26: [${formData.subject || 'Inquiry'}] from ${formData.name}`
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && (result?.success === 'true' || result?.success === true || result?.message || !result)) {
         setSuccess(true);
+        setError(null);
         setFormData({
           name: '',
           email: '',
@@ -62,10 +73,14 @@ const ContactForm = () => {
           subject: '',
           message: ''
         });
-        setTimeout(() => setSuccess(false), 5000);
+        setTimeout(() => setSuccess(false), 6000);
+      } else {
+        const msg = result?.message || 'Failed to transmit message. Please try again or email itechno730@gmail.com directly.';
+        setError(msg);
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Connection error. Please verify your network or email itechno730@gmail.com directly.');
     } finally {
       setLoading(false);
     }
@@ -220,8 +235,8 @@ const ContactForm = () => {
                 </div>
                 <div className="flex flex-col justify-center pt-1">
                   <h4 className="text-yellow-300/80 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Official_Mail</h4>
-                  <a href="mailto:itechno2k@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-sm sm:text-base tracking-wide font-medium">
-                    itechno2k@gmail.com
+                  <a href="mailto:itechno730@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-sm sm:text-base tracking-wide font-medium">
+                    itechno730@gmail.com
                   </a>
                 </div>
               </div>
@@ -274,6 +289,13 @@ const ContactForm = () => {
                 <div className="mb-8 p-4 rounded-xl bg-emerald-950/60 border border-emerald-400/60 text-emerald-200 text-sm font-kodeMono tracking-widest uppercase text-center flex items-center justify-center gap-3">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                   Transmission Sent Successfully
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-8 p-4 rounded-xl bg-rose-950/70 border border-rose-500/50 text-rose-200 text-xs sm:text-sm font-kodeMono text-center flex items-center justify-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping flex-shrink-0" />
+                  <span>{error}</span>
                 </div>
               )}
 

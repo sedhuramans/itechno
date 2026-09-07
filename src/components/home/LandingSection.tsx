@@ -88,7 +88,7 @@ const LandingSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2.5 sm:gap-4 mb-8 sm:mb-10 text-[11px] sm:text-xs md:text-sm font-kodeMono font-bold w-full max-w-2xl px-2"
+          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2.5 sm:gap-4 mb-4 text-[11px] sm:text-xs md:text-sm font-kodeMono font-bold w-full max-w-3xl px-2"
         >
           <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-yellow-500/40 bg-gradient-to-r from-yellow-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
             <Calendar className="w-4 h-4 text-yellow-400 flex-shrink-0" />
@@ -101,6 +101,23 @@ const LandingSection = () => {
               VENUE: TAKSHASHILA UNIVERSITY, TAMIL NADU
             </span>
           </div>
+
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 to-slate-950/80 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <span className="text-sm">💰</span>
+            <span className="text-emerald-300 whitespace-nowrap">PAYMENT: ₹100 / HEAD</span>
+          </div>
+        </motion.div>
+
+        {/* Note: Each participant in the team needs to pay ₹100 */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.75 }}
+          className="mb-8 text-center"
+        >
+          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3 py-1 rounded-full border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+            💰 <strong className="text-emerald-400">Payment: ₹100 per head</strong> — Each participant in the team needs to pay ₹100
+          </span>
         </motion.div>
 
         {/* Primary CTA Buttons: Register Now (Left) + Events (Right) Side-by-Side on all screens */}

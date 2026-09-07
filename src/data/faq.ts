@@ -23,6 +23,12 @@ export const participationRules: FAQItem[] = [
     category: "Participation Rules",
     question: "3. Specified Event Team Sizes",
     answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (4 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (2–3 participants)."
+  },
+  {
+    id: "pr4",
+    category: "Participation Rules",
+    question: "4. Event Registration Fee & Payment",
+    answer: "💰 Payment: ₹100 per head. For every event, each participant in the team needs to pay ₹100."
   }
 ];
 
@@ -113,6 +119,12 @@ export const faqData: FAQItem[] = [
     category: "Registration",
     question: "Can I participate in multiple events?",
     answer: "Hackverse participants can participate ONLY in Hackverse and cannot participate in any other event. Participants who do NOT participate in Hackverse can participate in multiple other events, but must participate in a minimum of 3 events."
+  },
+  {
+    id: "f-fee",
+    category: "Registration",
+    question: "What is the registration fee for each event?",
+    answer: "💰 Payment: ₹100 per head. For every event, each participant in the team needs to pay ₹100."
   },
   {
     id: "f5",
