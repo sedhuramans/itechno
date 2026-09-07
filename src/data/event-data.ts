@@ -62,7 +62,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall Presentation'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'hackathon'
   },
@@ -102,7 +102,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Understanding of the code'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'coding'
   },
@@ -140,7 +140,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall quiz score.'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'quiz'
   },
@@ -182,7 +182,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Time management'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'speaking'
   },
@@ -220,7 +220,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall score'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'puzzle'
   },
@@ -259,7 +259,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall performance'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'gaming'
   },
@@ -301,7 +301,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall Production Quality'
     ],
     lastDate: 'Registration Open',
-    registrationLink: 'https://forms.google.com',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'media'
   }

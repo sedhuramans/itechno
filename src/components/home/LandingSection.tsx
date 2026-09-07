@@ -7,7 +7,7 @@ import CountdownTimer from "../CountdownTimer";
 import { Sparkles, ExternalLink, Calendar, MapPin } from "lucide-react";
 
 const LandingSection = () => {
-  const googleFormUrl = "https://forms.google.com";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog";
 
   return (
     <div id="home" className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">

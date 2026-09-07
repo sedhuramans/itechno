@@ -52,7 +52,7 @@ const getSectionIcon = (iconName: string) => {
 };
 
 const TeamsPage: React.FC = () => {
-  const googleFormUrl = "https://forms.google.com";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog";
 
   // Selected coordinator for full profile modal pop-up
   const [selectedMember, setSelectedMember] = useState<{

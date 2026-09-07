@@ -117,7 +117,7 @@ export default function EventsPage() {
           </div>
         </div>
         <a
-          href="https://forms.google.com"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-black font-orbitron font-bold text-xs shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all shrink-0 hover:scale-105 active:scale-95 flex items-center gap-2"

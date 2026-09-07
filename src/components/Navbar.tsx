@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const googleFormUrl = "https://forms.google.com";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);

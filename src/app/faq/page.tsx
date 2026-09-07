@@ -32,7 +32,7 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [openId, setOpenId] = useState<string | null>("g1"); // default first rule open
 
-  const googleFormUrl = "https://forms.google.com";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog";
 
   const filteredFaqs = faqData.filter((item) => {
     const matchesCategory =
