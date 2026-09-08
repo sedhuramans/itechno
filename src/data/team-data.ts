@@ -327,7 +327,7 @@ export const eventSections: EventSection[] = [
     number: "07",
     title: "VIRAL MINDS",
     category: "Creative",
-    description: "Cinematography, viral storytelling, dynamic video editing, and fest highlights.",
+    description: "Inter-College Reel Contest – cinematography, storytelling, dynamic video editing, and festive highlights.",
     iconName: "Film",
     accentColor: "cyan",
     coordinators: [

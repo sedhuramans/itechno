@@ -22,7 +22,7 @@ export const participationRules: FAQItem[] = [
     id: "pr3",
     category: "Participation Rules",
     question: "3. Specified Event Team Sizes",
-    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (2–3 participants)."
+    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (Individual / Duo - Max 2 members)."
   },
   {
     id: "pr4",
