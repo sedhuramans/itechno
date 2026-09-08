@@ -107,14 +107,14 @@ export const eventSections: EventSection[] = [
     accentColor: "blue",
     coordinators: [
       {
-        name: "Vignesh. B",
+        name: "Vignesh",
         role: "Event Coordinator",
         department: "Codeathon",
         departments: ["CODEATHON"],
         badge: "EVENT COORDINATOR",
         bio: "Coordinator responsible for supporting the Codeathon event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788496971/vicky.png.jpg",
-        initials: "VB"
+        initials: "V"
       },
       {
         name: "Jaishitha",

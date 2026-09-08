@@ -79,7 +79,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: 'Time-Limited',
     teamSize: 'Duo / 2 Participants',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Vignesh. B', 'Jaishitha', 'Udhayaraj'],
+    coordinators: ['Vignesh', 'Jaishitha', 'Udhayaraj'],
     description: 'Challenges include syntax errors, logical errors, runtime errors, incorrect outputs and programming mistakes.',
     rules: [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
