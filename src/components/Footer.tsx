@@ -108,6 +108,36 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
+            {/* Embedded Google Map */}
+            <div className="w-full mb-6 rounded-2xl overflow-hidden border border-yellow-500/30 bg-[#050814]/90 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <div className="flex items-center justify-between px-3.5 py-2 bg-black/60 border-b border-yellow-500/20 text-[11px] font-kodeMono text-yellow-300">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-400" />
+                  <span>CAMPUS LOCATION</span>
+                </span>
+                <a
+                  href="https://maps.google.com/?q=Takshashila+University+Ongur+Tamil+Nadu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors"
+                >
+                  <span>Open Maps</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.724718334563!2d79.78059162506578!3d12.334306287925552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a531501c8620677%3A0x57511cc958199077!2sTakshashila%20University!5e0!3m2!1sen!2sin!4v1788859238118!5m2!1sen!2sin"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="w-full h-44 sm:h-48"
+                title="Takshashila University Campus Location"
+              />
+            </div>
+
             <a
               href={googleFormUrl}
               target="_blank"
