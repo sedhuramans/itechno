@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import CountdownTimer from "../CountdownTimer";
-import { Sparkles, ExternalLink, Calendar, MapPin } from "lucide-react";
+import { Sparkles, ArrowRight, Calendar, MapPin } from "lucide-react";
 
 const LandingSection = () => {
   return (
@@ -121,7 +121,7 @@ const LandingSection = () => {
           </span>
         </motion.div>
 
-        {/* Primary CTA Button: Register Now */}
+        {/* Primary CTA Button: Event Details */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -134,8 +134,8 @@ const LandingSection = () => {
           >
             <span className="absolute inset-0 bg-white/25 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-black shrink-0 animate-spin" style={{ animationDuration: '4s' }} />
-            <span>REGISTER NOW</span>
-            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <span>EVENT DETAILS</span>
+            <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-black shrink-0 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
 
