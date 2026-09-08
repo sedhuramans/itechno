@@ -108,15 +108,18 @@ const LandingSection = () => {
           </div>
         </motion.div>
 
-        {/* Note: Each participant in the team needs to pay ₹100 */}
+        {/* Note: Each participant in the team needs to pay ₹100 & Online Registration Deadline */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75 }}
-          className="mb-8 text-center"
+          className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2"
         >
           <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3 py-1 rounded-full border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
             💰 <strong className="text-emerald-400">Payment: ₹100 per head</strong> — Each participant in the team needs to pay ₹100
+          </span>
+          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3 py-1 rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)]">
+            ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Sep 28, 5:30 PM</strong> • On-the-spot registration available at venue
           </span>
         </motion.div>
 

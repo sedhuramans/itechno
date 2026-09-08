@@ -61,7 +61,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Completion of Requirements',
       'Overall Presentation'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'hackathon'
@@ -77,14 +77,15 @@ export const ItechnoEventsData: EventDataType[] = [
     fee: '💰 Payment: ₹100 per head',
     feeDetails: 'Each participant in the team needs to pay ₹100',
     time: 'Time-Limited',
-    teamSize: '4 Participants',
+    teamSize: 'Duo / 2 Participants',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
     coordinators: ['Vignesh. B', 'Jaishitha', 'Udhayaraj'],
     description: 'Challenges include syntax errors, logical errors, runtime errors, incorrect outputs and programming mistakes.',
     rules: [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
-      'Team Size: 4 Participants per team.',
+      'Team Size: Duo / Exactly 2 members per team.',
       'Type: Debugging Challenge.',
+      'Registration Deadline: Online registration closes on September 28 at 5:30 PM. On-the-spot registration will be available at the venue.',
       'The code will be provided by the organizing team.',
       'Challenges include syntax errors, logical errors, runtime errors, incorrect outputs and programming mistakes.',
       'Participants must identify and fix the errors in the given code within the time limit.',
@@ -101,7 +102,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Time',
       'Understanding of the code'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'coding'
@@ -139,7 +140,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Speed and accuracy of answering.',
       'Overall quiz score.'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'quiz'
@@ -181,7 +182,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Examples/applications',
       'Time management'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'speaking'
@@ -219,7 +220,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Number of correct answers',
       'Overall score'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'puzzle'
@@ -258,7 +259,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Survival',
       'Overall performance'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'gaming'
@@ -300,7 +301,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Engagement',
       'Overall Production Quality'
     ],
-    lastDate: 'Registration Open',
+    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'media'

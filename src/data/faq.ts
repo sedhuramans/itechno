@@ -22,7 +22,7 @@ export const participationRules: FAQItem[] = [
     id: "pr3",
     category: "Participation Rules",
     question: "3. Specified Event Team Sizes",
-    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (4 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (2–3 participants)."
+    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (2–3 participants)."
   },
   {
     id: "pr4",
@@ -36,8 +36,8 @@ export const generalGuidelines: FAQItem[] = [
   {
     id: "g1",
     category: "General Rules",
-    question: "1. Registration Requirement",
-    answer: "Participants must register before the registration deadline to secure entry to Itechno '26 arenas."
+    question: "1. Registration Requirement & Deadlines",
+    answer: "Online registration will close on September 28, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on event day (September 29). Participants must register to secure entry to Itechno '26 arenas."
   },
   {
     id: "g2",
@@ -125,6 +125,12 @@ export const faqData: FAQItem[] = [
     category: "Registration",
     question: "What is the registration fee for each event?",
     answer: "💰 Payment: ₹100 per head. For every event, each participant in the team needs to pay ₹100."
+  },
+  {
+    id: "f-deadline",
+    category: "Registration",
+    question: "When does registration close?",
+    answer: "Online registration closes on September 28, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on the event day (September 29, 2026)."
   },
   {
     id: "f5",

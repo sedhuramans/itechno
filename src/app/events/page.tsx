@@ -243,6 +243,19 @@ export default function EventsPage() {
                       </div>
                     </div>
 
+                    {/* Registration Deadline Row */}
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-gradient-to-r from-yellow-950/40 to-slate-950/70 border border-yellow-500/30 shadow-[0_0_12px_rgba(234,179,8,0.1)]">
+                      <Clock className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-yellow-300 font-bold font-orbitron text-xs">
+                          Online Deadline: Sep 28, 5:30 PM
+                        </div>
+                        <div className="text-[11px] text-cyan-300 font-spaceGrotesk mt-0.5">
+                          On-the-spot registration available at venue
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="flex items-center gap-2 text-slate-300">
                       <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
                       <span className="text-slate-400">Venue:</span>
@@ -319,18 +332,34 @@ export default function EventsPage() {
               {activeModalEvent.description}
             </p>
 
-            {/* Payment Highlight Box */}
-            <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-emerald-900/20 to-slate-950/90 border border-emerald-500/40 mb-6 shadow-[0_0_25px_rgba(16,185,129,0.2)]">
-              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-2xl shrink-0">
-                💰
+            {/* Payment & Registration Deadline Highlight Box */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-emerald-900/20 to-slate-950/90 border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-2xl shrink-0">
+                  💰
+                </div>
+                <div>
+                  <h4 className="text-emerald-300 font-bold font-orbitron text-sm">
+                    Payment: ₹100 per head
+                  </h4>
+                  <p className="text-slate-300 text-xs font-spaceGrotesk mt-0.5">
+                    Each participant in the team needs to pay ₹100
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-emerald-300 font-bold font-orbitron text-sm sm:text-base">
-                  Payment: ₹100 per head
-                </h4>
-                <p className="text-slate-300 text-xs font-spaceGrotesk mt-0.5">
-                  Each participant in the team needs to pay ₹100
-                </p>
+
+              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-gradient-to-r from-yellow-950/50 via-yellow-900/20 to-slate-950/90 border border-yellow-500/40 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+                <div className="w-11 h-11 rounded-xl bg-yellow-500/20 border border-yellow-400/40 flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5 text-yellow-400" />
+                </div>
+                <div>
+                  <h4 className="text-yellow-300 font-bold font-orbitron text-sm">
+                    Online Deadline: Sep 28, 5:30 PM
+                  </h4>
+                  <p className="text-cyan-300 text-xs font-spaceGrotesk mt-0.5">
+                    On-the-spot registration available at venue
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -411,9 +440,14 @@ export default function EventsPage() {
 
             {/* Modal Bottom CTA */}
             <div className="pt-4 border-t border-yellow-500/20 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xs font-kodeMono text-slate-400">
-                Status: <span className="text-emerald-400 font-bold">Registration Open</span>
-              </span>
+              <div className="flex flex-col gap-1 text-xs font-kodeMono">
+                <div>
+                  Status: <span className="text-emerald-400 font-bold">Online Registration Open</span>
+                </div>
+                <div className="text-slate-400 text-[11px] font-spaceGrotesk">
+                  Online closes <strong className="text-yellow-300">Sep 28, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
+                </div>
+              </div>
               <a
                 href={activeModalEvent.registrationLink}
                 target="_blank"
