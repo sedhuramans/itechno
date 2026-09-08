@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Loader from "@/components/Loader";
@@ -13,8 +14,24 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+  const [loading, setLoading] = useState(false);
   const [lowPerformanceMode, setLowPerformanceMode] = useState(false);
+
+  useEffect(() => {
+    // Only trigger opening loader on the home page on initial visit
+    const isHomePage = pathname === "/";
+    const alreadyLoaded = sessionStorage.getItem("itechno_initial_loader");
+
+    if (isHomePage && !alreadyLoaded) {
+      setLoading(true);
+    }
+  }, [pathname]);
+
+  const handleFinishLoading = () => {
+    sessionStorage.setItem("itechno_initial_loader", "true");
+    setLoading(false);
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -57,17 +74,15 @@ export default function ClientLayout({
       </div>
       <div className="pointer-events-none fixed inset-0 -z-10 bg-black/45" />
 
-      {loading ? (
-        <Loader finishLoading={() => setLoading(false)} />
-      ) : (
-        <div className="relative z-10">
-          <SplashCursor />
-          <Navbar />
-          {children}
-          <Footer />
-          <BackgroundMusic />
-        </div>
-      )}
+      {loading && <Loader finishLoading={handleFinishLoading} />}
+
+      <div className="relative z-10">
+        <SplashCursor />
+        <Navbar />
+        {children}
+        <Footer />
+        <BackgroundMusic />
+      </div>
     </div>
   );
 }
