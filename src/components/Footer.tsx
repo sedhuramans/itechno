@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDus3ukpG_JRyPhpRGq3cg5ja_8mpic8i1dFgQgOh9A_SuYQ/viewform?usp=dialog";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
 
   return (
     <footer className="w-full relative bg-[#020408] text-slate-200 py-16 md:py-20 border-t border-yellow-500/25 font-spaceGrotesk overflow-hidden">
