@@ -30,9 +30,10 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
 
   // Prevent scrolling while loading
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = originalOverflow;
     };
   }, []);
 
@@ -42,7 +43,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
         <motion.div
           exit={{ opacity: 0, scale: 1.08, filter: "blur(20px)" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030508] overflow-hidden select-none font-sans"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030508] overflow-hidden select-none font-sans px-4"
         >
           {/* Luxury Ambient Radial Glow: Sapphire Blue + Imperial Gold */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,_rgba(37,99,235,0.18)_0%,_rgba(212,175,55,0.12)_35%,_rgba(3,5,8,0.95)_70%)]" />
@@ -54,7 +55,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[330px] h-[330px] rounded-full border border-yellow-600/30 shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+              className="absolute w-[240px] h-[240px] xs:w-[280px] xs:h-[280px] sm:w-[330px] sm:h-[330px] rounded-full border border-yellow-600/30 shadow-[0_0_30px_rgba(212,175,55,0.2)]"
               style={{ borderTopColor: "#D4AF37", borderRightColor: "transparent" }}
             />
 
@@ -62,7 +63,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[260px] h-[260px] rounded-full border border-blue-600/30 shadow-[0_0_25px_rgba(59,130,246,0.3)]"
+              className="absolute w-[190px] h-[190px] xs:w-[220px] xs:h-[220px] sm:w-[260px] sm:h-[260px] rounded-full border border-blue-600/30 shadow-[0_0_25px_rgba(59,130,246,0.3)]"
               style={{ borderBottomColor: "#3B82F6", borderLeftColor: "transparent" }}
             />
 
@@ -70,7 +71,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
             <motion.div
               animate={{ rotate: 360, scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute w-[200px] h-[200px] rounded-full border-[2px] border-dashed border-amber-300/40"
+              className="absolute w-[150px] h-[150px] xs:w-[170px] xs:h-[170px] sm:w-[200px] sm:h-[200px] rounded-full border-[2px] border-dashed border-amber-300/40"
             />
 
             {/* Glowing Obsidian Core */}
@@ -83,23 +84,23 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
                 ],
               }}
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-36 h-36 bg-[#070b16]/95 backdrop-blur-2xl rounded-full flex items-center justify-center border border-yellow-500/50"
+              className="relative w-24 h-24 xs:w-28 xs:h-28 sm:w-36 sm:h-36 bg-[#070b16]/95 backdrop-blur-2xl rounded-full flex items-center justify-center border border-yellow-500/50"
             >
               {/* Inner Core Border Accent */}
               <div className="absolute inset-2 border border-blue-500/40 rounded-full" />
               
               {/* Percentage Text */}
-              <div className="text-white text-4xl font-bold font-orbitron tracking-wider z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] flex items-baseline">
+              <div className="text-white text-2xl xs:text-3xl sm:text-4xl font-bold font-orbitron tracking-wider z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] flex items-baseline">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-white to-blue-300">
                   {progress}
                 </span>
-                <span className="text-blue-400 text-xl font-kodeMono ml-1">%</span>
+                <span className="text-blue-400 text-base xs:text-lg sm:text-xl font-kodeMono ml-1">%</span>
               </div>
             </motion.div>
           </div>
 
           {/* Bottom Loading Bar and Status */}
-          <div className="absolute bottom-20 flex flex-col items-center gap-3 w-full max-w-sm px-8">
+          <div className="absolute bottom-8 xs:bottom-12 sm:bottom-20 flex flex-col items-center gap-3 w-full max-w-sm px-6 sm:px-8">
             <div className="flex items-center gap-2.5">
               <Image
                 src="https://res.cloudinary.com/k78tbfel/image/upload/v1788616750/dckycpwsln5ds2dtoh9b.png"
@@ -116,7 +117,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="text-blue-400/90 text-xs uppercase tracking-[0.45em] font-kodeMono font-bold"
+              className="text-blue-400/90 text-[10px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.35em] font-kodeMono font-bold text-center"
             >
               INITIALIZING TECH FEST EXPERIENCE
             </motion.div>

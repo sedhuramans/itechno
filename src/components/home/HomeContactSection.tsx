@@ -114,9 +114,9 @@ export default function HomeContactSection() {
                   {director.phone && (
                     <a
                       href={`tel:${director.phone.replace(/\s+/g, "")}`}
-                      className="w-full flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-amber-950/70 hover:bg-amber-400 border border-amber-400/50 hover:border-amber-300 text-amber-200 hover:text-black transition-all duration-200 shadow-[0_0_15px_rgba(212,175,55,0.15)] group/btn"
+                      className="w-full flex items-center justify-between gap-2 xs:gap-3 px-3 xs:px-3.5 py-2.5 rounded-xl bg-amber-950/70 hover:bg-amber-400 border border-amber-400/50 hover:border-amber-300 text-amber-200 hover:text-black transition-all duration-200 shadow-[0_0_15px_rgba(212,175,55,0.15)] group/btn"
                     >
-                      <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="flex items-center gap-2 xs:gap-2.5 min-w-0">
                         <div className="p-1.5 rounded-lg bg-black/40 group-hover/btn:bg-black/10 transition-colors flex-shrink-0">
                           <Phone className="w-4 h-4 text-amber-300 group-hover/btn:text-black transition-colors" />
                         </div>
@@ -129,7 +129,7 @@ export default function HomeContactSection() {
                           </div>
                         </div>
                       </div>
-                      <span className="text-[10px] font-kodeMono uppercase tracking-widest px-2 py-1 rounded bg-black/30 group-hover/btn:bg-black/20 font-semibold flex-shrink-0">
+                      <span className="text-[9px] xs:text-[10px] font-kodeMono uppercase tracking-wider xs:tracking-widest px-1.5 xs:px-2 py-1 rounded bg-black/30 group-hover/btn:bg-black/20 font-semibold flex-shrink-0">
                         CALL NOW
                       </span>
                     </a>
@@ -138,9 +138,9 @@ export default function HomeContactSection() {
                   {director.email && (
                     <a
                       href={`mailto:${director.email}`}
-                      className="w-full flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-black/60 hover:bg-blue-950/60 border border-amber-500/25 hover:border-blue-400/70 text-slate-200 hover:text-blue-200 transition-all duration-200 group/btn"
+                      className="w-full flex items-center justify-between gap-2 xs:gap-3 px-3 xs:px-3.5 py-2.5 rounded-xl bg-black/60 hover:bg-blue-950/60 border border-amber-500/25 hover:border-blue-400/70 text-slate-200 hover:text-blue-200 transition-all duration-200 group/btn"
                     >
-                      <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="flex items-center gap-2 xs:gap-2.5 min-w-0">
                         <div className="p-1.5 rounded-lg bg-white/5 group-hover/btn:bg-blue-900/40 transition-colors flex-shrink-0">
                           <Mail className="w-4 h-4 text-amber-400 group-hover/btn:text-blue-300 transition-colors" />
                         </div>
@@ -153,7 +153,7 @@ export default function HomeContactSection() {
                           </div>
                         </div>
                       </div>
-                      <span className="text-[10px] font-kodeMono uppercase tracking-widest px-2 py-1 rounded bg-white/5 group-hover/btn:bg-blue-900/30 text-slate-400 group-hover/btn:text-blue-200 font-semibold flex-shrink-0">
+                      <span className="text-[9px] xs:text-[10px] font-kodeMono uppercase tracking-wider xs:tracking-widest px-1.5 xs:px-2 py-1 rounded bg-white/5 group-hover/btn:bg-blue-900/30 text-slate-400 group-hover/btn:text-blue-200 font-semibold flex-shrink-0">
                         SEND MAIL
                       </span>
                     </a>

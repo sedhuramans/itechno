@@ -80,11 +80,11 @@ export default function EventsPage() {
           Takshashila University • Itechno 2026 Arenas
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 tracking-tight">
           OFFICIAL EVENTS
         </h1>
 
-        <p className="text-slate-300 font-spaceGrotesk text-base sm:text-lg max-w-2xl mx-auto">
+        <p className="text-slate-300 font-spaceGrotesk text-sm sm:text-lg max-w-2xl mx-auto">
           Explore our flagship technical challenges, gaming tournaments, visual puzzles, and media competitions. Compete, innovate, and win exciting rewards!
         </p>
 
@@ -99,19 +99,19 @@ export default function EventsPage() {
       </div>
 
       {/* Registration & Payment Notice Banner */}
-      <div className="max-w-5xl mx-auto mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-slate-950/80 to-blue-950/50 border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.18)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-2xl shrink-0">
+      <div className="max-w-5xl mx-auto mb-10 p-3.5 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-slate-950/80 to-blue-950/50 border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.18)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="flex items-center gap-3 sm:gap-3.5">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-xl sm:text-2xl shrink-0">
             💰
           </div>
           <div>
-            <div className="text-emerald-300 font-orbitron font-bold text-sm sm:text-base tracking-wide flex items-center justify-center sm:justify-start gap-2">
+            <div className="text-emerald-300 font-orbitron font-bold text-xs sm:text-base tracking-wide flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
               <span>Payment: ₹100 per head</span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-kodeMono uppercase font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-kodeMono uppercase font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
                 All Events
               </span>
             </div>
-            <p className="text-slate-300 text-xs sm:text-sm font-spaceGrotesk mt-0.5">
+            <p className="text-slate-300 text-[11px] sm:text-sm font-spaceGrotesk mt-0.5">
               Each participant in the team needs to pay ₹100
             </p>
           </div>
@@ -120,7 +120,7 @@ export default function EventsPage() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-black font-orbitron font-bold text-xs shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all shrink-0 hover:scale-105 active:scale-95 flex items-center gap-2"
+          className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-black font-orbitron font-bold text-xs shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all shrink-0 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
         >
           <span>REGISTER NOW</span>
           <ExternalLink className="w-3.5 h-3.5" />
@@ -137,17 +137,17 @@ export default function EventsPage() {
             placeholder="Search events by title or keyword..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 bg-[#05070e]/90 border border-yellow-500/30 rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 font-spaceGrotesk transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]"
+            className="w-full pl-12 pr-4 py-3 bg-[#05070e]/90 border border-yellow-500/30 rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 font-spaceGrotesk transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)] text-sm"
           />
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2.5 rounded-xl font-orbitron text-xs font-semibold tracking-wider transition-all duration-300 ${
+              className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-orbitron text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-300 ${
                 selectedCategory === cat.id
                   ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
                   : "bg-[#05070e]/80 text-slate-300 border border-yellow-500/20 hover:border-yellow-400/50 hover:text-yellow-300"
@@ -265,12 +265,12 @@ export default function EventsPage() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-4 border-t border-yellow-500/20 flex items-center justify-between gap-3">
+                <div className="pt-4 border-t border-yellow-500/20 flex items-center justify-between gap-2 xs:gap-3">
                   <button
                     onClick={() => setActiveModalEvent(event)}
-                    className="flex-1 py-2.5 px-3 rounded-xl border-2 border-yellow-400/70 bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-400/20 hover:to-blue-600/20 text-yellow-300 hover:text-yellow-200 text-xs font-orbitron font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95"
+                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl border-2 border-yellow-400/70 bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-400/20 hover:to-blue-600/20 text-yellow-300 hover:text-yellow-200 text-[11px] xs:text-xs font-orbitron font-semibold transition-all duration-300 flex items-center justify-center gap-1 xs:gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95 whitespace-nowrap"
                   >
-                    <BookOpen className="w-3.5 h-3.5" />
+                    <BookOpen className="w-3.5 h-3.5 shrink-0" />
                     <span>RULES & INFO</span>
                   </button>
 
@@ -278,11 +278,11 @@ export default function EventsPage() {
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black text-xs font-orbitron font-bold shadow-[0_0_18px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-300 flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95 overflow-hidden relative group"
+                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black text-[11px] xs:text-xs font-orbitron font-bold shadow-[0_0_18px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-300 flex items-center justify-center gap-1 xs:gap-1.5 hover:scale-105 active:scale-95 overflow-hidden relative group whitespace-nowrap"
                   >
                     <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 pointer-events-none" />
                     <span>REGISTER</span>
-                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -295,13 +295,13 @@ export default function EventsPage() {
       {activeModalEvent && (
         <div
           onClick={() => setActiveModalEvent(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn cursor-pointer"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn cursor-pointer"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
           <div
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#05070e] border border-yellow-500/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(212,175,55,0.3)] text-slate-100 cursor-default"
+            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#05070e] border border-yellow-500/50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-[0_0_50px_rgba(212,175,55,0.3)] text-slate-100 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -309,22 +309,22 @@ export default function EventsPage() {
               type="button"
               onClick={() => setActiveModalEvent(null)}
               aria-label="Close rules and details modal"
-              className="absolute top-5 right-5 p-2 rounded-full bg-slate-900 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full bg-slate-900 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors z-10"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Modal Header */}
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-kodeMono uppercase font-bold text-yellow-300 bg-yellow-950/60 border border-yellow-500/40">
+            <div className="flex flex-wrap items-center gap-2 xs:gap-3 mb-3 sm:mb-4">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-kodeMono uppercase font-bold text-yellow-300 bg-yellow-950/60 border border-yellow-500/40">
                 {activeModalEvent.category}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-kodeMono font-bold text-blue-300 bg-blue-950/60 border border-blue-500/40">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-kodeMono font-bold text-blue-300 bg-blue-950/60 border border-blue-500/40">
                 {activeModalEvent.eventDate}
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 mb-4">
+            <h2 className="text-2xl sm:text-4xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 mb-4">
               {activeModalEvent.title}
             </h2>
 
@@ -452,7 +452,7 @@ export default function EventsPage() {
                 href={activeModalEvent.registrationLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black text-sm font-orbitron font-bold shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:scale-105 transition-all flex items-center gap-2"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black text-xs sm:text-sm font-orbitron font-bold shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:scale-105 transition-all flex items-center justify-center gap-2"
               >
                 <span>REGISTER FOR THIS EVENT</span>
                 <ExternalLink className="w-4 h-4" />

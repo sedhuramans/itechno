@@ -184,7 +184,7 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
 
             {/* Main Modal Card Surface with Mobile-Friendly Vertical Scroll */}
             <div
-              className={`relative rounded-[22px] bg-[#050814]/95 backdrop-blur-2xl border border-white/10 p-5 sm:p-8 md:p-10 max-h-[88vh] overflow-y-auto ${colorMap.glow}`}
+              className={`relative rounded-[22px] bg-[#050814]/95 backdrop-blur-2xl border border-white/10 p-4 xs:p-6 sm:p-8 md:p-10 max-h-[88vh] overflow-y-auto ${colorMap.glow}`}
             >
               {/* Corner Cyber HUD Accents */}
               <div
@@ -201,10 +201,10 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
               />
 
               {/* Top Bar: Telemetry Label & Close Button */}
-              <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="flex items-center gap-2 text-[10px] sm:text-xs font-kodeMono tracking-widest text-slate-400 uppercase">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span>ITECHNO &apos;26 • PROFILE DOSSIER</span>
+              <div className="flex items-center justify-between gap-3 mb-4 sm:mb-6">
+                <div className="flex items-center gap-2 text-[9px] xs:text-[10px] sm:text-xs font-kodeMono tracking-widest text-slate-400 uppercase truncate">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
+                  <span className="truncate">ITECHNO &apos;26 • PROFILE DOSSIER</span>
                 </div>
 
                 {/* Close (×) Button */}
@@ -212,9 +212,9 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
                   type="button"
                   onClick={onClose}
                   aria-label="Close profile modal"
-                  className="group p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 hover:border-cyan-400/60 text-slate-300 hover:text-white transition-all shadow-lg active:scale-95"
+                  className="group p-1.5 sm:p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 hover:border-cyan-400/60 text-slate-300 hover:text-white transition-all shadow-lg active:scale-95 shrink-0"
                 >
-                  <X className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-90 transition-transform duration-300" />
                 </button>
               </div>
 
@@ -267,16 +267,16 @@ export const CoordinatorProfileModal: React.FC<CoordinatorProfileModalProps> = (
                 {/* Coordinator Name */}
                 <h3
                   id="modal-title"
-                  className="text-2xl sm:text-3xl md:text-4xl font-black font-orbitron text-white tracking-wide mt-3 mb-2"
+                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black font-orbitron text-white tracking-wide mt-3 mb-2"
                 >
                   {member.name}
                 </h3>
 
                 {/* Primary Badge: CHIEF EVENT DIRECTOR / EVENT COORDINATOR */}
                 <div
-                  className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border ${colorMap.badge} font-kodeMono text-xs font-bold uppercase tracking-widest mb-4 shadow-[0_0_20px_rgba(0,0,0,0.5)]`}
+                  className={`inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 rounded-full border ${colorMap.badge} font-kodeMono text-[10px] xs:text-xs font-bold uppercase tracking-widest mb-4 shadow-[0_0_20px_rgba(0,0,0,0.5)]`}
                 >
-                  <IconComponent className="w-4 h-4 animate-pulse" />
+                  <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse shrink-0" />
                   <span>
                     {actualIsChief
                       ? "CHIEF EVENT DIRECTOR"

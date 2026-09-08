@@ -88,22 +88,22 @@ const LandingSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2.5 sm:gap-4 mb-4 text-[11px] sm:text-xs md:text-sm font-kodeMono font-bold w-full max-w-3xl px-2"
+          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 mb-4 text-[10px] xs:text-xs md:text-sm font-kodeMono font-bold w-full max-w-3xl px-1 sm:px-2"
         >
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-yellow-500/40 bg-gradient-to-r from-yellow-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-            <Calendar className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+          <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-yellow-500/40 bg-gradient-to-r from-yellow-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0" />
             <span className="text-yellow-200 whitespace-nowrap">DATE: SEP 29, 2026</span>
           </div>
 
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-blue-500/40 bg-gradient-to-r from-blue-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(59,130,246,0.2)] max-w-full text-center sm:text-left">
-            <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
+          <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-blue-500/40 bg-gradient-to-r from-blue-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(59,130,246,0.2)] max-w-full text-center sm:text-left">
+            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
             <span className="text-blue-200 break-words leading-tight">
               VENUE: TAKSHASHILA UNIVERSITY, TAMIL NADU
             </span>
           </div>
 
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 to-slate-950/80 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-            <span className="text-sm">💰</span>
+          <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 to-slate-950/80 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <span className="text-xs sm:text-sm">💰</span>
             <span className="text-emerald-300 whitespace-nowrap">PAYMENT: ₹100 / HEAD</span>
           </div>
         </motion.div>
@@ -113,12 +113,12 @@ const LandingSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75 }}
-          className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2"
+          className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2 max-w-full px-2"
         >
-          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3 py-1 rounded-full border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)] max-w-full leading-relaxed">
             💰 <strong className="text-emerald-400">Payment: ₹100 per head</strong> — Each participant in the team needs to pay ₹100
           </span>
-          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3 py-1 rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)]">
+          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)] max-w-full leading-relaxed">
             ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Sep 28, 5:30 PM</strong> • On-the-spot registration available at venue
           </span>
         </motion.div>
@@ -128,28 +128,28 @@ const LandingSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="mb-10 sm:mb-12 flex flex-row items-stretch justify-center gap-2.5 sm:gap-4 w-full max-w-xl px-2"
+          className="mb-10 sm:mb-12 flex flex-row items-stretch justify-center gap-2 sm:gap-4 w-full max-w-xl px-2"
         >
           {/* Register Now */}
           <a
             href={googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-10 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-xs sm:text-lg md:text-xl text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:shadow-[0_0_40px_rgba(212,175,55,0.65)] hover:shadow-[0_0_60px_rgba(59,130,246,0.85)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
+            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 xs:gap-1.5 sm:gap-3 px-2.5 xs:px-3.5 sm:px-10 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-[11px] xs:text-xs sm:text-lg md:text-xl text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:shadow-[0_0_40px_rgba(212,175,55,0.65)] hover:shadow-[0_0_60px_rgba(59,130,246,0.85)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
           >
             <span className="absolute inset-0 bg-white/25 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-black shrink-0 animate-spin" style={{ animationDuration: '4s' }} />
+            <Sparkles className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-black shrink-0 animate-spin" style={{ animationDuration: '4s' }} />
             <span>REGISTER NOW</span>
-            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-black shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
 
           {/* Events */}
           <Link
             href="/events"
-            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-8 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-xs sm:text-lg md:text-xl text-yellow-300 border-2 border-yellow-400/60 bg-gradient-to-r from-yellow-950/40 via-blue-950/30 to-slate-950/60 backdrop-blur-md hover:border-yellow-300 hover:text-yellow-200 hover:bg-yellow-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.25)] sm:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_45px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
+            className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 xs:gap-1.5 sm:gap-2.5 px-2.5 xs:px-3.5 sm:px-8 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-[11px] xs:text-xs sm:text-lg md:text-xl text-yellow-300 border-2 border-yellow-400/60 bg-gradient-to-r from-yellow-950/40 via-blue-950/30 to-slate-950/60 backdrop-blur-md hover:border-yellow-300 hover:text-yellow-200 hover:bg-yellow-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.25)] sm:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_45px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
           >
             <span className="absolute inset-0 bg-yellow-400/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
-            <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
+            <Calendar className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-yellow-400 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
             <span>EVENTS</span>
           </Link>
         </motion.div>
@@ -161,7 +161,7 @@ const LandingSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="mb-10 sm:mb-16 p-0.5 sm:p-1 rounded-2xl w-full max-w-4xl bg-gradient-to-r from-yellow-500/30 via-blue-500/35 to-yellow-500/30 shadow-[0_0_50px_rgba(0,0,0,0.9)]"
         >
-          <div className="bg-[#05070e]/90 backdrop-blur-2xl rounded-xl p-3 sm:p-6 border border-white/5">
+          <div className="bg-[#05070e]/90 backdrop-blur-2xl rounded-xl p-2 xs:p-3 sm:p-6 border border-white/5">
             <CountdownTimer />
           </div>
         </motion.div>

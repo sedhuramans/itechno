@@ -64,11 +64,11 @@ export default function FAQPage() {
           Takshashila University • Itechno 2026
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 tracking-tight">
+        <h1 className="text-3xl sm:text-6xl md:text-7xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-blue-400 tracking-tight">
           FAQ & GUIDELINES
         </h1>
 
-        <p className="text-slate-300 font-spaceGrotesk text-base sm:text-lg max-w-2xl mx-auto">
+        <p className="text-slate-300 font-spaceGrotesk text-sm sm:text-lg max-w-2xl mx-auto">
           Everything you need to know about event registration, general code of conduct, venue guidelines, and competition rules for Itechno &apos;26.
         </p>
 
@@ -105,12 +105,12 @@ export default function FAQPage() {
         </div>
 
         {/* Category Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl font-orbitron text-xs font-semibold tracking-wider transition-all duration-300 ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl font-orbitron text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-300 ${
                 selectedCategory === cat
                   ? "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
                   : "bg-[#05070e]/80 text-slate-300 border border-yellow-500/20 hover:border-yellow-400/50 hover:text-yellow-300"
@@ -190,10 +190,10 @@ export default function FAQPage() {
       </div>
 
       {/* Still Have Questions CTA */}
-      <div className="max-w-4xl mx-auto mt-16 p-8 rounded-3xl border border-yellow-500/30 bg-gradient-to-r from-[#05070e] via-[#080d1e] to-[#05070e] shadow-[0_0_40px_rgba(212,175,55,0.15)] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div className="max-w-4xl mx-auto mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-yellow-500/30 bg-gradient-to-r from-[#05070e] via-[#080d1e] to-[#05070e] shadow-[0_0_40px_rgba(212,175,55,0.15)] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div className="space-y-2">
-          <div className="flex items-center justify-center md:justify-start gap-2 text-yellow-400 font-orbitron font-bold text-lg">
-            <MessageSquare className="w-5 h-5" />
+          <div className="flex items-center justify-center md:justify-start gap-2 text-yellow-400 font-orbitron font-bold text-base sm:text-lg">
+            <MessageSquare className="w-5 h-5 shrink-0" />
             <span>STILL HAVE QUESTIONS?</span>
           </div>
           <p className="text-slate-300 font-spaceGrotesk text-xs sm:text-sm max-w-xl">
@@ -201,12 +201,12 @@ export default function FAQPage() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+        <div className="flex flex-col xs:flex-row items-stretch xs:items-center justify-center gap-2.5 sm:gap-3 w-full md:w-auto shrink-0">
           <Link
             href="/contact"
-            className="px-5 py-3 rounded-xl border border-yellow-500/40 bg-yellow-950/30 hover:bg-yellow-500/20 text-yellow-300 font-orbitron text-xs font-semibold tracking-wider transition-all flex items-center gap-2"
+            className="px-5 py-2.5 sm:py-3 rounded-xl border border-yellow-500/40 bg-yellow-950/30 hover:bg-yellow-500/20 text-yellow-300 font-orbitron text-xs font-semibold tracking-wider transition-all flex items-center justify-center gap-2"
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-4 h-4 shrink-0" />
             <span>CONTACT CREW</span>
           </Link>
 
@@ -214,10 +214,10 @@ export default function FAQPage() {
             href={googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black font-orbitron text-xs font-bold tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 flex items-center gap-2"
+            className="px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black font-orbitron text-xs font-bold tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 flex items-center justify-center gap-2"
           >
             <span>REGISTER NOW</span>
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-4 h-4 shrink-0" />
           </a>
         </div>
       </div>

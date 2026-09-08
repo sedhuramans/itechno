@@ -126,26 +126,26 @@ const ContactForm = () => {
             {chiefDirectors.map((director) => (
               <div
                 key={director.name}
-                className="relative rounded-[24px] border border-amber-500/40 bg-[#05070e]/95 backdrop-blur-2xl p-6 sm:p-8 shadow-[0_15px_45px_rgba(0,0,0,0.85)] hover:border-amber-400/80 transition-all duration-500 group overflow-hidden"
+                className="relative rounded-2xl sm:rounded-[24px] border border-amber-500/40 bg-[#05070e]/95 backdrop-blur-2xl p-4 xs:p-6 sm:p-8 shadow-[0_15px_45px_rgba(0,0,0,0.85)] hover:border-amber-400/80 transition-all duration-500 group overflow-hidden"
               >
                 {/* Ambient Behind Glow */}
                 <div className="absolute -top-16 -right-16 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-500/20 transition-colors" />
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 relative z-10">
                   {/* Photo with glowing frame */}
                   <div className="relative flex-shrink-0">
-                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-gradient-to-tr from-amber-500 via-yellow-300 to-blue-500 shadow-[0_0_25px_rgba(212,175,55,0.4)] overflow-hidden">
+                    <div className="relative w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-gradient-to-tr from-amber-500 via-yellow-300 to-blue-500 shadow-[0_0_25px_rgba(212,175,55,0.4)] overflow-hidden">
                       <div className="relative w-full h-full rounded-[14px] overflow-hidden bg-[#05070e]">
                         {director.image ? (
                           <Image
                             src={director.image}
                             alt={director.name}
                             fill
-                            sizes="128px"
+                            sizes="(max-width: 640px) 112px, 128px"
                             className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center font-orbitron font-black text-3xl text-amber-300">
+                          <div className="w-full h-full flex items-center justify-center font-orbitron font-black text-2xl sm:text-3xl text-amber-300">
                             {director.initials || 'CD'}
                           </div>
                         )}
@@ -164,7 +164,7 @@ const ContactForm = () => {
                     <span className="text-[10px] font-kodeMono uppercase tracking-[0.2em] text-amber-400 font-bold mb-1">
                       {director.role}
                     </span>
-                    <h4 className="text-2xl font-black font-orbitron text-white tracking-wide mb-2 group-hover:text-amber-200 transition-colors">
+                    <h4 className="text-xl xs:text-2xl font-black font-orbitron text-white tracking-wide mb-2 group-hover:text-amber-200 transition-colors">
                       {director.name}
                     </h4>
                     <p className="text-xs font-inter text-slate-300 leading-relaxed mb-4 line-clamp-2">
@@ -227,15 +227,15 @@ const ContactForm = () => {
             </h3>
 
             {/* Email */}
-            <div className="group p-6 rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-yellow-400/60 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-500 overflow-hidden relative">
+            <div className="group p-4 xs:p-5 sm:p-6 rounded-2xl sm:rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-yellow-400/60 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-500 overflow-hidden relative">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-yellow-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-              <div className="flex items-start gap-5 relative z-10">
-                <div className="p-3.5 rounded-xl bg-[#030508] border border-yellow-500/30 text-yellow-400 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
-                  <Mail size={22} />
+              <div className="flex items-start gap-4 sm:gap-5 relative z-10">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#030508] border border-yellow-500/30 text-yellow-400 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 shrink-0">
+                  <Mail size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <div className="flex flex-col justify-center pt-1">
+                <div className="flex flex-col justify-center pt-0.5 sm:pt-1 min-w-0">
                   <h4 className="text-yellow-300/80 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Official_Mail</h4>
-                  <a href="mailto:itechno730@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-sm sm:text-base tracking-wide font-medium">
+                  <a href="mailto:itechno730@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-xs xs:text-sm sm:text-base tracking-wide font-medium truncate">
                     itechno730@gmail.com
                   </a>
                 </div>
@@ -243,15 +243,15 @@ const ContactForm = () => {
             </div>
 
             {/* Location */}
-            <div className="group p-6 rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-blue-400/60 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden relative">
+            <div className="group p-4 xs:p-5 sm:p-6 rounded-2xl sm:rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-blue-400/60 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden relative">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-              <div className="flex items-start gap-5 relative z-10">
-                <div className="p-3.5 rounded-xl bg-[#030508] border border-blue-500/30 text-blue-400 group-hover:border-blue-400 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
-                  <MapPin size={22} />
+              <div className="flex items-start gap-4 sm:gap-5 relative z-10">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#030508] border border-blue-500/30 text-blue-400 group-hover:border-blue-400 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300 shrink-0">
+                  <MapPin size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <div className="flex flex-col justify-center pt-1">
+                <div className="flex flex-col justify-center pt-0.5 sm:pt-1 min-w-0">
                   <h4 className="text-blue-300/80 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Festival_Venue</h4>
-                  <p className="text-slate-200 font-inter text-sm sm:text-base tracking-wide leading-relaxed">
+                  <p className="text-slate-200 font-inter text-xs xs:text-sm sm:text-base tracking-wide leading-relaxed">
                     Takshashila University, Ongur, Tamil Nadu, India
                   </p>
                 </div>
@@ -259,15 +259,15 @@ const ContactForm = () => {
             </div>
 
             {/* Response Time */}
-            <div className="group p-6 rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-yellow-400/60 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-500 overflow-hidden relative">
+            <div className="group p-4 xs:p-5 sm:p-6 rounded-2xl sm:rounded-[22px] border border-yellow-500/25 bg-[#05070e]/85 backdrop-blur-xl hover:border-yellow-400/60 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-500 overflow-hidden relative">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-yellow-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-              <div className="flex items-start gap-5 relative z-10">
-                <div className="p-3.5 rounded-xl bg-[#030508] border border-yellow-500/30 text-yellow-400 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
-                  <Clock size={22} />
+              <div className="flex items-start gap-4 sm:gap-5 relative z-10">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#030508] border border-yellow-500/30 text-yellow-400 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 shrink-0">
+                  <Clock size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <div className="flex flex-col justify-center pt-1">
+                <div className="flex flex-col justify-center pt-0.5 sm:pt-1 min-w-0">
                   <h4 className="text-yellow-300/80 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Query_Turnaround</h4>
-                  <p className="text-slate-200 font-inter text-sm sm:text-base tracking-wide">
+                  <p className="text-slate-200 font-inter text-xs xs:text-sm sm:text-base tracking-wide">
                     Standard Response ≈ 24-48 HRS
                   </p>
                 </div>
@@ -277,7 +277,7 @@ const ContactForm = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-[24px] border border-yellow-500/30 bg-[#05070e]/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-hidden">
+            <form onSubmit={handleSubmit} className="p-4 xs:p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[24px] border border-yellow-500/30 bg-[#05070e]/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-hidden">
               
               {/* Decorative corners (Gold & Sapphire) */}
               <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-yellow-400/70 rounded-tl-[24px]" />
@@ -393,10 +393,10 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black font-kodeMono font-bold tracking-[0.2em] uppercase rounded-xl hover:from-yellow-300 hover:to-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center gap-3 group"
+                className="w-full px-4 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black font-kodeMono font-bold text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.2em] uppercase rounded-xl hover:from-yellow-300 hover:to-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center gap-2 sm:gap-3 group"
               >
-                <Send size={18} className="group-hover:translate-x-1 transition-transform text-black" />
-                {loading ? 'SENDING...' : 'TRANSMIT INQUIRY'}
+                <Send size={18} className="group-hover:translate-x-1 transition-transform text-black shrink-0" />
+                <span>{loading ? 'SENDING...' : 'TRANSMIT INQUIRY'}</span>
               </button>
             </form>
           </div>
