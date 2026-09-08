@@ -7,8 +7,6 @@ import CountdownTimer from "../CountdownTimer";
 import { Sparkles, ExternalLink, Calendar, MapPin } from "lucide-react";
 
 const LandingSection = () => {
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
-
   return (
     <div id="home" className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
       {/* Luxury Corporate Ambient Glows: Tech Sapphire Blue + Imperial Gold */}
@@ -131,17 +129,15 @@ const LandingSection = () => {
           className="mb-10 sm:mb-12 flex flex-row items-stretch justify-center gap-2 sm:gap-4 w-full max-w-xl px-2"
         >
           {/* Register Now */}
-          <a
-            href={googleFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/events"
             className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 xs:gap-1.5 sm:gap-3 px-2.5 xs:px-3.5 sm:px-10 py-3 sm:py-4 rounded-xl font-orbitron font-bold text-[11px] xs:text-xs sm:text-lg md:text-xl text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:shadow-[0_0_40px_rgba(212,175,55,0.65)] hover:shadow-[0_0_60px_rgba(59,130,246,0.85)] hover:scale-105 active:scale-95 overflow-hidden whitespace-nowrap"
           >
             <span className="absolute inset-0 bg-white/25 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
             <Sparkles className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-black shrink-0 animate-spin" style={{ animationDuration: '4s' }} />
             <span>REGISTER NOW</span>
             <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-black shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
+          </Link>
 
           {/* Events */}
           <Link
