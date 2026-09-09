@@ -440,7 +440,42 @@ export const eventSections: EventSection[] = [
 export const mediaDepartment = eventSections.find(s => s.id === "media-department")?.coordinators || [];
 export const registrationTeam = eventSections.find(s => s.id === "registration-team")?.coordinators || [];
 export const eventCoordinators = eventSections.flatMap(s => s.coordinators);
+
+export const supportiveMembers: TeamMember[] = [
+  {
+    name: "Susibala",
+    role: "Supportive Member",
+    department: "Supportive Team",
+    departments: ["SUPPORTIVE TEAM"],
+    badge: "SUPPORTIVE MEMBER",
+    bio: "Supportive crew member assisting festival operations, logistics, and event coordination.",
+    image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788938724/WhatsApp_Image_2026-09-08_at_14.00.46.jpg",
+    initials: "SB"
+  },
+  {
+    name: "Nivetha",
+    role: "Supportive Member",
+    department: "Supportive Team",
+    departments: ["SUPPORTIVE TEAM"],
+    badge: "SUPPORTIVE MEMBER",
+    bio: "Supportive crew member assisting festival operations, logistics, and event coordination.",
+    image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788938262/JJJ.jpg",
+    initials: "NV"
+  },
+  {
+    name: "Carmel",
+    role: "Supportive Member",
+    department: "Supportive Team",
+    departments: ["SUPPORTIVE TEAM"],
+    badge: "SUPPORTIVE MEMBER",
+    bio: "Supportive crew member assisting festival operations, logistics, and event coordination.",
+    image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788938229/WhatsApp_Image_2026-09-08_at_15.52.12.jpg",
+    initials: "CM"
+  }
+];
+
 export const teamMembers: TeamMember[] = [
   ...chiefDirectors,
-  ...eventCoordinators
+  ...eventCoordinators,
+  ...supportiveMembers
 ];

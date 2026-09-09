@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { chiefDirectors, eventSections, TeamMember } from "@/data/team-data";
+import { chiefDirectors, eventSections, supportiveMembers, TeamMember } from "@/data/team-data";
 import { galleryImages } from "@/data/gallery";
 import { CoordinatorCard } from "@/components/crew/CoordinatorCard";
 import { CoordinatorProfileModal } from "@/components/crew/CoordinatorProfileModal";
@@ -24,6 +24,7 @@ import {
   ExternalLink,
   ChevronDown,
   Images,
+  HeartHandshake,
 } from "lucide-react";
 
 const getSectionIcon = (iconName: string) => {
@@ -67,7 +68,8 @@ const TeamsPage: React.FC = () => {
     0
   );
   const totalDirectors = chiefDirectors.length;
-  const totalCrew = totalDirectors + totalCoordinators;
+  const totalSupportive = supportiveMembers.length;
+  const totalCrew = totalDirectors + totalCoordinators + totalSupportive;
 
   return (
     <div className="relative min-h-screen text-slate-100 overflow-x-hidden pt-32 sm:pt-36 pb-24 font-spaceGrotesk">
@@ -138,6 +140,14 @@ const TeamsPage: React.FC = () => {
             >
               <span>Explore Leadership &amp; Divisions</span>
               <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
+            </a>
+
+            <a
+              href="#supportive-members"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 hover:bg-cyan-950/60 border border-white/10 hover:border-cyan-400/50 text-xs font-kodeMono text-cyan-400 hover:text-cyan-300 transition-all"
+            >
+              <span>Supportive Members</span>
+              <ChevronDown className="w-3.5 h-3.5" />
             </a>
           </div>
         </section>
@@ -310,6 +320,51 @@ const TeamsPage: React.FC = () => {
             );
           })}
         </div>
+
+        {/* =========================================================================
+            SUPPORTIVE MEMBERS SECTION
+           ========================================================================= */}
+        <section id="supportive-members" className="mt-28 sm:mt-36 scroll-mt-36 sm:scroll-mt-44">
+          {/* Section Heading Banner */}
+          <div className="relative mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-cyan-500/30 pb-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-cyan-950/60 border border-cyan-400/50 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                <HeartHandshake className="w-7 h-7 text-cyan-300" />
+              </div>
+              <div>
+                <span className="text-[11px] font-kodeMono uppercase tracking-[0.25em] text-cyan-400 font-bold block">
+                  OPERATIONAL SUPPORT
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-400 tracking-tight">
+                  SUPPORTIVE MEMBERS
+                </h2>
+              </div>
+            </div>
+
+            <p className="text-xs font-kodeMono text-slate-400 max-w-sm sm:text-right">
+              Assisting festival operations, attendee experience &amp; logistics coordination.
+            </p>
+          </div>
+
+          {/* Supportive Members Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {supportiveMembers.map((member, idx) => (
+              <CoordinatorCard
+                key={member.name}
+                member={member}
+                accentColor="cyan"
+                index={idx}
+                onSelect={(selected) =>
+                  setSelectedMember({
+                    member: selected,
+                    isChief: false,
+                    accentColor: "cyan",
+                  })
+                }
+              />
+            ))}
+          </div>
+        </section>
 
         {/* =========================================================================
             EVENT GALLERY SECTION (with 4 photos & full-screen lightbox)
