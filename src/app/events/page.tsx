@@ -108,11 +108,14 @@ export default function EventsPage() {
             <div className="text-emerald-300 font-orbitron font-bold text-xs sm:text-base tracking-wide flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
               <span>Payment: ₹100 per head</span>
               <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-kodeMono uppercase font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-                All Events
+                General Events
+              </span>
+              <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-kodeMono uppercase font-bold bg-blue-500/20 text-blue-300 border border-blue-400/30">
+                Free Fire: ₹200 / Squad
               </span>
             </div>
             <p className="text-slate-300 text-[11px] sm:text-sm font-spaceGrotesk mt-0.5">
-              Each participant in the team needs to pay ₹100
+              Each participant in the team needs to pay ₹100 (Free Fire: ₹200 per complete squad)
             </p>
           </div>
         </div>
@@ -235,13 +238,26 @@ export default function EventsPage() {
                       <span className="text-base shrink-0 leading-none">💰</span>
                       <div>
                         <div className="text-emerald-300 font-bold font-orbitron text-xs">
-                          Payment: ₹100 per head
+                          {event.fee}
                         </div>
                         <div className="text-[11px] text-slate-300 font-spaceGrotesk mt-0.5">
-                          Each participant in the team needs to pay ₹100
+                          {event.feeDetails}
                         </div>
                       </div>
                     </div>
+
+                    {/* Free Fire Exclusive Participation Rule Notice */}
+                    {event.id === 'free-fire' && (
+                      <div className="flex items-start gap-2 p-2.5 rounded-xl bg-red-950/50 border border-red-500/40 text-[11px] font-spaceGrotesk text-red-200">
+                        <span className="shrink-0 text-sm leading-none">⚠️</span>
+                        <div>
+                          <span className="text-red-300 font-bold font-orbitron text-[10px] uppercase block">
+                            Important Participation Rule:
+                          </span>
+                          <span>Free Fire participants cannot participate in any other event.</span>
+                        </div>
+                      </div>
+                    )}
 
                     {/* Registration Deadline Row */}
                     <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-gradient-to-r from-yellow-950/40 to-slate-950/70 border border-yellow-500/30 shadow-[0_0_12px_rgba(234,179,8,0.1)]">
@@ -340,10 +356,10 @@ export default function EventsPage() {
                 </div>
                 <div>
                   <h4 className="text-emerald-300 font-bold font-orbitron text-sm">
-                    Payment: ₹100 per head
+                    {activeModalEvent.fee}
                   </h4>
                   <p className="text-slate-300 text-xs font-spaceGrotesk mt-0.5">
-                    Each participant in the team needs to pay ₹100
+                    {activeModalEvent.feeDetails}
                   </p>
                 </div>
               </div>
@@ -363,6 +379,32 @@ export default function EventsPage() {
               </div>
             </div>
 
+            {/* Free Fire Specific Participation Rule & Fee Clarification Banner */}
+            {activeModalEvent.id === 'free-fire' && (
+              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-red-950/70 via-amber-950/30 to-slate-950/90 border-2 border-red-500/50 shadow-[0_0_25px_rgba(239,68,68,0.25)]">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-red-500/20 border border-red-400/50 flex items-center justify-center text-2xl shrink-0">
+                    ⚠️
+                  </div>
+                  <div className="space-y-2 text-xs sm:text-sm font-spaceGrotesk text-slate-200">
+                    <h5 className="font-orbitron font-bold text-red-300 text-sm sm:text-base uppercase tracking-wider">
+                      IMPORTANT PARTICIPATION RULE
+                    </h5>
+                    <p className="leading-relaxed">
+                      Anyone who registers for <strong>Free Fire – Squad Battle</strong> cannot participate in any other event. This restriction applies to every member of the Free Fire squad.
+                    </p>
+                    <p className="text-red-200/90 text-xs">
+                      A participant registered for Free Fire cannot participate in: <strong className="text-white">Hackverse, Codeathon, Tech Battle, Word Battle, Pictonary, or Viral Minds</strong>.
+                    </p>
+                    <div className="pt-2 border-t border-red-500/20 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs text-amber-300">
+                      <span className="font-bold font-orbitron">Registration Fee Note:</span>
+                      <span>₹200 is the registration fee for one complete squad (NOT ₹200 per participant). All members of the registered squad are covered.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Key Event Details Box */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 p-4 rounded-2xl bg-slate-950/80 border border-yellow-500/20 mb-8 text-xs font-kodeMono">
               <div>
@@ -379,7 +421,9 @@ export default function EventsPage() {
               </div>
               <div>
                 <span className="text-slate-400 block mb-1">Reg. Fee:</span>
-                <span className="text-emerald-400 font-bold text-sm">₹100 / head</span>
+                <span className="text-emerald-400 font-bold text-sm">
+                  {activeModalEvent.id === 'free-fire' ? '₹200 / Squad' : '₹100 / head'}
+                </span>
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <span className="text-slate-400 block mb-1">Venue:</span>
@@ -445,7 +489,15 @@ export default function EventsPage() {
                   Status: <span className="text-emerald-400 font-bold">Online Registration Open</span>
                 </div>
                 <div className="text-slate-400 text-[11px] font-spaceGrotesk">
-                  Online closes <strong className="text-yellow-300">Sep 28, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
+                  {activeModalEvent.id === 'free-fire' ? (
+                    <span className="text-emerald-300 font-medium">
+                      <strong>Registration Fee: ₹200 per Squad</strong> (Covers complete squad • Exclusive to Free Fire)
+                    </span>
+                  ) : (
+                    <span>
+                      Online closes <strong className="text-yellow-300">Sep 28, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
+                    </span>
+                  )}
                 </div>
               </div>
               <a

@@ -13,22 +13,28 @@ export const participationRules: FAQItem[] = [
     answer: "Hackverse participants can participate ONLY in Hackverse. Hackverse participants cannot participate in any other event."
   },
   {
+    id: "pr1-ff",
+    category: "Participation Rules",
+    question: "2. Free Fire – Squad Battle Participation Exclusivity",
+    answer: "Anyone who registers for Free Fire – Squad Battle cannot participate in any other event (Hackverse, Codeathon, Tech Battle, Word Battle, Pictonary, or Viral Minds). This restriction applies to every member of the Free Fire squad."
+  },
+  {
     id: "pr2",
     category: "Participation Rules",
-    question: "2. Multi-Event Participation (Non-Hackverse)",
-    answer: "Participants who do NOT participate in Hackverse can participate in multiple other events. Non-Hackverse participants must participate in a minimum of 3 events."
+    question: "3. Multi-Event Participation (Non-Hackverse & Non-Free Fire)",
+    answer: "Participants who do NOT participate in Hackverse or Free Fire can participate in multiple other events. Non-Hackverse and Non-Free Fire participants must participate in a minimum of 3 events."
   },
   {
     id: "pr3",
     category: "Participation Rules",
-    question: "3. Specified Event Team Sizes",
+    question: "4. Specified Event Team Sizes",
     answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (Individual / Duo - Max 2 members)."
   },
   {
     id: "pr4",
     category: "Participation Rules",
-    question: "4. Event Registration Fee & Payment",
-    answer: "💰 Payment: ₹100 per head. For every event, each participant in the team needs to pay ₹100."
+    question: "5. Event Registration Fee & Payment",
+    answer: "💰 Payment: ₹100 per head for general events. For Free Fire – Squad Battle, the registration fee is ₹200 per Squad (covers the complete squad; fee is not per participant)."
   }
 ];
 
@@ -118,13 +124,13 @@ export const faqData: FAQItem[] = [
     id: "f4",
     category: "Registration",
     question: "Can I participate in multiple events?",
-    answer: "Hackverse participants can participate ONLY in Hackverse and cannot participate in any other event. Participants who do NOT participate in Hackverse can participate in multiple other events, but must participate in a minimum of 3 events."
+    answer: "Hackverse and Free Fire participants cannot participate in any other event. Participants who do NOT participate in Hackverse or Free Fire can participate in multiple other events, but must participate in a minimum of 3 events."
   },
   {
     id: "f-fee",
     category: "Registration",
     question: "What is the registration fee for each event?",
-    answer: "💰 Payment: ₹100 per head. For every event, each participant in the team needs to pay ₹100."
+    answer: "💰 Payment: ₹100 per head for general events. For Free Fire – Squad Battle, the registration fee is ₹200 per Squad (covers the complete squad; not per participant)."
   },
   {
     id: "f-deadline",
