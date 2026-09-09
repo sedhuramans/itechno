@@ -100,22 +100,15 @@ const LandingSection = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 to-slate-950/80 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-            <span className="text-xs sm:text-sm">💰</span>
-            <span className="text-emerald-300 whitespace-nowrap">PAYMENT: ₹100 / HEAD</span>
-          </div>
         </motion.div>
 
-        {/* Note: Each participant in the team needs to pay ₹100 & Online Registration Deadline */}
+        {/* Online Registration Deadline */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75 }}
           className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2 max-w-full px-2"
         >
-          <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)] max-w-full leading-relaxed">
-            💰 <strong className="text-emerald-400">Payment: ₹100 per head</strong> — Each participant in the team needs to pay ₹100
-          </span>
           <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)] max-w-full leading-relaxed">
             ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Sep 28, 5:30 PM</strong> • On-the-spot registration available at venue
           </span>

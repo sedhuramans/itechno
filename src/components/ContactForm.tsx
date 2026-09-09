@@ -43,7 +43,7 @@ const ContactForm = () => {
     setError(null);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/itechno730@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/sedhur425@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,12 +75,12 @@ const ContactForm = () => {
         });
         setTimeout(() => setSuccess(false), 6000);
       } else {
-        const msg = result?.message || 'Failed to transmit message. Please try again or email itechno730@gmail.com directly.';
+        const msg = result?.message || 'Failed to transmit message. Please try again or email sedhur425@gmail.com directly.';
         setError(msg);
       }
     } catch (err) {
       console.error('Error submitting form:', err);
-      setError('Connection error. Please verify your network or email itechno730@gmail.com directly.');
+      setError('Connection error. Please verify your network or email sedhur425@gmail.com directly.');
     } finally {
       setLoading(false);
     }
@@ -235,8 +235,8 @@ const ContactForm = () => {
                 </div>
                 <div className="flex flex-col justify-center pt-0.5 sm:pt-1 min-w-0">
                   <h4 className="text-yellow-300/80 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Official_Mail</h4>
-                  <a href="mailto:itechno730@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-xs xs:text-sm sm:text-base tracking-wide font-medium truncate">
-                    itechno730@gmail.com
+                  <a href="mailto:sedhur425@gmail.com" className="text-slate-200 font-inter hover:text-white transition-colors text-xs xs:text-sm sm:text-base tracking-wide font-medium truncate">
+                    sedhur425@gmail.com
                   </a>
                 </div>
               </div>
