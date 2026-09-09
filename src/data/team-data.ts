@@ -66,7 +66,17 @@ export const eventSections: EventSection[] = [
     accentColor: "cyan",
     coordinators: [
       {
-        name: "Farzana Kalesha",
+        name: "Keerthi Vasan",
+        role: "Event Coordinator",
+        department: "Hackverse",
+        departments: ["HACKVERSE"],
+        badge: "EVENT COORDINATOR",
+        bio: "Coordinator responsible for supporting the Hackverse event and participant experience.",
+        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788954835/WhatsApp_Image_2026-09-09_at_12.59.07.jpg",
+        initials: "KV"
+      },
+      {
+        name: "Farzana Kaleesha",
         role: "Event Coordinator",
         department: "Hackverse",
         departments: ["HACKVERSE"],
@@ -107,14 +117,24 @@ export const eventSections: EventSection[] = [
     accentColor: "blue",
     coordinators: [
       {
-        name: "Vignesh",
+        name: "Kishore",
+        role: "Event Coordinator",
+        department: "Codeathon",
+        departments: ["CODEATHON"],
+        badge: "EVENT COORDINATOR",
+        bio: "Coordinator responsible for supporting the Codeathon event and participant experience.",
+        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788954834/WhatsApp_Image_2026-09-09_at_13.00.47.jpg",
+        initials: "KS"
+      },
+      {
+        name: "Vignesh. B",
         role: "Event Coordinator",
         department: "Codeathon",
         departments: ["CODEATHON"],
         badge: "EVENT COORDINATOR",
         bio: "Coordinator responsible for supporting the Codeathon event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788496971/vicky.png.jpg",
-        initials: "V"
+        initials: "VB"
       },
       {
         name: "Jaishitha",
@@ -125,16 +145,6 @@ export const eventSections: EventSection[] = [
         bio: "Coordinator responsible for supporting the Codeathon event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788509212/WhatsApp_Image_2026-09-04_at_13.32.34.jpg",
         initials: "JS"
-      },
-      {
-        name: "Udhayaraj",
-        role: "Event Coordinator",
-        department: "Codeathon",
-        departments: ["CODEATHON"],
-        badge: "EVENT COORDINATOR",
-        bio: "Coordinator responsible for supporting the Codeathon event and participant experience.",
-        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788527496/file_00000000d4288211a3de79d99f02a22e.png",
-        initials: "UR"
       }
     ]
   },
@@ -291,14 +301,14 @@ export const eventSections: EventSection[] = [
         initials: "BM"
       },
       {
-        name: "Nourash S B",
+        name: "Nouresh",
         role: "Event Coordinator",
         department: "Free Fire – Squad Battle",
         departments: ["FREE FIRE – SQUAD BATTLE"],
         badge: "EVENT COORDINATOR",
         bio: "Coordinator responsible for supporting the Free Fire – Squad Battle event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788527500/file_000000004d10821193685597bc040153.png",
-        initials: "NS"
+        initials: "NR"
       },
       {
         name: "Divakar",
@@ -319,6 +329,16 @@ export const eventSections: EventSection[] = [
         bio: "Coordinator responsible for supporting the Free Fire – Squad Battle event and participant experience.",
         image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788533426/WhatsApp_Image_2026-09-04_at_20.05.00.jpg",
         initials: "SK"
+      },
+      {
+        name: "Udhayaraj",
+        role: "Event Coordinator",
+        department: "Free Fire – Squad Battle",
+        departments: ["FREE FIRE – SQUAD BATTLE"],
+        badge: "EVENT COORDINATOR",
+        bio: "Coordinator responsible for supporting the Free Fire – Squad Battle event and participant experience.",
+        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788527496/file_00000000d4288211a3de79d99f02a22e.png",
+        initials: "UR"
       }
     ]
   },

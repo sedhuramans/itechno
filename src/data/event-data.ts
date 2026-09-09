@@ -35,7 +35,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: '2–3 Hours',
     teamSize: '2–3 Participants',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Farzana Kalesha', 'Rajesh. S', 'Praveenkumar'],
+    coordinators: ['Keerthi Vasan', 'Farzana Kaleesha', 'Rajesh. S', 'Praveenkumar'],
     description: 'Hackverse is a web development challenge where participants create a functional and attractive website using HTML, CSS and JavaScript within the given time.',
     rules: [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
@@ -79,7 +79,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: 'Time-Limited',
     teamSize: 'Duo / 2 Participants',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Vignesh', 'Jaishitha', 'Udhayaraj'],
+    coordinators: ['Kishore', 'Vignesh. B', 'Jaishitha'],
     description: 'Challenges include syntax errors, logical errors, runtime errors, incorrect outputs and programming mistakes.',
     rules: [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
@@ -238,7 +238,7 @@ export const ItechnoEventsData: EventDataType[] = [
     time: 'As Scheduled',
     teamSize: 'Squad',
     location: 'Takshashila University, Ongur, Tamil Nadu, India',
-    coordinators: ['Mohamed Afsar', 'Balaji Meshak Jebastine', 'Nourash S B', 'Divakar', 'Sybudheen K'],
+    coordinators: ['Mohamed Afsar', 'Balaji Meshak Jebastine', 'Nouresh', 'Divakar', 'Sybudheen K', 'Udhayaraj'],
     description: 'Free Fire – Squad Battle is an esports gaming competition where squads compete in intense Free Fire tournament matches.',
     rules: [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
