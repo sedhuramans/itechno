@@ -444,14 +444,14 @@ export const eventSections: EventSection[] = [
         initials: "AK"
       },
       {
-        name: "Arun Karthikeyan",
+        name: "Arun",
         role: "Event Coordinator",
         department: "Registration Team",
         departments: ["REGISTRATION TEAM", "ENTRY ACCREDITATION"],
         badge: "EVENT COORDINATOR",
         bio: "Coordinator responsible for registration management, credential distribution, and attendee guidance.",
-        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1788534689/WhatsApp_Image_2026-09-04_at_20.38.39.jpg",
-        initials: "AK"
+        image: "https://res.cloudinary.com/k78tbfel/image/upload/v1789016629/ChatGPT_Image_Sep_10_2026_10_32_47_AM.png",
+        initials: "AR"
       }
     ]
   }
