@@ -33,9 +33,9 @@ const Navbar = () => {
   const navItems = [
     { icon: <Home size={18} />, text: "Home", navigateTo: "/#home" },
     { icon: <Sparkles size={18} />, text: "Events", navigateTo: "/events" },
-    { icon: <HelpCircle size={18} />, text: "FAQ", navigateTo: "/faq" },
-    { icon: <Users size={18} />, text: "Crew", navigateTo: "/teams" },
     { icon: <Images size={18} />, text: "Gallery", navigateTo: "/gallery" },
+    { icon: <Users size={18} />, text: "Crew", navigateTo: "/teams" },
+    { icon: <HelpCircle size={18} />, text: "FAQ", navigateTo: "/faq" },
     { icon: <Mail size={18} />, text: "Contact", navigateTo: "/contact" },
   ];
 

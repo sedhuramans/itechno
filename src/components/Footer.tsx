@@ -68,14 +68,14 @@ const Footer: React.FC = () => {
               <Link href="/events" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Events
               </Link>
-              <Link href="/faq" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • FAQ & Guidelines
+              <Link href="/gallery" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • Event Gallery
               </Link>
               <Link href="/teams" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Event Crew
               </Link>
-              <Link href="/gallery" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Event Gallery
+              <Link href="/faq" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • FAQ & Guidelines
               </Link>
               <Link href="/contact" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Contact Us
