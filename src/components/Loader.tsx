@@ -13,18 +13,20 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Smooth 2-second progression
+    // Snappy, silky progression (~600ms total)
+    let current = 0;
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => setIsExiting(true), 400); // Slight pause at 100%
-          setTimeout(finishLoading, 1200); // Wait for exit animation
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, 20);
+      current += Math.floor(Math.random() * 3) + 3;
+      if (current >= 100) {
+        current = 100;
+        setProgress(100);
+        clearInterval(interval);
+        setTimeout(() => setIsExiting(true), 120);
+        setTimeout(finishLoading, 420);
+      } else {
+        setProgress(current);
+      }
+    }, 16);
     return () => clearInterval(interval);
   }, [finishLoading]);
 
@@ -41,8 +43,8 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
     <AnimatePresence>
       {!isExiting && (
         <motion.div
-          exit={{ opacity: 0, scale: 1.08, filter: "blur(20px)" }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          exit={{ opacity: 0, scale: 1.03 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030508] overflow-hidden select-none font-sans px-4"
         >
           {/* Luxury Ambient Radial Glow: Sapphire Blue + Imperial Gold */}
@@ -76,15 +78,9 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
 
             {/* Glowing Obsidian Core */}
             <motion.div
-              animate={{
-                boxShadow: [
-                  "0 0 25px rgba(212, 175, 55, 0.25), 0 0 40px rgba(59, 130, 246, 0.2)",
-                  "0 0 60px rgba(212, 175, 55, 0.5), 0 0 70px rgba(59, 130, 246, 0.4)",
-                  "0 0 25px rgba(212, 175, 55, 0.25), 0 0 40px rgba(59, 130, 246, 0.2)",
-                ],
-              }}
+              animate={{ scale: [1, 1.025, 1] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 bg-[#070b16]/95 backdrop-blur-2xl rounded-full flex items-center justify-center border border-yellow-500/50"
+              className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 bg-[#070b16]/95 backdrop-blur-2xl rounded-full flex items-center justify-center border border-yellow-500/50 shadow-[0_0_35px_rgba(212,175,55,0.35),0_0_50px_rgba(59,130,246,0.3)]"
             >
               {/* Inner Core Border Accent */}
               <div className="absolute inset-2 border border-blue-500/40 rounded-full" />

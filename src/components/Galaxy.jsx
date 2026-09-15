@@ -220,9 +220,14 @@ export default function Galaxy({
     const frameInterval = 1000 / Math.max(1, maxFPS);
     let lastFrameTime = 0;
 
+    let ctnWidth = window.innerWidth;
+    let ctnHeight = window.innerHeight;
+
     function resize() {
-      const width = Math.max(1, Math.floor(ctn.offsetWidth * safeRenderScale));
-      const height = Math.max(1, Math.floor(ctn.offsetHeight * safeRenderScale));
+      ctnWidth = ctn.offsetWidth || window.innerWidth;
+      ctnHeight = ctn.offsetHeight || window.innerHeight;
+      const width = Math.max(1, Math.floor(ctnWidth * safeRenderScale));
+      const height = Math.max(1, Math.floor(ctnHeight * safeRenderScale));
       renderer.setSize(width, height);
       if (program) {
         program.uniforms.uResolution.value = new Color(
@@ -301,9 +306,8 @@ export default function Galaxy({
     ctn.appendChild(gl.canvas);
 
     function handleMouseMove(e) {
-      const rect = ctn.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = 1.0 - (e.clientY - rect.top) / rect.height;
+      const x = e.clientX / (ctnWidth || 1);
+      const y = 1.0 - e.clientY / (ctnHeight || 1);
       targetMousePos.current = { x, y };
       targetMouseActive.current = 1.0;
     }
@@ -313,8 +317,8 @@ export default function Galaxy({
     }
 
     if (mouseInteraction) {
-      ctn.addEventListener('mousemove', handleMouseMove);
-      ctn.addEventListener('mouseleave', handleMouseLeave);
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+      window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     }
 
     return () => {
@@ -322,8 +326,8 @@ export default function Galaxy({
       window.removeEventListener('resize', resize);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (mouseInteraction) {
-        ctn.removeEventListener('mousemove', handleMouseMove);
-        ctn.removeEventListener('mouseleave', handleMouseLeave);
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mouseleave', handleMouseLeave);
       }
       ctn.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
