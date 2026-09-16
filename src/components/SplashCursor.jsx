@@ -91,8 +91,8 @@ export default function TechNexusCursor() {
       const dy = mouse.y - lastSpawnPos.y;
       const movedDistSq = dx * dx + dy * dy;
 
-      // Throttle particle creation to save CPU & avoid GC pressure
-      if (particles.length < maxParticles && (now - lastSpawnTime > 24 || movedDistSq > 100)) {
+      // Throttle particle creation to save CPU & avoid GC pressure while maintaining 60 FPS
+      if (particles.length < maxParticles && (now - lastSpawnTime > 16 || movedDistSq > 100)) {
         lastSpawnTime = now;
         lastSpawnPos = { x: mouse.x, y: mouse.y };
         const offsetX = (Math.random() - 0.5) * 10;

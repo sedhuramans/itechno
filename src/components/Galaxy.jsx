@@ -188,7 +188,7 @@ export default function Galaxy({
   autoCenterRepulsion = 0,
   transparent = true,
   renderScale = 1,
-  maxFPS = 40,
+  maxFPS = 60,
   numLayers = 4,
   ...rest
 }) {
@@ -218,7 +218,7 @@ export default function Galaxy({
     let program;
     let isVisible = !document.hidden;
     const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 1);
-    const frameInterval = 1000 / Math.max(1, maxFPS);
+    const frameInterval = maxFPS >= 60 ? (1000 / maxFPS - 2) : (1000 / Math.max(1, maxFPS));
     let lastFrameTime = 0;
 
     let ctnWidth = window.innerWidth;

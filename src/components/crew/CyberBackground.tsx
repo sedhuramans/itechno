@@ -90,7 +90,7 @@ export const CyberBackground: React.FC = () => {
       ctx.globalAlpha = 1.0;
     };
 
-    const frameInterval = 1000 / 40;
+    const frameInterval = 1000 / 60 - 2;
     let lastTime = 0;
 
     const loop = (currentTime: number) => {

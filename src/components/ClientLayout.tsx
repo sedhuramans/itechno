@@ -75,7 +75,7 @@ export default function ClientLayout({
           starSpeed={isMobile || lowPerformanceMode ? 0.25 : 0.4}
           speed={isMobile || lowPerformanceMode ? 0.8 : 1.1}
           renderScale={isMobile || lowPerformanceMode ? 0.45 : 0.7}
-          maxFPS={40}
+          maxFPS={60}
           numLayers={isMobile || lowPerformanceMode ? 2 : 4}
         />
       </div>
