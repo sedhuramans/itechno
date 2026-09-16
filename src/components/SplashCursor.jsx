@@ -11,7 +11,7 @@ export default function TechNexusCursor() {
 
     // Respect accessibility and touch devices
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
     if (prefersReducedMotion || isTouchDevice) return;
 
     let particles = [];

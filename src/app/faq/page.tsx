@@ -53,9 +53,9 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen text-slate-100 py-16 px-4 sm:px-8 md:px-16 lg:px-24 pt-32 bg-[#030508] relative overflow-hidden">
       {/* Radiant Background Mesh Glows */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-yellow-500/10 via-blue-600/15 to-yellow-500/10 blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-600/10 blur-[150px] pointer-events-none -z-10" />
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-yellow-500/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[340px] sm:w-[800px] h-[260px] sm:h-[400px] bg-gradient-to-r from-yellow-500/10 via-blue-600/15 to-yellow-500/10 blur-3xl sm:blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/10 blur-2xl sm:blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-20 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-500/10 blur-2xl sm:blur-[150px] pointer-events-none -z-10" />
 
       {/* Header Section */}
       <div className="text-center max-w-4xl mx-auto mb-12 space-y-4">

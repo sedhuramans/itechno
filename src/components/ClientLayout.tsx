@@ -16,6 +16,7 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to lightweight mobile background during initial SSR/hydration
   const [lowPerformanceMode, setLowPerformanceMode] = useState(false);
 
   useEffect(() => {
@@ -37,47 +38,56 @@ export default function ClientLayout({
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const checkPerformanceProfile = () => {
+      const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
+      setIsMobile(isTouch);
+
       const nav = navigator as Navigator & { deviceMemory?: number };
       const lowCpu = navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4;
       const lowMemory = typeof nav.deviceMemory === "number" && nav.deviceMemory <= 4;
       const reducedMotion = mediaQuery.matches;
-      setLowPerformanceMode(lowCpu || lowMemory || reducedMotion);
+      setLowPerformanceMode(lowCpu || lowMemory || reducedMotion || isTouch);
     };
 
     checkPerformanceProfile();
     mediaQuery.addEventListener("change", checkPerformanceProfile);
+    window.addEventListener("resize", checkPerformanceProfile, { passive: true });
 
     return () => {
       mediaQuery.removeEventListener("change", checkPerformanceProfile);
+      window.removeEventListener("resize", checkPerformanceProfile);
     };
   }, []);
 
   return (
     <div className="relative min-h-screen">
       <div className="pointer-events-none fixed inset-0 -z-20">
-        <Galaxy
-          mouseRepulsion={!lowPerformanceMode}
-          mouseInteraction={!lowPerformanceMode}
-          density={lowPerformanceMode ? 0.6 : 1.0}
-          glowIntensity={lowPerformanceMode ? 0.15 : 0.25}
-          saturation={0}
-          hueShift={140}
-          twinkleIntensity={lowPerformanceMode ? 0.15 : 0.4}
-          rotationSpeed={lowPerformanceMode ? 0.03 : 0.08}
-          repulsionStrength={lowPerformanceMode ? 0.8 : 1.6}
-          autoCenterRepulsion={0}
-          starSpeed={lowPerformanceMode ? 0.25 : 0.45}
-          speed={lowPerformanceMode ? 0.8 : 1.2}
-          renderScale={lowPerformanceMode ? 0.45 : 0.65}
-          maxFPS={lowPerformanceMode ? 24 : 45}
-        />
+        {isMobile ? (
+          <div className="w-full h-full mobile-cosmic-bg" />
+        ) : (
+          <Galaxy
+            mouseRepulsion={!lowPerformanceMode}
+            mouseInteraction={!lowPerformanceMode}
+            density={lowPerformanceMode ? 0.6 : 1.0}
+            glowIntensity={lowPerformanceMode ? 0.15 : 0.25}
+            saturation={0}
+            hueShift={140}
+            twinkleIntensity={lowPerformanceMode ? 0.15 : 0.4}
+            rotationSpeed={lowPerformanceMode ? 0.03 : 0.08}
+            repulsionStrength={lowPerformanceMode ? 0.8 : 1.6}
+            autoCenterRepulsion={0}
+            starSpeed={lowPerformanceMode ? 0.25 : 0.45}
+            speed={lowPerformanceMode ? 0.8 : 1.2}
+            renderScale={lowPerformanceMode ? 0.45 : 0.65}
+            maxFPS={lowPerformanceMode ? 24 : 45}
+          />
+        )}
       </div>
       <div className="pointer-events-none fixed inset-0 -z-10 bg-black/45" />
 
       {loading && <Loader finishLoading={handleFinishLoading} />}
 
       <div className="relative z-10">
-        <SplashCursor />
+        {!isMobile && <SplashCursor />}
         <Navbar />
         {children}
         <Footer />

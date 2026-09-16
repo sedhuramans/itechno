@@ -13,20 +13,20 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Snappy, silky progression (~600ms total)
+    // Snappy, silky progression (~500ms total, optimized for mobile CPUs)
     let current = 0;
     const interval = setInterval(() => {
-      current += Math.floor(Math.random() * 3) + 3;
+      current += Math.floor(Math.random() * 5) + 4;
       if (current >= 100) {
         current = 100;
         setProgress(100);
         clearInterval(interval);
-        setTimeout(() => setIsExiting(true), 120);
-        setTimeout(finishLoading, 420);
+        setTimeout(() => setIsExiting(true), 100);
+        setTimeout(finishLoading, 360);
       } else {
         setProgress(current);
       }
-    }, 16);
+    }, 28);
     return () => clearInterval(interval);
   }, [finishLoading]);
 
@@ -53,34 +53,26 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
           {/* Central Animated Mechanics */}
           <div className="relative flex items-center justify-center">
 
-            {/* Outer Luxury Gold Ring (Slow, Clockwise) */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[260px] h-[260px] xs:w-[290px] xs:h-[290px] sm:w-[330px] sm:h-[330px] rounded-full border border-yellow-600/30 shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+            {/* Outer Luxury Gold Ring (Slow, Clockwise - CSS hardware accelerated) */}
+            <div
+              className="absolute w-[260px] h-[260px] xs:w-[290px] xs:h-[290px] sm:w-[330px] sm:h-[330px] rounded-full border border-yellow-600/30 shadow-[0_0_30px_rgba(212,175,55,0.2)] animate-[spin_12s_linear_infinite]"
               style={{ borderTopColor: "#D4AF37", borderRightColor: "transparent" }}
             />
 
-            {/* Middle Electric Sapphire Blue Ring (Medium, Counter-Clockwise) */}
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[210px] h-[210px] xs:w-[230px] xs:h-[230px] sm:w-[260px] sm:h-[260px] rounded-full border border-blue-600/30 shadow-[0_0_25px_rgba(59,130,246,0.3)]"
+            {/* Middle Electric Sapphire Blue Ring (Medium, Counter-Clockwise - CSS hardware accelerated) */}
+            <div
+              className="absolute w-[210px] h-[210px] xs:w-[230px] xs:h-[230px] sm:w-[260px] sm:h-[260px] rounded-full border border-blue-600/30 shadow-[0_0_25px_rgba(59,130,246,0.3)] animate-[spin_8s_linear_infinite_reverse]"
               style={{ borderBottomColor: "#3B82F6", borderLeftColor: "transparent" }}
             />
 
-            {/* Inner Champagne Gold Dashed Ring (Pulsing) */}
-            <motion.div
-              animate={{ rotate: 360, scale: [1, 1.05, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute w-[160px] h-[160px] xs:w-[180px] xs:h-[180px] sm:w-[200px] sm:h-[200px] rounded-full border-[2px] border-dashed border-amber-300/40"
+            {/* Inner Champagne Gold Dashed Ring (CSS hardware accelerated) */}
+            <div
+              className="absolute w-[160px] h-[160px] xs:w-[180px] xs:h-[180px] sm:w-[200px] sm:h-[200px] rounded-full border-[2px] border-dashed border-amber-300/40 animate-[spin_5s_linear_infinite]"
             />
 
             {/* Glowing Obsidian Core */}
-            <motion.div
-              animate={{ scale: [1, 1.025, 1] }}
-              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 bg-[#070b16]/95 backdrop-blur-2xl rounded-full flex items-center justify-center border border-yellow-500/50 shadow-[0_0_35px_rgba(212,175,55,0.35),0_0_50px_rgba(59,130,246,0.3)]"
+            <div
+              className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 bg-[#070b16]/95 backdrop-blur-md rounded-full flex items-center justify-center border border-yellow-500/50 shadow-[0_0_35px_rgba(212,175,55,0.35),0_0_50px_rgba(59,130,246,0.3)]"
             >
               {/* Inner Core Border Accent */}
               <div className="absolute inset-2 border border-blue-500/40 rounded-full" />
@@ -92,7 +84,7 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
                 </span>
                 <span className="text-blue-400 text-lg sm:text-xl font-kodeMono ml-1">%</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Bottom Loading Bar and Status */}

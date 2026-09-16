@@ -33,7 +33,7 @@ export const EventGallery: React.FC<EventGalleryProps> = ({
   return (
     <section id={id} className={`relative scroll-mt-48 sm:scroll-mt-56 pt-8 sm:pt-14 ${className}`}>
       {/* Background Cyber Ambient Radiance */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-cyan-500/10 via-blue-600/15 to-purple-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[250px] sm:h-[350px] bg-gradient-to-r from-cyan-500/10 via-blue-600/15 to-purple-600/10 blur-3xl sm:blur-[130px] rounded-full pointer-events-none -z-10" />
 
       {showHeading && (
         <div className="relative mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
@@ -84,7 +84,7 @@ export const EventGallery: React.FC<EventGalleryProps> = ({
               }`}
             >
               {/* Inner Dark Glass Container */}
-              <div className="relative rounded-[22px] overflow-hidden bg-[#050814]/90 backdrop-blur-xl border border-white/10 h-full flex flex-col justify-between">
+              <div className="relative rounded-[22px] overflow-hidden bg-[#050814]/95 sm:bg-[#050814]/90 backdrop-blur-md sm:backdrop-blur-xl border border-white/10 h-full flex flex-col justify-between">
                 {/* Image Frame with Adaptive Height */}
                 <div
                   className={`relative w-full overflow-hidden bg-[#03050a] ${

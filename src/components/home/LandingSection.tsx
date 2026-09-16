@@ -10,8 +10,9 @@ const LandingSection = () => {
   return (
     <div id="home" className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
       {/* Luxury Corporate Ambient Glows: Tech Sapphire Blue + Imperial Gold */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-[140px] rounded-full pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute bottom-10 left-1/4 w-[550px] h-[550px] bg-gradient-to-br from-blue-500/15 via-slate-900/40 to-yellow-600/15 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[700px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-3xl sm:blur-[140px] rounded-full pointer-events-none -z-10 hidden sm:block sm:animate-pulse" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-2xl rounded-full pointer-events-none -z-10 sm:hidden" />
+      <div className="absolute bottom-10 left-1/4 w-[280px] sm:w-[550px] h-[280px] sm:h-[550px] bg-gradient-to-br from-blue-500/15 via-slate-900/40 to-yellow-600/15 blur-2xl sm:blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center">
 
@@ -139,7 +140,7 @@ const LandingSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="mb-10 sm:mb-16 p-0.5 sm:p-1 rounded-2xl w-full max-w-4xl bg-gradient-to-r from-yellow-500/30 via-blue-500/35 to-yellow-500/30 shadow-[0_0_50px_rgba(0,0,0,0.9)]"
         >
-          <div className="bg-[#05070e]/90 backdrop-blur-2xl rounded-xl p-2 xs:p-3 sm:p-6 border border-white/5">
+          <div className="bg-[#05070e]/95 sm:bg-[#05070e]/90 backdrop-blur-md sm:backdrop-blur-2xl rounded-xl p-2 xs:p-3 sm:p-6 border border-white/5">
             <CountdownTimer />
           </div>
         </motion.div>

@@ -6,6 +6,9 @@ export const CyberBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
+    if (isTouchDevice) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -105,12 +108,12 @@ export const CyberBackground: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f0ff08_1px,transparent_1px),linear-gradient(to_bottom,#00f0ff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70" />
 
       {/* Ambient Radial Gradient Glows */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-cyan-500/15 via-blue-600/10 to-transparent blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-[-100px] w-[500px] h-[500px] bg-purple-600/10 blur-[130px] pointer-events-none" />
-      <div className="absolute top-2/3 right-[-100px] w-[500px] h-[500px] bg-blue-500/10 blur-[140px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[800px] h-[260px] sm:h-[500px] bg-gradient-to-b from-cyan-500/15 via-blue-600/10 to-transparent blur-3xl sm:blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-[-100px] w-[260px] sm:w-[500px] h-[260px] sm:h-[500px] bg-purple-600/10 blur-2xl sm:blur-[130px] pointer-events-none" />
+      <div className="absolute top-2/3 right-[-100px] w-[260px] sm:w-[500px] h-[260px] sm:h-[500px] bg-blue-500/10 blur-2xl sm:blur-[140px] pointer-events-none" />
 
-      {/* Canvas for Particle Network */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
+      {/* Canvas for Particle Network (Desktop Only) */}
+      <canvas ref={canvasRef} className="hidden sm:block absolute inset-0 w-full h-full opacity-60" />
     </div>
   );
 };
