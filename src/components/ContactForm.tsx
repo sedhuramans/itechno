@@ -13,6 +13,7 @@ import {
   Crown,
   ShieldCheck,
   ExternalLink,
+  MessageCircle,
 } from 'lucide-react';
 import { chiefDirectors } from '@/data/team-data';
 import './ContactForm.css';
@@ -254,6 +255,28 @@ const ContactForm = () => {
                   <p className="text-slate-200 font-inter text-xs xs:text-sm sm:text-base tracking-wide leading-relaxed">
                     Takshashila University, Ongur, Tamil Nadu, India
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Official WhatsApp Group */}
+            <div className="group p-4 xs:p-5 sm:p-6 rounded-2xl sm:rounded-[22px] border border-emerald-500/30 bg-[#05070e]/85 backdrop-blur-xl hover:border-emerald-400/60 hover:shadow-[0_10px_30px_rgba(16,185,129,0.2)] transition-all duration-500 overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-emerald-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+              <div className="flex items-start gap-4 sm:gap-5 relative z-10">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#030508] border border-emerald-500/30 text-emerald-400 group-hover:border-emerald-400 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300 shrink-0">
+                  <MessageCircle size={20} className="sm:w-[22px] sm:h-[22px]" />
+                </div>
+                <div className="flex flex-col justify-center pt-0.5 sm:pt-1 min-w-0">
+                  <h4 className="text-emerald-300/90 font-kodeMono text-[10px] tracking-[0.2em] mb-1 uppercase font-bold">Official_WhatsApp_Group</h4>
+                  <a
+                    href="https://chat.whatsapp.com/BsU6V2xXilU1ymnB6csiVJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-300 font-inter hover:text-white transition-colors text-xs xs:text-sm sm:text-base tracking-wide font-medium flex items-center gap-1.5"
+                  >
+                    <span>Join Official WhatsApp Community</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             </div>

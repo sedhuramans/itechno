@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   ArrowRight,
   MessageSquare,
+  MessageCircle,
 } from "lucide-react";
 import { chiefDirectors } from "@/data/team-data";
 
@@ -229,14 +230,25 @@ export default function HomeContactSection() {
             </div>
           </div>
 
-          {/* Item 3: Quick Navigation to Transmission Form */}
-          <div className="flex items-center md:justify-end gap-3 pt-2 md:pt-0 border-t md:border-t-0 border-white/10">
+          {/* Item 3: Quick Navigation to Transmission Form & WhatsApp */}
+          <div className="flex flex-col sm:flex-row items-center md:justify-end gap-3 pt-2 md:pt-0 border-t md:border-t-0 border-white/10">
+            <a
+              href="https://chat.whatsapp.com/BsU6V2xXilU1ymnB6csiVJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-orbitron font-bold text-xs text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all hover:scale-105"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>WHATSAPP</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
             <Link
               href="/contact"
-              className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 active:scale-95"
             >
               <MessageSquare className="w-4 h-4 text-black" />
-              <span>TRANSMIT MESSAGE</span>
+              <span>TRANSMIT</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

@@ -1,10 +1,11 @@
-import { MapPin, Sparkles, ExternalLink, Calendar, Mail } from "lucide-react";
+import { MapPin, Sparkles, ExternalLink, Calendar, Mail, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
   const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
+  const whatsappGroupUrl = "https://chat.whatsapp.com/BsU6V2xXilU1ymnB6csiVJ";
 
   return (
     <footer className="w-full relative bg-[#020408] text-slate-200 py-16 md:py-20 border-t border-yellow-500/25 font-spaceGrotesk overflow-hidden">
@@ -102,6 +103,18 @@ const Footer: React.FC = () => {
                   sedhur425@gmail.com
                 </a>
               </div>
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <a
+                  href={whatsappGroupUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 break-all"
+                >
+                  <span>Official WhatsApp Group</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
                 <span>Takshashila University, Ongur, Tamil Nadu, India</span>
@@ -138,16 +151,29 @@ const Footer: React.FC = () => {
               />
             </div>
 
-            <a
-              href={googleFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105"
-            >
-              <Sparkles className="w-4 h-4 text-black" />
-              <span>REGISTER NOW</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <a
+                href={googleFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105"
+              >
+                <Sparkles className="w-4 h-4 text-black" />
+                <span>REGISTER NOW</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+
+              <a
+                href={whatsappGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-orbitron font-bold text-xs text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 transition-all shadow-[0_0_18px_rgba(16,185,129,0.3)] hover:scale-105"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>WHATSAPP GROUP</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
