@@ -61,26 +61,23 @@ export default function ClientLayout({
   return (
     <div className="relative min-h-screen">
       <div className="pointer-events-none fixed inset-0 -z-20">
-        {isMobile ? (
-          <div className="w-full h-full mobile-cosmic-bg" />
-        ) : (
-          <Galaxy
-            mouseRepulsion={!lowPerformanceMode}
-            mouseInteraction={!lowPerformanceMode}
-            density={lowPerformanceMode ? 0.6 : 1.0}
-            glowIntensity={lowPerformanceMode ? 0.15 : 0.25}
-            saturation={0}
-            hueShift={140}
-            twinkleIntensity={lowPerformanceMode ? 0.15 : 0.4}
-            rotationSpeed={lowPerformanceMode ? 0.03 : 0.08}
-            repulsionStrength={lowPerformanceMode ? 0.8 : 1.6}
-            autoCenterRepulsion={0}
-            starSpeed={lowPerformanceMode ? 0.25 : 0.45}
-            speed={lowPerformanceMode ? 0.8 : 1.2}
-            renderScale={lowPerformanceMode ? 0.45 : 0.65}
-            maxFPS={lowPerformanceMode ? 24 : 45}
-          />
-        )}
+        <Galaxy
+          mouseRepulsion={!isMobile && !lowPerformanceMode}
+          mouseInteraction={!isMobile && !lowPerformanceMode}
+          density={isMobile || lowPerformanceMode ? 0.5 : 0.85}
+          glowIntensity={isMobile || lowPerformanceMode ? 0.15 : 0.25}
+          saturation={0}
+          hueShift={140}
+          twinkleIntensity={isMobile || lowPerformanceMode ? 0.15 : 0.35}
+          rotationSpeed={isMobile || lowPerformanceMode ? 0.03 : 0.07}
+          repulsionStrength={isMobile || lowPerformanceMode ? 0.8 : 1.5}
+          autoCenterRepulsion={0}
+          starSpeed={isMobile || lowPerformanceMode ? 0.25 : 0.4}
+          speed={isMobile || lowPerformanceMode ? 0.8 : 1.1}
+          renderScale={isMobile || lowPerformanceMode ? 0.45 : 0.7}
+          maxFPS={40}
+          numLayers={isMobile || lowPerformanceMode ? 2 : 4}
+        />
       </div>
       <div className="pointer-events-none fixed inset-0 -z-10 bg-black/45" />
 

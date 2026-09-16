@@ -14,7 +14,7 @@ void main() {
 }
 `;
 
-const fragmentShader = `
+const getFragmentShader = (numLayers = 4) => `
 precision highp float;
 
 uniform float uTime;
@@ -38,7 +38,7 @@ uniform bool uTransparent;
 
 varying vec2 vUv;
 
-#define NUM_LAYER 4.0
+#define NUM_LAYER ${Number(numLayers || 4).toFixed(1)}
 #define STAR_COLOR_CUTOFF 0.2
 #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
 #define PERIOD 3.0
@@ -188,7 +188,8 @@ export default function Galaxy({
   autoCenterRepulsion = 0,
   transparent = true,
   renderScale = 1,
-  maxFPS = 60,
+  maxFPS = 40,
+  numLayers = 4,
   ...rest
 }) {
   const ctnDom = useRef(null);
@@ -216,7 +217,7 @@ export default function Galaxy({
 
     let program;
     let isVisible = !document.hidden;
-    const safeRenderScale = Math.min(Math.max(renderScale, 0.4), 1);
+    const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 1);
     const frameInterval = 1000 / Math.max(1, maxFPS);
     let lastFrameTime = 0;
 
@@ -249,7 +250,7 @@ export default function Galaxy({
     const geometry = new Triangle(gl);
     program = new Program(gl, {
       vertex: vertexShader,
-      fragment: fragmentShader,
+      fragment: getFragmentShader(numLayers),
       uniforms: {
         uTime: { value: 0 },
         uResolution: {
@@ -350,7 +351,8 @@ export default function Galaxy({
     autoCenterRepulsion,
     transparent,
     renderScale,
-    maxFPS
+    maxFPS,
+    numLayers
   ]);
 
   return <div ref={ctnDom} className="galaxy-container" {...rest} />;

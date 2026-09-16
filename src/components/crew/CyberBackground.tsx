@@ -88,10 +88,19 @@ export const CyberBackground: React.FC = () => {
       }
 
       ctx.globalAlpha = 1.0;
-      animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    const frameInterval = 1000 / 40;
+    let lastTime = 0;
+
+    const loop = (currentTime: number) => {
+      animationFrameId = requestAnimationFrame(loop);
+      if (currentTime - lastTime < frameInterval) return;
+      lastTime = currentTime;
+      render();
+    };
+
+    animationFrameId = requestAnimationFrame(loop);
 
     return () => {
       window.removeEventListener("resize", handleResize);
