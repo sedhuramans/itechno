@@ -14,32 +14,38 @@ const brunoAceFont = Bruno_Ace({
   subsets: ["latin"],
   variable: "--font-bruno-ace",
   weight: "400",
-})
+  display: "swap",
+});
 
 const orbitronFont = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
+  display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: "swap",
 });
 
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const viewport = {

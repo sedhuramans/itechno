@@ -48,35 +48,42 @@ export default function ClientLayout({
       setLowPerformanceMode(lowCpu || lowMemory || reducedMotion || isTouch);
     };
 
+    let resizeTimer: NodeJS.Timeout;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkPerformanceProfile, 150);
+    };
+
     checkPerformanceProfile();
     mediaQuery.addEventListener("change", checkPerformanceProfile);
-    window.addEventListener("resize", checkPerformanceProfile, { passive: true });
+    window.addEventListener("resize", debouncedResize, { passive: true });
 
     return () => {
+      clearTimeout(resizeTimer);
       mediaQuery.removeEventListener("change", checkPerformanceProfile);
-      window.removeEventListener("resize", checkPerformanceProfile);
+      window.removeEventListener("resize", debouncedResize);
     };
   }, []);
 
   return (
     <div className="relative min-h-screen">
-      <div className="pointer-events-none fixed inset-0 -z-20">
+      <div className="pointer-events-none fixed inset-0 -z-20 transform-gpu">
         <Galaxy
           mouseRepulsion={!isMobile && !lowPerformanceMode}
           mouseInteraction={!isMobile && !lowPerformanceMode}
-          density={isMobile || lowPerformanceMode ? 0.5 : 0.85}
-          glowIntensity={isMobile || lowPerformanceMode ? 0.15 : 0.25}
+          density={isMobile || lowPerformanceMode ? 0.45 : 0.75}
+          glowIntensity={isMobile || lowPerformanceMode ? 0.12 : 0.22}
           saturation={0}
           hueShift={140}
-          twinkleIntensity={isMobile || lowPerformanceMode ? 0.15 : 0.35}
-          rotationSpeed={isMobile || lowPerformanceMode ? 0.03 : 0.07}
-          repulsionStrength={isMobile || lowPerformanceMode ? 0.8 : 1.5}
+          twinkleIntensity={isMobile || lowPerformanceMode ? 0.12 : 0.25}
+          rotationSpeed={isMobile || lowPerformanceMode ? 0.02 : 0.05}
+          repulsionStrength={isMobile || lowPerformanceMode ? 0.6 : 1.2}
           autoCenterRepulsion={0}
-          starSpeed={isMobile || lowPerformanceMode ? 0.25 : 0.4}
-          speed={isMobile || lowPerformanceMode ? 0.8 : 1.1}
-          renderScale={isMobile || lowPerformanceMode ? 0.45 : 0.7}
-          maxFPS={60}
-          numLayers={isMobile || lowPerformanceMode ? 2 : 4}
+          starSpeed={isMobile || lowPerformanceMode ? 0.2 : 0.35}
+          speed={isMobile || lowPerformanceMode ? 0.7 : 0.9}
+          renderScale={isMobile || lowPerformanceMode ? 0.35 : 0.55}
+          maxFPS={isMobile || lowPerformanceMode ? 35 : 50}
+          numLayers={isMobile || lowPerformanceMode ? 1 : 2}
         />
       </div>
       <div className="pointer-events-none fixed inset-0 -z-10 bg-black/45" />

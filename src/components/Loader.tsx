@@ -13,20 +13,20 @@ const OrbitalLoader = ({ finishLoading }: LoaderProps) => {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Snappy, silky progression (~500ms total, optimized for mobile CPUs)
+    // Ultra-snappy instant progression (~180ms total) for immediate responsiveness
     let current = 0;
     const interval = setInterval(() => {
-      current += Math.floor(Math.random() * 5) + 4;
+      current += Math.floor(Math.random() * 12) + 18;
       if (current >= 100) {
         current = 100;
         setProgress(100);
         clearInterval(interval);
-        setTimeout(() => setIsExiting(true), 100);
-        setTimeout(finishLoading, 360);
+        setTimeout(() => setIsExiting(true), 50);
+        setTimeout(finishLoading, 180);
       } else {
         setProgress(current);
       }
-    }, 28);
+    }, 16);
     return () => clearInterval(interval);
   }, [finishLoading]);
 

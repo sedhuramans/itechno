@@ -10,9 +10,9 @@ const LandingSection = () => {
   return (
     <div id="home" className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
       {/* Luxury Corporate Ambient Glows: Tech Sapphire Blue + Imperial Gold */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[700px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-3xl sm:blur-[140px] rounded-full pointer-events-none -z-10 hidden sm:block sm:animate-pulse" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-2xl rounded-full pointer-events-none -z-10 sm:hidden" />
-      <div className="absolute bottom-10 left-1/4 w-[280px] sm:w-[550px] h-[280px] sm:h-[550px] bg-gradient-to-br from-blue-500/15 via-slate-900/40 to-yellow-600/15 blur-2xl sm:blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[700px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-3xl sm:blur-[140px] rounded-full pointer-events-none -z-10 hidden sm:block transform-gpu" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-tr from-yellow-500/15 via-blue-600/20 to-blue-900/25 blur-2xl rounded-full pointer-events-none -z-10 sm:hidden transform-gpu" />
+      <div className="absolute bottom-10 left-1/4 w-[280px] sm:w-[550px] h-[280px] sm:h-[550px] bg-gradient-to-br from-blue-500/15 via-slate-900/40 to-yellow-600/15 blur-2xl sm:blur-[130px] rounded-full pointer-events-none -z-10 transform-gpu" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center">
 
@@ -44,7 +44,7 @@ const LandingSection = () => {
             {/* Ambient Behind-Logo Bloom */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-blue-700/20 blur-3xl -z-10 rounded-full scale-110 pointer-events-none" />
             <Image
-              src="https://res.cloudinary.com/k78tbfel/image/upload/v1788616738/kuq5evfg1yugmzdbb6zz.png"
+              src="https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788616738/kuq5evfg1yugmzdbb6zz.png"
               alt="i-TECHNO 2026"
               width={1024}
               height={360}
@@ -60,7 +60,7 @@ const LandingSection = () => {
             className="mt-4 sm:mt-6 flex items-center justify-center"
           >
             <Image
-              src="https://res.cloudinary.com/k78tbfel/image/upload/v1788616757/tzbkazes1h0pbclvxcnm.png"
+              src="https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788616757/tzbkazes1h0pbclvxcnm.png"
               alt="Takshashila University X FACE Prep Campus"
               width={974}
               height={166}

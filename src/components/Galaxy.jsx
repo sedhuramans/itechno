@@ -2,6 +2,9 @@ import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
 import './Galaxy.css';
 
+const DEFAULT_FOCAL = [0.5, 0.5];
+const DEFAULT_ROTATION = [1.0, 0.0];
+
 const vertexShader = `
 attribute vec2 uv;
 attribute vec2 position;
@@ -14,8 +17,8 @@ void main() {
 }
 `;
 
-const getFragmentShader = (numLayers = 4) => `
-precision highp float;
+const getFragmentShader = (numLayers = 2) => `
+precision mediump float;
 
 uniform float uTime;
 uniform vec3 uResolution;
@@ -38,7 +41,7 @@ uniform bool uTransparent;
 
 varying vec2 vUv;
 
-#define NUM_LAYER ${Number(numLayers || 4).toFixed(1)}
+#define NUM_LAYER ${Number(numLayers || 2).toFixed(1)}
 #define STAR_COLOR_CUTOFF 0.2
 #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
 #define PERIOD 3.0
@@ -171,25 +174,25 @@ void main() {
 `;
 
 export default function Galaxy({
-  focal = [0.5, 0.5],
-  rotation = [1.0, 0.0],
-  starSpeed = 0.5,
-  density = 1,
+  focal = DEFAULT_FOCAL,
+  rotation = DEFAULT_ROTATION,
+  starSpeed = 0.4,
+  density = 0.8,
   hueShift = 140,
   disableAnimation = false,
-  speed = 1.0,
+  speed = 0.9,
   mouseInteraction = true,
-  glowIntensity = 0.3,
+  glowIntensity = 0.25,
   saturation = 0.0,
   mouseRepulsion = true,
-  repulsionStrength = 2,
-  twinkleIntensity = 0.3,
-  rotationSpeed = 0.1,
+  repulsionStrength = 1.2,
+  twinkleIntensity = 0.25,
+  rotationSpeed = 0.05,
   autoCenterRepulsion = 0,
   transparent = true,
-  renderScale = 1,
-  maxFPS = 60,
-  numLayers = 4,
+  renderScale = 0.55,
+  maxFPS = 50,
+  numLayers = 2,
   ...rest
 }) {
   const ctnDom = useRef(null);
@@ -203,7 +206,8 @@ export default function Galaxy({
     const ctn = ctnDom.current;
     const renderer = new Renderer({
       alpha: transparent,
-      premultipliedAlpha: false
+      premultipliedAlpha: false,
+      powerPreference: 'high-performance'
     });
     const gl = renderer.gl;
 
@@ -217,8 +221,8 @@ export default function Galaxy({
 
     let program;
     let isVisible = !document.hidden;
-    const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 1);
-    const frameInterval = maxFPS >= 60 ? (1000 / maxFPS - 2) : (1000 / Math.max(1, maxFPS));
+    const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 0.75);
+    const frameInterval = 1000 / Math.max(1, maxFPS);
     let lastFrameTime = 0;
 
     let ctnWidth = window.innerWidth;
@@ -322,38 +326,30 @@ export default function Galaxy({
       window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     }
 
-    return () => {
-      cancelAnimationFrame(animateId);
-      window.removeEventListener('resize', resize);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      if (mouseInteraction) {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseleave', handleMouseLeave);
-      }
-      ctn.removeChild(gl.canvas);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+    const handleScroll = () => {
+      lastFrameTime = performance.now() + 60;
     };
-  }, [
-    focal,
-    rotation,
-    starSpeed,
-    density,
-    hueShift,
-    disableAnimation,
-    speed,
-    mouseInteraction,
-    glowIntensity,
-    saturation,
-    mouseRepulsion,
-    twinkleIntensity,
-    rotationSpeed,
-    repulsionStrength,
-    autoCenterRepulsion,
-    transparent,
-    renderScale,
-    maxFPS,
-    numLayers
-  ]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        cancelAnimationFrame(animateId);
+        window.removeEventListener('resize', resize);
+        window.removeEventListener('scroll', handleScroll);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+        if (mouseInteraction) {
+          window.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('mouseleave', handleMouseLeave);
+        }
+        if (ctn.contains(gl.canvas)) {
+          ctn.removeChild(gl.canvas);
+        }
+        gl.getExtension('WEBGL_lose_context')?.loseContext();
+      };
+    }, [
+      disableAnimation,
+      mouseInteraction,
+      numLayers
+    ]);
 
   return <div ref={ctnDom} className="galaxy-container" {...rest} />;
 }

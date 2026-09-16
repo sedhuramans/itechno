@@ -10,7 +10,7 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788456805/WhatsApp_Image_2026-09-02_at_17.22.23.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788456805/WhatsApp_Image_2026-09-02_at_17.22.23.jpg",
     alt: "Itechno '26 Hackathon & Technical Arena",
     title: "Hackverse Arena & Rapid Prototyping",
     tag: "TECHNICAL SPRINT",
@@ -18,7 +18,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 2,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788456798/WhatsApp_Image_2026-09-02_at_17.22.22.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788456798/WhatsApp_Image_2026-09-02_at_17.22.22.jpg",
     alt: "Takshashila University Grand Auditorium Stage",
     title: "Grand Stage & Keynote Operations",
     tag: "FESTIVAL AUDITORIUM",
@@ -26,7 +26,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 3,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788456798/WhatsApp_Image_2026-09-02_at_17.22.21.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788456798/WhatsApp_Image_2026-09-02_at_17.22.21.jpg",
     alt: "Project Presentation & Jury Evaluation",
     title: "Innovation Showcase & Jury Evaluations",
     tag: "PROJECT EXPO",
@@ -34,7 +34,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 4,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788497354/WhatsApp_Image_2026-09-04_at_10.14.57.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788497354/WhatsApp_Image_2026-09-04_at_10.14.57.jpg",
     alt: "Esports Arena & Gaming Squad Showdowns",
     title: "Esports Arena & Championship Energy",
     tag: "GAMING ARENA",
@@ -42,7 +42,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 5,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788497341/WhatsApp_Image_2026-09-03_at_22.13.39.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788497341/WhatsApp_Image_2026-09-03_at_22.13.39.jpg",
     alt: "Technical Workshop & Interactive Labs",
     title: "Technical Workshop & Interactive Labs",
     tag: "HANDS-ON LABS",
@@ -50,7 +50,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 6,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788497316/WhatsApp_Image_k.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788497316/WhatsApp_Image_k.jpg",
     alt: "Festival Ambience & Creative Moments",
     title: "Creative Media & Festival Atmosphere",
     tag: "CAMPUS VIBES",
@@ -58,7 +58,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788497236/VCK.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788497236/VCK.jpg",
     alt: "Valedictory Ceremony & Victory Celebrations",
     title: "Valedictory Ceremony & Victory Celebrations",
     tag: "CEREMONY & HONORS",
@@ -66,7 +66,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 8,
-    src: "https://res.cloudinary.com/k78tbfel/image/upload/v1788456797/WhatsApp_Image_2026-09-02.jpg",
+    src: "https://res.cloudinary.com/k78tbfel/image/upload/f_auto,q_auto/v1788456797/WhatsApp_Image_2026-09-02.jpg",
     alt: "Takshashila University Fest Highlights & Campus Delegation",
     title: "Campus Delegation & Fest Highlights",
     tag: "CAMPUS HIGHLIGHTS",

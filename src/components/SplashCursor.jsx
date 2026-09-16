@@ -20,12 +20,19 @@ export default function TechNexusCursor() {
     let mouse = { x: -1000, y: -1000 };
     let lastSpawnTime = 0;
     let lastSpawnPos = { x: -1000, y: -1000 };
+    let lastMouseMoveTime = 0;
     let rotation = 0;
 
-    // Luxury Tech Palette: Gold + Sapphire Blue + Diamond White
-    const colors = ['#D4AF37', '#F5D77F', '#3B82F6', '#60A5FA', '#FFFFFF'];
-    const maxParticles = 22; 
-    const connectionDistance = 75; 
+    // Precomputed Luxury Tech Palette RGBs
+    const palette = [
+      { hex: '#D4AF37', rgb: '212, 175, 55' },
+      { hex: '#F5D77F', rgb: '245, 215, 127' },
+      { hex: '#3B82F6', rgb: '59, 130, 246' },
+      { hex: '#60A5FA', rgb: '96, 165, 250' },
+      { hex: '#FFFFFF', rgb: '255, 255, 255' }
+    ];
+    const maxParticles = 12; 
+    const connectionDistance = 70; 
     const connectionDistanceSq = connectionDistance * connectionDistance;
 
     const resizeCanvas = () => {
@@ -33,7 +40,7 @@ export default function TechNexusCursor() {
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas, { passive: true });
     resizeCanvas();
 
     class NodeParticle {
@@ -41,16 +48,16 @@ export default function TechNexusCursor() {
         this.x = x;
         this.y = y;
         
-        // Slight drift
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 0.8 + 0.2;
+        const speed = Math.random() * 0.7 + 0.2;
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
         
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.size = Math.random() * 1.8 + 1.2; 
+        const c = palette[Math.floor(Math.random() * palette.length)];
+        this.rgb = c.rgb;
+        this.size = Math.random() * 1.5 + 1.2; 
         this.life = 1;
-        this.decay = Math.random() * 0.025 + 0.02;
+        this.decay = Math.random() * 0.035 + 0.025;
       }
 
       update() {
@@ -62,16 +69,8 @@ export default function TechNexusCursor() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.hexToRgb(this.color)}, ${this.life})`;
+        ctx.fillStyle = `rgba(${this.rgb}, ${this.life})`;
         ctx.fill();
-      }
-
-      hexToRgb(hex) {
-        const bigint = parseInt(hex.replace('#', ''), 16);
-        const r = (bigint >> 16) & 255;
-        const g = (bigint >> 8) & 255;
-        const b = bigint & 255;
-        return `${r}, ${g}, ${b}`;
       }
     }
 
@@ -85,18 +84,18 @@ export default function TechNexusCursor() {
     const handlePointerMove = (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-
       const now = performance.now();
+      lastMouseMoveTime = now;
+
       const dx = mouse.x - lastSpawnPos.x;
       const dy = mouse.y - lastSpawnPos.y;
       const movedDistSq = dx * dx + dy * dy;
 
-      // Throttle particle creation to save CPU & avoid GC pressure while maintaining 60 FPS
-      if (particles.length < maxParticles && (now - lastSpawnTime > 16 || movedDistSq > 100)) {
+      if (particles.length < maxParticles && (now - lastSpawnTime > 24 || movedDistSq > 140)) {
         lastSpawnTime = now;
         lastSpawnPos = { x: mouse.x, y: mouse.y };
-        const offsetX = (Math.random() - 0.5) * 10;
-        const offsetY = (Math.random() - 0.5) * 10;
+        const offsetX = (Math.random() - 0.5) * 8;
+        const offsetY = (Math.random() - 0.5) * 8;
         particles.push(new NodeParticle(mouse.x + offsetX, mouse.y + offsetY));
       }
 
@@ -114,8 +113,9 @@ export default function TechNexusCursor() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // If idle and no particles left, pause RAF
-      if (mouse.x === -1000 && particles.length === 0) {
+      // If idle and no particles left, pause RAF to save 100% CPU/GPU
+      const isMouseIdle = (performance.now() - lastMouseMoveTime) > 2000;
+      if (particles.length === 0 && (mouse.x === -1000 || isMouseIdle)) {
         isRunning = false;
         return;
       }
