@@ -2,9 +2,6 @@ import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
 import './Galaxy.css';
 
-const DEFAULT_FOCAL = [0.5, 0.5];
-const DEFAULT_ROTATION = [1.0, 0.0];
-
 const vertexShader = `
 attribute vec2 uv;
 attribute vec2 position;
@@ -17,8 +14,8 @@ void main() {
 }
 `;
 
-const getFragmentShader = (numLayers = 2) => `
-precision mediump float;
+const fragmentShader = `
+precision highp float;
 
 uniform float uTime;
 uniform vec3 uResolution;
@@ -41,7 +38,7 @@ uniform bool uTransparent;
 
 varying vec2 vUv;
 
-#define NUM_LAYER ${Number(numLayers || 2).toFixed(1)}
+#define NUM_LAYER 4.0
 #define STAR_COLOR_CUTOFF 0.2
 #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
 #define PERIOD 3.0
@@ -174,25 +171,24 @@ void main() {
 `;
 
 export default function Galaxy({
-  focal = DEFAULT_FOCAL,
-  rotation = DEFAULT_ROTATION,
-  starSpeed = 0.4,
-  density = 0.8,
+  focal = [0.5, 0.5],
+  rotation = [1.0, 0.0],
+  starSpeed = 0.5,
+  density = 1,
   hueShift = 140,
   disableAnimation = false,
-  speed = 0.9,
+  speed = 1.0,
   mouseInteraction = true,
-  glowIntensity = 0.25,
+  glowIntensity = 0.3,
   saturation = 0.0,
   mouseRepulsion = true,
-  repulsionStrength = 1.2,
-  twinkleIntensity = 0.25,
-  rotationSpeed = 0.05,
+  repulsionStrength = 2,
+  twinkleIntensity = 0.3,
+  rotationSpeed = 0.1,
   autoCenterRepulsion = 0,
   transparent = true,
-  renderScale = 0.55,
-  maxFPS = 50,
-  numLayers = 2,
+  renderScale = 1,
+  maxFPS = 60,
   ...rest
 }) {
   const ctnDom = useRef(null);
@@ -206,8 +202,7 @@ export default function Galaxy({
     const ctn = ctnDom.current;
     const renderer = new Renderer({
       alpha: transparent,
-      premultipliedAlpha: false,
-      powerPreference: 'high-performance'
+      premultipliedAlpha: false
     });
     const gl = renderer.gl;
 
@@ -221,18 +216,13 @@ export default function Galaxy({
 
     let program;
     let isVisible = !document.hidden;
-    const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 0.75);
+    const safeRenderScale = Math.min(Math.max(renderScale, 0.4), 1);
     const frameInterval = 1000 / Math.max(1, maxFPS);
     let lastFrameTime = 0;
 
-    let ctnWidth = window.innerWidth;
-    let ctnHeight = window.innerHeight;
-
     function resize() {
-      ctnWidth = ctn.offsetWidth || window.innerWidth;
-      ctnHeight = ctn.offsetHeight || window.innerHeight;
-      const width = Math.max(1, Math.floor(ctnWidth * safeRenderScale));
-      const height = Math.max(1, Math.floor(ctnHeight * safeRenderScale));
+      const width = Math.max(1, Math.floor(ctn.offsetWidth * safeRenderScale));
+      const height = Math.max(1, Math.floor(ctn.offsetHeight * safeRenderScale));
       renderer.setSize(width, height);
       if (program) {
         program.uniforms.uResolution.value = new Color(
@@ -254,7 +244,7 @@ export default function Galaxy({
     const geometry = new Triangle(gl);
     program = new Program(gl, {
       vertex: vertexShader,
-      fragment: getFragmentShader(numLayers),
+      fragment: fragmentShader,
       uniforms: {
         uTime: { value: 0 },
         uResolution: {
@@ -311,8 +301,9 @@ export default function Galaxy({
     ctn.appendChild(gl.canvas);
 
     function handleMouseMove(e) {
-      const x = e.clientX / (ctnWidth || 1);
-      const y = 1.0 - e.clientY / (ctnHeight || 1);
+      const rect = ctn.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = 1.0 - (e.clientY - rect.top) / rect.height;
       targetMousePos.current = { x, y };
       targetMouseActive.current = 1.0;
     }
@@ -322,34 +313,43 @@ export default function Galaxy({
     }
 
     if (mouseInteraction) {
-      window.addEventListener('mousemove', handleMouseMove, { passive: true });
-      window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+      ctn.addEventListener('mousemove', handleMouseMove);
+      ctn.addEventListener('mouseleave', handleMouseLeave);
     }
 
-    const handleScroll = () => {
-      lastFrameTime = performance.now() + 60;
+    return () => {
+      cancelAnimationFrame(animateId);
+      window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (mouseInteraction) {
+        ctn.removeEventListener('mousemove', handleMouseMove);
+        ctn.removeEventListener('mouseleave', handleMouseLeave);
+      }
+      if (ctn.contains(gl.canvas)) {
+        ctn.removeChild(gl.canvas);
+      }
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-      return () => {
-        cancelAnimationFrame(animateId);
-        window.removeEventListener('resize', resize);
-        window.removeEventListener('scroll', handleScroll);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-        if (mouseInteraction) {
-          window.removeEventListener('mousemove', handleMouseMove);
-          window.removeEventListener('mouseleave', handleMouseLeave);
-        }
-        if (ctn.contains(gl.canvas)) {
-          ctn.removeChild(gl.canvas);
-        }
-        gl.getExtension('WEBGL_lose_context')?.loseContext();
-      };
-    }, [
-      disableAnimation,
-      mouseInteraction,
-      numLayers
-    ]);
+  }, [
+    focal,
+    rotation,
+    starSpeed,
+    density,
+    hueShift,
+    disableAnimation,
+    speed,
+    mouseInteraction,
+    glowIntensity,
+    saturation,
+    mouseRepulsion,
+    twinkleIntensity,
+    rotationSpeed,
+    repulsionStrength,
+    autoCenterRepulsion,
+    transparent,
+    renderScale,
+    maxFPS
+  ]);
 
   return <div ref={ctnDom} className="galaxy-container" {...rest} />;
 }

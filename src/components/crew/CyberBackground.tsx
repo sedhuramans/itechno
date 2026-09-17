@@ -6,9 +6,6 @@ export const CyberBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
-    if (isTouchDevice) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -38,18 +35,15 @@ export const CyberBackground: React.FC = () => {
     }
 
     const colors = ["#00f0ff", "#3b82f6", "#8b5cf6", "#d4af37"];
-    const particles: Particle[] = Array.from({ length: 16 }, () => ({
+    const particles: Particle[] = Array.from({ length: 45 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      size: Math.random() * 1.8 + 1,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      size: Math.random() * 2 + 1,
       color: colors[Math.floor(Math.random() * colors.length)],
-      alpha: Math.random() * 0.35 + 0.1,
+      alpha: Math.random() * 0.4 + 0.1,
     }));
-
-    const maxDist = 100;
-    const maxDistSq = maxDist * maxDist;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
@@ -76,35 +70,25 @@ export const CyberBackground: React.FC = () => {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const distSq = dx * dx + dy * dy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (distSq < maxDistSq) {
-            const dist = Math.sqrt(distSq);
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = p.color;
-            ctx.globalAlpha = (1 - dist / maxDist) * 0.1;
-            ctx.lineWidth = 0.5;
+            ctx.globalAlpha = (1 - dist / 120) * 0.12;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
       }
 
       ctx.globalAlpha = 1.0;
+      animationFrameId = requestAnimationFrame(render);
     };
 
-    const frameInterval = 1000 / 30; // Smooth 30 FPS ambient background saves massive GPU cycles
-    let lastTime = 0;
-
-    const loop = (currentTime: number) => {
-      animationFrameId = requestAnimationFrame(loop);
-      if (currentTime - lastTime < frameInterval) return;
-      lastTime = currentTime;
-      render();
-    };
-
-    animationFrameId = requestAnimationFrame(loop);
+    render();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -121,12 +105,12 @@ export const CyberBackground: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f0ff08_1px,transparent_1px),linear-gradient(to_bottom,#00f0ff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70" />
 
       {/* Ambient Radial Gradient Glows */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[800px] h-[260px] sm:h-[500px] bg-gradient-to-b from-cyan-500/15 via-blue-600/10 to-transparent blur-3xl sm:blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-[-100px] w-[260px] sm:w-[500px] h-[260px] sm:h-[500px] bg-purple-600/10 blur-2xl sm:blur-[130px] pointer-events-none" />
-      <div className="absolute top-2/3 right-[-100px] w-[260px] sm:w-[500px] h-[260px] sm:h-[500px] bg-blue-500/10 blur-2xl sm:blur-[140px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-cyan-500/15 via-blue-600/10 to-transparent blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-[-100px] w-[500px] h-[500px] bg-purple-600/10 blur-[130px] pointer-events-none" />
+      <div className="absolute top-2/3 right-[-100px] w-[500px] h-[500px] bg-blue-500/10 blur-[140px] pointer-events-none" />
 
-      {/* Canvas for Particle Network (Desktop Only) */}
-      <canvas ref={canvasRef} className="hidden sm:block absolute inset-0 w-full h-full opacity-60" />
+      {/* Canvas for Particle Network */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
     </div>
   );
 };
