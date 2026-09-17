@@ -53,8 +53,6 @@ const getSectionIcon = (iconName: string) => {
 };
 
 const TeamsPage: React.FC = () => {
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
-
   // Selected coordinator for full profile modal pop-up
   const [selectedMember, setSelectedMember] = useState<{
     member: TeamMember;
@@ -408,15 +406,13 @@ const TeamsPage: React.FC = () => {
             </p>
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={googleFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/events"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-orbitron font-bold text-xs sm:text-sm text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-cyan-400 hover:from-yellow-300 hover:to-cyan-300 shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] transition-all hover:scale-105"
               >
                 <span>REGISTER FOR EVENTS</span>
                 <ExternalLink className="w-4 h-4" />
-              </a>
+              </Link>
 
               <Link
                 href="/contact"

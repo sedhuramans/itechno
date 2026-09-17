@@ -32,8 +32,6 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [openId, setOpenId] = useState<string | null>("g1"); // default first rule open
 
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
-
   const filteredFaqs = faqData.filter((item) => {
     const matchesCategory =
       selectedCategory === "All" || item.category === selectedCategory;
@@ -210,15 +208,13 @@ export default function FAQPage() {
             <span>CONTACT CREW</span>
           </Link>
 
-          <a
-            href={googleFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/events"
             className="px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black font-orbitron text-xs font-bold tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 flex items-center justify-center gap-2"
           >
             <span>REGISTER NOW</span>
             <ExternalLink className="w-4 h-4 shrink-0" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

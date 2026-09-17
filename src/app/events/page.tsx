@@ -120,9 +120,7 @@ export default function EventsPage() {
           </div>
         </div>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#events-list"
           className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-black font-orbitron font-bold text-xs shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all shrink-0 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
         >
           <span>REGISTER NOW</span>
@@ -172,7 +170,7 @@ export default function EventsPage() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div id="events-list" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto scroll-mt-28">
           {filteredEvents.map((event) => (
             <div
               key={event.id}

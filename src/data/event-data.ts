@@ -62,7 +62,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall Presentation'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdtDyHXACFhfzvkwO6h03Y2BWVb12XgAnZzHUbQaGTFP5-jGw/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'hackathon'
   },
@@ -103,7 +103,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Understanding of the code'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfx_cXPy8fNZ1QjNQMCyzIvyRAsPIVtxoV121simOH48UXyIg/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'coding'
   },
@@ -141,7 +141,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall quiz score.'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSd5vqaU1TjBIaYGZxvoyQVc-6DV8psQLkvGZzp3iP04I3Z8wg/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'quiz'
   },
@@ -183,7 +183,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Time management'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeg7kektQ7Bx9jTm7i4K82X9PVlVX5RQo1JJU-JuKuVWDapZg/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'speaking'
   },
@@ -221,7 +221,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall score'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdbBykt_4W-Cw6GFwjQRfEVq05eFtkRhichjhu5CJlIFFyv1w/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'puzzle'
   },
@@ -262,7 +262,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall performance'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScAROp9TMLJKrZKDyzztB_60_gzqt8bu0D1K42czB9A5xNaBw/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'gaming'
   },
@@ -303,7 +303,7 @@ export const ItechnoEventsData: EventDataType[] = [
       'Overall Impact'
     ],
     lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
-    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog',
+    registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfYeljvECdOk0XHuHZctj9foN52xrKBPA7HhbUBrBQHk2OVcg/viewform?usp=dialog',
     eventDate: 'September 29, 2026',
     type: 'media'
   }

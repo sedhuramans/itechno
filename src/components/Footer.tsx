@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSegCSZJ1sg1HH92bwMOBfoU29DEbzxvGlS0mSoNZfpI9WhfCA/viewform?usp=dialog";
   const whatsappGroupUrl = "https://chat.whatsapp.com/BsU6V2xXilU1ymnB6csiVJ";
 
   return (
@@ -152,16 +151,13 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <a
-                href={googleFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/events"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105"
               >
                 <Sparkles className="w-4 h-4 text-black" />
                 <span>REGISTER NOW</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              </Link>
 
               <a
                 href={whatsappGroupUrl}
