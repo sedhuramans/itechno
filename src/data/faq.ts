@@ -9,8 +9,8 @@ export const participationRules: FAQItem[] = [
   {
     id: "pr1",
     category: "Participation Rules",
-    question: "1. Hackverse Participation Exclusivity",
-    answer: "Hackverse participants can participate ONLY in Hackverse. Hackverse participants cannot participate in any other event."
+    question: "1. Hackverse Participation Exclusivity & Team Format",
+    answer: "Hackverse participants can participate ONLY in Hackverse. Hackverse participants cannot participate in any other event. Participation can be individual (solo) or as a team of 2–3 members (team is optional)."
   },
   {
     id: "pr1-ff",
@@ -28,7 +28,7 @@ export const participationRules: FAQItem[] = [
     id: "pr3",
     category: "Participation Rules",
     question: "4. Specified Event Team Sizes",
-    answer: "Every participant must follow the specified team size for each event: Hackverse (2–3 participants), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (Individual / Duo - Max 2 members)."
+    answer: "Every participant must follow the specified team size for each event: Hackverse (Individual / 2–3 participants — Team is optional), Codeathon (Duo / 2 participants), Tech Battle (Duo / 2 participants), Word Battle (Individual), Pictionary (Duo / 2 participants), Free Fire – Squad Battle (Squad), and VIRAL MINDS (Individual / Duo - Max 2 members)."
   },
   {
     id: "pr4",

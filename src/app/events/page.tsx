@@ -403,6 +403,28 @@ export default function EventsPage() {
               </div>
             )}
 
+            {/* Hackverse Specific Participation & Team Clarification Banner */}
+            {activeModalEvent.id === 'hackverse' && (
+              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-cyan-950/70 via-blue-950/30 to-slate-950/90 border-2 border-cyan-500/50 shadow-[0_0_25px_rgba(6,182,212,0.25)]">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-2xl shrink-0">
+                    💡
+                  </div>
+                  <div className="space-y-2 text-xs sm:text-sm font-spaceGrotesk text-slate-200">
+                    <h5 className="font-orbitron font-bold text-cyan-300 text-sm sm:text-base uppercase tracking-wider">
+                      TEAM FORMAT & PARTICIPATION DETAILS
+                    </h5>
+                    <p className="leading-relaxed">
+                      <strong>Team is optional:</strong> Participants can participate individually (solo) or as a team of 2–3 members.
+                    </p>
+                    <p className="text-cyan-200/90 text-xs">
+                      <strong>Exclusivity Rule:</strong> Hackverse participants can participate <strong className="text-white">ONLY in Hackverse</strong> and cannot participate in any other event.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Key Event Details Box */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 p-4 rounded-2xl bg-slate-950/80 border border-yellow-500/20 mb-8 text-xs font-kodeMono">
               <div>
