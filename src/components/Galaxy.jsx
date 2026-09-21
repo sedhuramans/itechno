@@ -14,7 +14,7 @@ void main() {
 }
 `;
 
-const fragmentShader = `
+const createFragmentShader = (numLayers = 2.0) => `
 precision highp float;
 
 uniform float uTime;
@@ -38,7 +38,7 @@ uniform bool uTransparent;
 
 varying vec2 vUv;
 
-#define NUM_LAYER 4.0
+#define NUM_LAYER ${Number(numLayers).toFixed(1)}
 #define STAR_COLOR_CUTOFF 0.2
 #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
 #define PERIOD 3.0
@@ -170,25 +170,29 @@ void main() {
 }
 `;
 
+const DEFAULT_FOCAL = [0.5, 0.5];
+const DEFAULT_ROTATION = [1.0, 0.0];
+
 export default function Galaxy({
-  focal = [0.5, 0.5],
-  rotation = [1.0, 0.0],
-  starSpeed = 0.5,
-  density = 1,
+  focal = DEFAULT_FOCAL,
+  rotation = DEFAULT_ROTATION,
+  starSpeed = 0.4,
+  density = 0.85,
   hueShift = 140,
   disableAnimation = false,
   speed = 1.0,
   mouseInteraction = true,
-  glowIntensity = 0.3,
+  glowIntensity = 0.25,
   saturation = 0.0,
   mouseRepulsion = true,
-  repulsionStrength = 2,
-  twinkleIntensity = 0.3,
-  rotationSpeed = 0.1,
+  repulsionStrength = 1.2,
+  twinkleIntensity = 0.25,
+  rotationSpeed = 0.05,
   autoCenterRepulsion = 0,
   transparent = true,
-  renderScale = 1,
-  maxFPS = 60,
+  renderScale = 0.6,
+  maxFPS = 45,
+  numLayers = 2.0,
   ...rest
 }) {
   const ctnDom = useRef(null);
@@ -202,7 +206,8 @@ export default function Galaxy({
     const ctn = ctnDom.current;
     const renderer = new Renderer({
       alpha: transparent,
-      premultipliedAlpha: false
+      premultipliedAlpha: false,
+      powerPreference: 'high-performance'
     });
     const gl = renderer.gl;
 
@@ -216,7 +221,7 @@ export default function Galaxy({
 
     let program;
     let isVisible = !document.hidden;
-    const safeRenderScale = Math.min(Math.max(renderScale, 0.4), 1);
+    const safeRenderScale = Math.min(Math.max(renderScale, 0.35), 0.75);
     const frameInterval = 1000 / Math.max(1, maxFPS);
     let lastFrameTime = 0;
 
@@ -237,14 +242,20 @@ export default function Galaxy({
       isVisible = !document.hidden;
     }
 
-    window.addEventListener('resize', resize, false);
+    const handleScroll = () => {
+      // Pause briefly during scroll so clicks & touch navigation are 100% instant
+      lastFrameTime = performance.now() + 60;
+    };
+
+    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
     resize();
 
     const geometry = new Triangle(gl);
     program = new Program(gl, {
       vertex: vertexShader,
-      fragment: fragmentShader,
+      fragment: createFragmentShader(numLayers),
       uniforms: {
         uTime: { value: 0 },
         uResolution: {
@@ -313,13 +324,14 @@ export default function Galaxy({
     }
 
     if (mouseInteraction) {
-      ctn.addEventListener('mousemove', handleMouseMove);
-      ctn.addEventListener('mouseleave', handleMouseLeave);
+      ctn.addEventListener('mousemove', handleMouseMove, { passive: true });
+      ctn.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     }
 
     return () => {
       cancelAnimationFrame(animateId);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (mouseInteraction) {
         ctn.removeEventListener('mousemove', handleMouseMove);
@@ -330,23 +342,12 @@ export default function Galaxy({
       }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    focal,
-    rotation,
-    starSpeed,
-    density,
-    hueShift,
     disableAnimation,
-    speed,
     mouseInteraction,
-    glowIntensity,
-    saturation,
-    mouseRepulsion,
-    twinkleIntensity,
-    rotationSpeed,
-    repulsionStrength,
-    autoCenterRepulsion,
     transparent,
+    numLayers,
     renderScale,
     maxFPS
   ]);

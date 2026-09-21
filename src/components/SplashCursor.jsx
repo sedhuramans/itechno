@@ -8,6 +8,7 @@ export default function TechNexusCursor() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     // Respect accessibility and touch devices
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -15,21 +16,32 @@ export default function TechNexusCursor() {
     if (prefersReducedMotion || isTouchDevice) return;
 
     let particles = [];
-    let animationFrameId;
+    let animationFrameId = null;
+    let isRunning = false;
     let mouse = { x: -1000, y: -1000 };
+    let lastSpawnTime = 0;
+    let lastSpawnPos = { x: -1000, y: -1000 };
+    let lastMouseMoveTime = 0;
     let rotation = 0;
 
-    // Luxury Tech Palette: Gold + Sapphire Blue + Diamond White
-    const colors = ['#D4AF37', '#F5D77F', '#3B82F6', '#60A5FA', '#FFFFFF'];
-    const maxParticles = 45; 
-    const connectionDistance = 85; 
+    // Precomputed Luxury Tech Palette RGBs
+    const palette = [
+      { hex: '#D4AF37', rgb: '212, 175, 55' },
+      { hex: '#F5D77F', rgb: '245, 215, 127' },
+      { hex: '#3B82F6', rgb: '59, 130, 246' },
+      { hex: '#60A5FA', rgb: '96, 165, 250' },
+      { hex: '#FFFFFF', rgb: '255, 255, 255' }
+    ];
+    const maxParticles = 14; 
+    const connectionDistance = 70; 
+    const connectionDistanceSq = connectionDistance * connectionDistance;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas, { passive: true });
     resizeCanvas();
 
     class NodeParticle {
@@ -37,16 +49,16 @@ export default function TechNexusCursor() {
         this.x = x;
         this.y = y;
         
-        // Slight drift
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 1.2 + 0.2;
+        const speed = Math.random() * 0.8 + 0.2;
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
         
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.size = Math.random() * 2 + 1.5; 
+        const c = palette[Math.floor(Math.random() * palette.length)];
+        this.rgb = c.rgb;
+        this.size = Math.random() * 1.5 + 1.2; 
         this.life = 1;
-        this.decay = Math.random() * 0.02 + 0.015;
+        this.decay = Math.random() * 0.035 + 0.025;
       }
 
       update() {
@@ -58,35 +70,58 @@ export default function TechNexusCursor() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.hexToRgb(this.color)}, ${this.life})`;
+        ctx.fillStyle = `rgba(${this.rgb}, ${this.life})`;
         ctx.fill();
       }
-
-      hexToRgb(hex) {
-        const bigint = parseInt(hex.replace('#', ''), 16);
-        const r = (bigint >> 16) & 255;
-        const g = (bigint >> 8) & 255;
-        const b = bigint & 255;
-        return `${r}, ${g}, ${b}`;
-      }
     }
+
+    const startAnimation = () => {
+      if (!isRunning) {
+        isRunning = true;
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    };
 
     const handlePointerMove = (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      const now = performance.now();
+      lastMouseMoveTime = now;
 
-      if (particles.length < maxParticles) {
-        const offsetX = (Math.random() - 0.5) * 15;
-        const offsetY = (Math.random() - 0.5) * 15;
+      const dx = mouse.x - lastSpawnPos.x;
+      const dy = mouse.y - lastSpawnPos.y;
+      const movedDistSq = dx * dx + dy * dy;
+
+      // Throttle particle creation to eliminate CPU lag and preserve instant button clicks
+      if (particles.length < maxParticles && (now - lastSpawnTime > 25 || movedDistSq > 140)) {
+        lastSpawnTime = now;
+        lastSpawnPos = { x: mouse.x, y: mouse.y };
+        const offsetX = (Math.random() - 0.5) * 8;
+        const offsetY = (Math.random() - 0.5) * 8;
         particles.push(new NodeParticle(mouse.x + offsetX, mouse.y + offsetY));
       }
+
+      startAnimation();
     };
 
-    window.addEventListener('pointermove', handlePointerMove);
+    const handlePointerLeave = () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener('pointerleave', handlePointerLeave, { passive: true });
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      // If idle and no particles left, pause RAF completely to free CPU/GPU for button clicks
+      const isMouseIdle = (performance.now() - lastMouseMoveTime) > 1500;
+      if (particles.length === 0 && (mouse.x === -1000 || isMouseIdle)) {
+        isRunning = false;
+        return;
+      }
+
       // Additive blending for luxury glow
       ctx.globalCompositeOperation = 'lighter';
 
@@ -95,40 +130,43 @@ export default function TechNexusCursor() {
         particles[i].update();
         particles[i].draw();
 
-        // Draw structural lines between nearby nodes
+        // Draw structural lines between nearby nodes (using fast distance-squared check)
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (distance < connectionDistance) {
+          if (distSq < connectionDistanceSq) {
+            const distance = Math.sqrt(distSq);
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             
             const opacity = (1 - (distance / connectionDistance)) * Math.min(particles[i].life, particles[j].life);
-            // Alternating sapphire and gold connecting lines
             ctx.strokeStyle = i % 2 === 0
-              ? `rgba(59, 130, 246, ${opacity * 0.75})`
-              : `rgba(212, 175, 55, ${opacity * 0.75})`; 
+              ? `rgba(59, 130, 246, ${opacity * 0.7})`
+              : `rgba(212, 175, 55, ${opacity * 0.7})`; 
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
 
         // Draw lines from the tail nodes directly to the active cursor head
-        const mouseDx = particles[i].x - mouse.x;
-        const mouseDy = particles[i].y - mouse.y;
-        const mouseDistance = Math.sqrt(mouseDx * mouseDx + mouseDy * mouseDy);
-        
-        if (mouseDistance < connectionDistance && mouse.x !== -1000) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          const mouseOpacity = (1 - (mouseDistance / connectionDistance)) * particles[i].life;
-          ctx.strokeStyle = `rgba(245, 215, 127, ${mouseOpacity * 0.85})`; 
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
+        if (mouse.x !== -1000) {
+          const mouseDx = particles[i].x - mouse.x;
+          const mouseDy = particles[i].y - mouse.y;
+          const mouseDistSq = mouseDx * mouseDx + mouseDy * mouseDy;
+          
+          if (mouseDistSq < connectionDistanceSq) {
+            const mouseDistance = Math.sqrt(mouseDistSq);
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            const mouseOpacity = (1 - (mouseDistance / connectionDistance)) * particles[i].life;
+            ctx.strokeStyle = `rgba(245, 215, 127, ${mouseOpacity * 0.8})`; 
+            ctx.lineWidth = 1.1;
+            ctx.stroke();
+          }
         }
 
         // Remove dead particles
@@ -150,7 +188,7 @@ export default function TechNexusCursor() {
         // Outer dashed tech ring (Metallic Imperial Gold)
         ctx.beginPath();
         ctx.arc(0, 0, 16, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(212, 175, 55, 0.95)';
+        ctx.strokeStyle = 'rgba(212, 175, 55, 0.9)';
         ctx.lineWidth = 1.5;
         ctx.setLineDash([4, 5]); 
         ctx.stroke();
@@ -159,8 +197,8 @@ export default function TechNexusCursor() {
         // Inner solid ring (Electric Sapphire Blue)
         ctx.beginPath();
         ctx.arc(0, 0, 7.5, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(59, 130, 246, 1)';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = 'rgba(59, 130, 246, 0.95)';
+        ctx.lineWidth = 1.8;
         ctx.stroke();
 
         // Diamond White core target dot
@@ -175,12 +213,15 @@ export default function TechNexusCursor() {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    startAnimation();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('pointermove', handlePointerMove);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('pointerleave', handlePointerLeave);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
@@ -194,7 +235,7 @@ export default function TechNexusCursor() {
         width: '100vw',
         height: '100vh',
         pointerEvents: 'none',
-        zIndex: 50,
+        zIndex: 40,
       }}
     />
   );

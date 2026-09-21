@@ -148,7 +148,7 @@ export default function EventsPage() {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-orbitron text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-300 ${
+              className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-orbitron text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-150 touch-manipulation active:scale-95 ${
                 selectedCategory === cat.id
                   ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
                   : "bg-[#05070e]/80 text-slate-300 border border-yellow-500/20 hover:border-yellow-400/50 hover:text-yellow-300"
@@ -282,7 +282,7 @@ export default function EventsPage() {
                 <div className="pt-4 border-t border-yellow-500/20 flex items-center justify-between gap-2 xs:gap-3">
                   <button
                     onClick={() => setActiveModalEvent(event)}
-                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl border-2 border-yellow-400/70 bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-400/20 hover:to-blue-600/20 text-yellow-300 hover:text-yellow-200 text-[11px] xs:text-xs font-orbitron font-semibold transition-all duration-300 flex items-center justify-center gap-1 xs:gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95 whitespace-nowrap"
+                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl border-2 border-yellow-400/70 bg-gradient-to-r from-yellow-950/40 to-blue-950/40 hover:from-yellow-400/20 hover:to-blue-600/20 text-yellow-300 hover:text-yellow-200 text-[11px] xs:text-xs font-orbitron font-semibold transition-all duration-150 flex items-center justify-center gap-1 xs:gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95 whitespace-nowrap touch-manipulation"
                   >
                     <BookOpen className="w-3.5 h-3.5 shrink-0" />
                     <span>RULES & INFO</span>
@@ -292,7 +292,7 @@ export default function EventsPage() {
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black text-[11px] xs:text-xs font-orbitron font-bold shadow-[0_0_18px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-300 flex items-center justify-center gap-1 xs:gap-1.5 hover:scale-105 active:scale-95 overflow-hidden relative group whitespace-nowrap"
+                    className="flex-1 py-2.5 px-2 xs:px-3 rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 text-black text-[11px] xs:text-xs font-orbitron font-bold shadow-[0_0_18px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-150 flex items-center justify-center gap-1 xs:gap-1.5 hover:scale-105 active:scale-95 overflow-hidden relative group whitespace-nowrap touch-manipulation"
                   >
                     <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 pointer-events-none" />
                     <span>REGISTER</span>

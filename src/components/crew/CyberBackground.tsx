@@ -11,6 +11,9 @@ export const CyberBackground: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
+    if (isTouchDevice) return;
+
     let animationFrameId: number;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -21,7 +24,7 @@ export const CyberBackground: React.FC = () => {
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
 
     // Particle nodes for subtle cyber network
     interface Particle {
@@ -35,15 +38,18 @@ export const CyberBackground: React.FC = () => {
     }
 
     const colors = ["#00f0ff", "#3b82f6", "#8b5cf6", "#d4af37"];
-    const particles: Particle[] = Array.from({ length: 45 }, () => ({
+    const particles: Particle[] = Array.from({ length: 18 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      size: Math.random() * 2 + 1,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 1.8 + 1,
       color: colors[Math.floor(Math.random() * colors.length)],
-      alpha: Math.random() * 0.4 + 0.1,
+      alpha: Math.random() * 0.35 + 0.1,
     }));
+
+    const maxDist = 110;
+    const maxDistSq = maxDist * maxDist;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
@@ -70,14 +76,15 @@ export const CyberBackground: React.FC = () => {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < 120) {
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = p.color;
-            ctx.globalAlpha = (1 - dist / 120) * 0.12;
+            ctx.globalAlpha = (1 - dist / maxDist) * 0.12;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
@@ -85,10 +92,19 @@ export const CyberBackground: React.FC = () => {
       }
 
       ctx.globalAlpha = 1.0;
-      animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    const frameInterval = 1000 / 30; // Smooth 30 FPS saves massive GPU cycles for button clicks
+    let lastTime = 0;
+
+    const loop = (currentTime: number) => {
+      animationFrameId = requestAnimationFrame(loop);
+      if (currentTime - lastTime < frameInterval) return;
+      lastTime = currentTime;
+      render();
+    };
+
+    animationFrameId = requestAnimationFrame(loop);
 
     return () => {
       window.removeEventListener("resize", handleResize);

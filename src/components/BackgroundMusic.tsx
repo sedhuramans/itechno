@@ -6,10 +6,11 @@ import { Volume2, VolumeX } from "lucide-react";
 export default function BackgroundMusic() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [userInteracted, setUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const wasPlayingBeforeHidden = useRef(false);
   const MUSIC_VOLUME = 0.35;
+
+  const userInteractedRef = useRef(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -20,36 +21,40 @@ export default function BackgroundMusic() {
 
     // Auto-start on first user interaction anywhere on the document (Chrome autoplay policy)
     const handleFirstInteraction = () => {
-      if (userInteracted) return;
-      setUserInteracted(true);
+      if (userInteractedRef.current) return;
+      userInteractedRef.current = true;
 
-      if (audioRef.current && !isPlaying) {
-        audioRef.current.volume = MUSIC_VOLUME;
-        audioRef.current
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {
-            // Autoplay blocked by browser policy until button is clicked
-          });
-      }
+      // Decouple audio playback so the user's clicked button registers with 0ms latency
+      setTimeout(() => {
+        if (audioRef.current && !isPlaying) {
+          audioRef.current.volume = MUSIC_VOLUME;
+          audioRef.current
+            .play()
+            .then(() => {
+              setIsPlaying(true);
+            })
+            .catch(() => {
+              // Autoplay blocked by browser policy until button is clicked
+            });
+        }
+      }, 0);
 
       window.removeEventListener("click", handleFirstInteraction);
       window.removeEventListener("touchstart", handleFirstInteraction);
       window.removeEventListener("keydown", handleFirstInteraction);
     };
 
-    window.addEventListener("click", handleFirstInteraction, { once: true });
-    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
-    window.addEventListener("keydown", handleFirstInteraction, { once: true });
+    window.addEventListener("click", handleFirstInteraction, { once: true, passive: true });
+    window.addEventListener("touchstart", handleFirstInteraction, { once: true, passive: true });
+    window.addEventListener("keydown", handleFirstInteraction, { once: true, passive: true });
 
     return () => {
       window.removeEventListener("click", handleFirstInteraction);
       window.removeEventListener("touchstart", handleFirstInteraction);
       window.removeEventListener("keydown", handleFirstInteraction);
     };
-  }, [userInteracted, isPlaying]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Pause only when tab is genuinely hidden/backgrounded, and resume when returning
   useEffect(() => {

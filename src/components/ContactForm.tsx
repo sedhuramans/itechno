@@ -416,7 +416,7 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-4 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black font-kodeMono font-bold text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.2em] uppercase rounded-xl hover:from-yellow-300 hover:to-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center gap-2 sm:gap-3 group"
+                className="w-full px-4 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 text-black font-kodeMono font-bold text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.2em] uppercase rounded-xl hover:from-yellow-300 hover:to-blue-500 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-150 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center gap-2 sm:gap-3 group touch-manipulation"
               >
                 <Send size={18} className="group-hover:translate-x-1 transition-transform text-black shrink-0" />
                 <span>{loading ? 'SENDING...' : 'TRANSMIT INQUIRY'}</span>
