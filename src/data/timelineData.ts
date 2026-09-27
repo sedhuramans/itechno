@@ -16,11 +16,11 @@ interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
-    title: "September 29, 2026 - Takshashila University, Ongur, Tamil Nadu, India",
+    title: "October 8, 2026 - Takshashila University, Ongur, Tamil Nadu, India",
     events: [
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Welcome & Registration",
         startTime: "09:30 AM",
         endTime: "09:40 AM",
@@ -29,8 +29,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Welcome Speech",
         startTime: "09:40 AM",
         endTime: "09:50 AM",
@@ -39,8 +39,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Introduction of Event & Organizing Team",
         startTime: "09:50 AM",
         endTime: "10:00 AM",
@@ -49,8 +49,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Event Competitions",
         startTime: "10:00 AM",
         endTime: "Onwards",
@@ -59,8 +59,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Winners & Prize Distribution",
         startTime: "Final 30 Mins",
         endTime: "",
@@ -69,8 +69,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Vote of Thanks / Thank You Note",
         startTime: "Closing",
         endTime: "",
@@ -79,8 +79,8 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 29,
-        month: 8,
+        date: 8,
+        month: 9,
         title: "Event Closing",
         startTime: "Official Conclusion",
         endTime: "",

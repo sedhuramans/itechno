@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3 mb-6 text-sm text-slate-200 font-kodeMono">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <span>Date: September 29, 2026</span>
+                <span>Date: October 8, 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />

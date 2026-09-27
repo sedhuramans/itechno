@@ -196,7 +196,7 @@ export default function EventsPage() {
                 {/* Date Pill */}
                 <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-kodeMono font-semibold text-blue-300 bg-slate-950/80 backdrop-blur-md border border-blue-500/40">
                   <Calendar className="w-3 h-3 text-blue-400" />
-                  <span>SEP 29</span>
+                  <span>OCT 8</span>
                 </div>
               </div>
 
@@ -262,7 +262,7 @@ export default function EventsPage() {
                       <Clock className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
                       <div>
                         <div className="text-yellow-300 font-bold font-orbitron text-xs">
-                          Online Deadline: Sep 28, 5:30 PM
+                          Online Deadline: Oct 7, 5:30 PM
                         </div>
                         <div className="text-[11px] text-cyan-300 font-spaceGrotesk mt-0.5">
                           On-the-spot registration available at venue
@@ -368,7 +368,7 @@ export default function EventsPage() {
                 </div>
                 <div>
                   <h4 className="text-yellow-300 font-bold font-orbitron text-sm">
-                    Online Deadline: Sep 28, 5:30 PM
+                    Online Deadline: Oct 7, 5:30 PM
                   </h4>
                   <p className="text-cyan-300 text-xs font-spaceGrotesk mt-0.5">
                     On-the-spot registration available at venue
@@ -515,7 +515,7 @@ export default function EventsPage() {
                     </span>
                   ) : (
                     <span>
-                      Online closes <strong className="text-yellow-300">Sep 28, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
+                      Online closes <strong className="text-yellow-300">Oct 7, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
                     </span>
                   )}
                 </div>

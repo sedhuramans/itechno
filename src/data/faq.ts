@@ -43,7 +43,7 @@ export const generalGuidelines: FAQItem[] = [
     id: "g1",
     category: "General Rules",
     question: "1. Registration Requirement & Deadlines",
-    answer: "Online registration will close on September 28, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on event day (September 29). Participants must register to secure entry to Itechno '26 arenas."
+    answer: "Online registration will close on October 7, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on event day (October 8). Participants must register to secure entry to Itechno '26 arenas."
   },
   {
     id: "g2",
@@ -136,13 +136,13 @@ export const faqData: FAQItem[] = [
     id: "f-deadline",
     category: "Registration",
     question: "When does registration close?",
-    answer: "Online registration closes on September 28, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on the event day (September 29, 2026)."
+    answer: "Online registration closes on October 7, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on the event day (October 8, 2026)."
   },
   {
     id: "f5",
     category: "Venue & Dates",
     question: "When and where is the event being held?",
-    answer: "Itechno '26 takes place on September 29, 2026, at Takshashila University, Ongur, Tamil Nadu, India."
+    answer: "Itechno '26 takes place on October 8, 2026, at Takshashila University, Ongur, Tamil Nadu, India."
   },
   {
     id: "f6",

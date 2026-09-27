@@ -61,9 +61,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Completion of Requirements',
       'Overall Presentation'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdtDyHXACFhfzvkwO6h03Y2BWVb12XgAnZzHUbQaGTFP5-jGw/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'hackathon'
   },
   {
@@ -85,7 +85,7 @@ export const ItechnoEventsData: EventDataType[] = [
       '💰 Payment: ₹100 per head. Each participant in the team needs to pay ₹100.',
       'Team Size: Duo / Exactly 2 members per team.',
       'Type: Debugging Challenge.',
-      'Registration Deadline: Online registration closes on September 28 at 5:30 PM. On-the-spot registration will be available at the venue.',
+      'Registration Deadline: Online registration closes on October 7 at 5:30 PM. On-the-spot registration will be available at the venue.',
       'The code will be provided by the organizing team.',
       'Challenges include syntax errors, logical errors, runtime errors, incorrect outputs and programming mistakes.',
       'Participants must identify and fix the errors in the given code within the time limit.',
@@ -102,9 +102,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Time',
       'Understanding of the code'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfx_cXPy8fNZ1QjNQMCyzIvyRAsPIVtxoV121simOH48UXyIg/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'coding'
   },
   {
@@ -140,9 +140,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Speed and accuracy of answering.',
       'Overall quiz score.'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSd5vqaU1TjBIaYGZxvoyQVc-6DV8psQLkvGZzp3iP04I3Z8wg/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'quiz'
   },
   {
@@ -182,9 +182,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Examples/applications',
       'Time management'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeg7kektQ7Bx9jTm7i4K82X9PVlVX5RQo1JJU-JuKuVWDapZg/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'speaking'
   },
   {
@@ -220,9 +220,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Number of correct answers',
       'Overall score'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdbBykt_4W-Cw6GFwjQRfEVq05eFtkRhichjhu5CJlIFFyv1w/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'puzzle'
   },
   {
@@ -261,9 +261,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Survival',
       'Overall performance'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLScAROp9TMLJKrZKDyzztB_60_gzqt8bu0D1K42czB9A5xNaBw/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'gaming'
   },
   {
@@ -302,9 +302,9 @@ export const ItechnoEventsData: EventDataType[] = [
       'Visual/Audio Quality',
       'Overall Impact'
     ],
-    lastDate: 'Online Closes: Sep 28, 5:30 PM (On-Spot Available)',
+    lastDate: 'Online Closes: Oct 7, 5:30 PM (On-Spot Available)',
     registrationLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfYeljvECdOk0XHuHZctj9foN52xrKBPA7HhbUBrBQHk2OVcg/viewform?usp=dialog',
-    eventDate: 'September 29, 2026',
+    eventDate: 'October 8, 2026',
     type: 'media'
   }
 ];
