@@ -257,6 +257,19 @@ export default function EventsPage() {
                       </div>
                     )}
 
+                    {/* Multiple Event Registration Notice (Pictonary, Codeathon, Word Battle, Tech Battle, Viral Minds) */}
+                    {['pictionary', 'codeathon', 'word-battle', 'tech-battle', 'reel-creation'].includes(event.id) && (
+                      <div className="flex items-start gap-2 p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-[11px] font-spaceGrotesk text-cyan-200">
+                        <span className="shrink-0 text-sm leading-none">✨</span>
+                        <div>
+                          <span className="text-cyan-300 font-bold font-orbitron text-[10px] uppercase block">
+                            Multiple Event Registration:
+                          </span>
+                          <span>You can register for up to 3 events. Make one payment for your selected events and use the same payment screenshot for all registrations.</span>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Registration Deadline Row */}
                     <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-gradient-to-r from-yellow-950/40 to-slate-950/70 border border-yellow-500/30 shadow-[0_0_12px_rgba(234,179,8,0.1)]">
                       <Clock className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
@@ -420,6 +433,31 @@ export default function EventsPage() {
                     <p className="text-cyan-200/90 text-xs">
                       <strong>Exclusivity Rule:</strong> Hackverse participants can participate <strong className="text-white">ONLY in Hackverse</strong> and cannot participate in any other event.
                     </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Multiple Event Registration & Combined Payment Banner (Pictonary, Codeathon, Word Battle, Tech Battle, Viral Minds) */}
+            {['pictionary', 'codeathon', 'word-battle', 'tech-battle', 'reel-creation'].includes(activeModalEvent.id) && (
+              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/70 via-cyan-950/30 to-slate-950/90 border-2 border-emerald-500/50 shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/50 flex items-center justify-center text-2xl shrink-0">
+                    💳
+                  </div>
+                  <div className="space-y-2 text-xs sm:text-sm font-spaceGrotesk text-slate-200">
+                    <h5 className="font-orbitron font-bold text-emerald-300 text-sm sm:text-base uppercase tracking-wider">
+                      MULTIPLE EVENT REGISTRATION & PAYMENT
+                    </h5>
+                    <p className="leading-relaxed font-semibold text-white">
+                      “You can register for up to 3 events. Make one payment for your selected events and use the same payment screenshot for all registrations.”
+                    </p>
+                    <ul className="text-slate-300 text-xs space-y-1 list-disc list-inside">
+                      <li>This rule applies <strong>ONLY to Pictonary • Codeathon • Word Battle • Tech Battle • Viral Minds</strong>.</li>
+                      <li>You can register for up to 3 of these events.</li>
+                      <li>Make <strong>one combined payment</strong> for your selected events (no need to make separate payments for each event).</li>
+                      <li>Use the <strong>same payment screenshot</strong> for all of your selected event registrations.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
