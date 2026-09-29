@@ -90,7 +90,7 @@ const LandingSection = () => {
         >
           <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-yellow-500/40 bg-gradient-to-r from-yellow-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
             <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0" />
-            <span className="text-yellow-200 whitespace-nowrap">DATE: OCT 8, 2026</span>
+            <span className="text-yellow-200 whitespace-nowrap">DATE: OCT 9, 2026</span>
           </div>
 
           <div className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-blue-500/40 bg-gradient-to-r from-blue-950/40 to-slate-950/80 shadow-[0_0_15px_rgba(59,130,246,0.2)] max-w-full text-center sm:text-left">
@@ -110,7 +110,7 @@ const LandingSection = () => {
           className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2 max-w-full px-2"
         >
           <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)] max-w-full leading-relaxed">
-            ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Oct 7, 5:30 PM</strong> • On-the-spot registration available at venue
+            ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Oct 8, 5:30 PM</strong> • On-the-spot registration available at venue
           </span>
         </motion.div>
 

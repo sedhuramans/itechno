@@ -16,10 +16,10 @@ interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
-    title: "October 8, 2026 - Takshashila University, Ongur, Tamil Nadu, India",
+    title: "October 9, 2026 - Takshashila University, Ongur, Tamil Nadu, India",
     events: [
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Welcome & Registration",
         startTime: "09:30 AM",
@@ -29,7 +29,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Welcome Speech",
         startTime: "09:40 AM",
@@ -39,7 +39,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Introduction of Event & Organizing Team",
         startTime: "09:50 AM",
@@ -49,7 +49,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Event Competitions",
         startTime: "10:00 AM",
@@ -59,7 +59,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Winners & Prize Distribution",
         startTime: "Final 30 Mins",
@@ -69,7 +69,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Vote of Thanks / Thank You Note",
         startTime: "Closing",
@@ -79,7 +79,7 @@ export const timelineData: TimelineEntry[] = [
         venue: "Takshashila University, Ongur, Tamil Nadu, India"
       },
       {
-        date: 8,
+        date: 9,
         month: 9,
         title: "Event Closing",
         startTime: "Official Conclusion",
