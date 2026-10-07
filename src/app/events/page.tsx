@@ -428,7 +428,7 @@ export default function EventsPage() {
                       TEAM FORMAT & PARTICIPATION DETAILS
                     </h5>
                     <p className="leading-relaxed">
-                      <strong>Team is optional:</strong> Participants can participate individually (solo) or as a team of 2–3 members.
+                      <strong>Team is optional:</strong> Participants can participate individually (solo) or as a team of 2 members (1 or 2 participants).
                     </p>
                     <p className="text-cyan-200/90 text-xs">
                       <strong>Exclusivity Rule:</strong> Hackverse participants can participate <strong className="text-white">ONLY in Hackverse</strong> and cannot participate in any other event.
