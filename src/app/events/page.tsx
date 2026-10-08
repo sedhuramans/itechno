@@ -275,7 +275,7 @@ export default function EventsPage() {
                       <Clock className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
                       <div>
                         <div className="text-yellow-300 font-bold font-orbitron text-xs">
-                          Online Deadline: Oct 8, 5:30 PM
+                          Online Deadline: Oct 9, 8:00 AM (Morning)
                         </div>
                         <div className="text-[11px] text-cyan-300 font-spaceGrotesk mt-0.5">
                           On-the-spot registration available at venue
@@ -381,7 +381,7 @@ export default function EventsPage() {
                 </div>
                 <div>
                   <h4 className="text-yellow-300 font-bold font-orbitron text-sm">
-                    Online Deadline: Oct 8, 5:30 PM
+                    Online Deadline: Oct 9, 8:00 AM (Morning)
                   </h4>
                   <p className="text-cyan-300 text-xs font-spaceGrotesk mt-0.5">
                     On-the-spot registration available at venue
@@ -553,7 +553,7 @@ export default function EventsPage() {
                     </span>
                   ) : (
                     <span>
-                      Online closes <strong className="text-yellow-300">Oct 8, 5:30 PM</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
+                      Online closes <strong className="text-yellow-300">Oct 9, 8:00 AM (Morning)</strong> • <span className="text-cyan-300">On-the-spot registration available at venue</span>
                     </span>
                   )}
                 </div>

@@ -43,7 +43,7 @@ export const generalGuidelines: FAQItem[] = [
     id: "g1",
     category: "General Rules",
     question: "1. Registration Requirement & Deadlines",
-    answer: "Online registration will close on October 8, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on event day (October 9). Participants must register to secure entry to Itechno '26 arenas."
+    answer: "Online registration will close on October 9, 2026 at 8:00 AM (Morning). On-the-spot registration will also be available directly at the venue on event day (October 9). Participants must register to secure entry to Itechno '26 arenas."
   },
   {
     id: "g2",
@@ -136,7 +136,7 @@ export const faqData: FAQItem[] = [
     id: "f-deadline",
     category: "Registration",
     question: "When does registration close?",
-    answer: "Online registration closes on October 8, 2026 at 5:30 PM. On-the-spot registration will also be available directly at the venue on the event day (October 9, 2026)."
+    answer: "Online registration closes on October 9, 2026 at 8:00 AM (Morning). On-the-spot registration will also be available directly at the venue on the event day (October 9, 2026)."
   },
   {
     id: "f5",

@@ -110,7 +110,7 @@ const LandingSection = () => {
           className="mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2 max-w-full px-2"
         >
           <span className="inline-block text-[11px] sm:text-xs font-spaceGrotesk text-slate-300 bg-black/40 px-3.5 py-1.5 rounded-2xl sm:rounded-full border border-yellow-500/30 shadow-[0_0_10px_rgba(212,175,55,0.15)] max-w-full leading-relaxed">
-            ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Oct 8, 5:30 PM</strong> • On-the-spot registration available at venue
+            ⏳ <strong className="text-yellow-400">Online Reg. Deadline: Oct 9, 8:00 AM (Morning)</strong> • On-the-spot registration available at venue
           </span>
         </motion.div>
 
@@ -140,6 +140,12 @@ const LandingSection = () => {
           className="mb-10 sm:mb-16 p-0.5 sm:p-1 rounded-2xl w-full max-w-4xl bg-gradient-to-r from-yellow-500/30 via-blue-500/35 to-yellow-500/30 shadow-[0_0_50px_rgba(0,0,0,0.9)]"
         >
           <div className="bg-[#05070e]/90 backdrop-blur-2xl rounded-xl p-2 xs:p-3 sm:p-6 border border-white/5">
+            <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-orbitron font-bold tracking-[0.2em] text-yellow-300 uppercase">
+                Online Registration Countdown • Closes Oct 9 Morning
+              </span>
+            </div>
             <CountdownTimer />
           </div>
         </motion.div>
