@@ -57,7 +57,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
+    default: "ITECHNO 2026 | Official Memories & Highlights",
     template: "%s | ITECHNO 2026 Memories",
   },
   description:
@@ -68,7 +68,6 @@ export const metadata: Metadata = {
     "itechno memories",
     "takshashila university",
     "takshashila symposium",
-    "hall of fame",
     "event photos",
     "aftermovie",
     "hackverse",
@@ -93,7 +92,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
+    title: "ITECHNO 2026 | Official Memories & Highlights",
     type: "website",
     siteName: "ITECHNO 2026 Memories",
     url: "https://itechno.takshashilauniv.ac.in/",
@@ -103,7 +102,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
+    title: "ITECHNO 2026 | Official Memories & Highlights",
     description:
       "Relive ITECHNO 2026 at Takshashila University through event photographs, competition highlights, memorable moments, and the people who made it special.",
   },

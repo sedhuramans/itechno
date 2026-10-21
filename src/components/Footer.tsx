@@ -71,9 +71,6 @@ const Footer: React.FC = () => {
               <Link href="/#videos" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Video Memories
               </Link>
-              <Link href="/#hall-of-fame" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Hall of Fame &amp; Winners
-              </Link>
               <Link href="/#journey" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Event Timeline
               </Link>

@@ -6,10 +6,8 @@ import Link from "next/link";
 import {
   OFFICIAL_MEMORIES,
   OFFICIAL_VIDEOS,
-  HALL_OF_FAME_DATA,
   INITIAL_MEMORY_SUBMISSIONS,
   MemoryItem,
-  WinnerRecord,
   MemorySubmission
 } from "@/data/memories-data";
 import {
@@ -17,7 +15,6 @@ import {
   Shield,
   Upload,
   FolderOpen,
-  Trophy,
   Film,
   CheckCircle2,
   ExternalLink,
@@ -30,11 +27,10 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
-  const [activeTab, setActiveTab] = useState<"media" | "videos" | "winners" | "moderation" | "import">("media");
+  const [activeTab, setActiveTab] = useState<"media" | "videos" | "moderation" | "import">("media");
 
   // State for editable data
   const [memories, setMemories] = useState<MemoryItem[]>(OFFICIAL_MEMORIES);
-  const [winners, setWinners] = useState<WinnerRecord[]>(HALL_OF_FAME_DATA);
   const [submissions, setSubmissions] = useState<MemorySubmission[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [saveNotification, setSaveNotification] = useState("");
@@ -81,24 +77,6 @@ export default function AdminPage() {
       prev.map((m) => (m.id === id ? { ...m, featured: !m.featured } : m))
     );
     showNotice("Featured status updated!");
-  };
-
-  const updateWinner = (id: string, field: "firstPlace" | "secondPlace", subField: string, value: string) => {
-    setWinners((prev) =>
-      prev.map((w) => {
-        if (w.id === id) {
-          return {
-            ...w,
-            [field]: {
-              ...w[field],
-              [subField]: value
-            }
-          };
-        }
-        return w;
-      })
-    );
-    showNotice("Winner record updated!");
   };
 
   const moderateSubmission = (id: string, status: "approved" | "rejected") => {
@@ -242,18 +220,6 @@ export default function AdminPage() {
           </button>
 
           <button
-            onClick={() => setActiveTab("winners")}
-            className={`px-4 py-2 rounded-xl text-xs font-orbitron flex items-center gap-2 transition-all ${
-              activeTab === "winners"
-                ? "bg-yellow-400 text-black font-bold shadow-md"
-                : "bg-white/5 text-slate-300 hover:bg-white/10"
-            }`}
-          >
-            <Trophy className="w-3.5 h-3.5" />
-            <span>Hall of Fame &amp; Winners</span>
-          </button>
-
-          <button
             onClick={() => setActiveTab("moderation")}
             className={`px-4 py-2 rounded-xl text-xs font-orbitron flex items-center gap-2 transition-all ${
               activeTab === "moderation"
@@ -390,113 +356,6 @@ export default function AdminPage() {
                       <span>Test Embed Link</span>
                     </a>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* TAB 3: WINNERS & HALL OF FAME EDITOR */}
-        {activeTab === "winners" && (
-          <div className="space-y-6">
-            <p className="text-xs font-kodeMono text-slate-400 mb-4">
-              Edit competition 1st place and 2nd place winner information directly. Changes take effect across the live website.
-            </p>
-
-            <div className="space-y-6">
-              {winners.map((record) => (
-                <div
-                  key={record.id}
-                  className="p-6 rounded-2xl bg-[#050814] border border-white/10 space-y-4"
-                >
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <div>
-                      <span className="text-[10px] font-kodeMono uppercase font-bold text-yellow-400">
-                        {record.category}
-                      </span>
-                      <h3 className="text-lg font-orbitron font-black text-white">
-                        {record.eventTitle}
-                      </h3>
-                    </div>
-                    <span className="text-xs font-kodeMono text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-md border border-emerald-500/30">
-                      Prize Pool: {record.prizePool}
-                    </span>
-                  </div>
-
-                  {/* 1st Place Inputs */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 rounded-xl bg-yellow-950/20 border border-yellow-500/30">
-                    <div>
-                      <label className="block text-[10px] font-orbitron text-yellow-300 mb-1">
-                        1st Place Team Name
-                      </label>
-                      <input
-                        type="text"
-                        value={record.firstPlace.teamName || ""}
-                        onChange={(e) =>
-                          updateWinner(record.id, "firstPlace", "teamName", e.target.value)
-                        }
-                        className="w-full px-3 py-1.5 rounded-lg bg-black/60 border border-white/20 text-xs text-white"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[10px] font-orbitron text-yellow-300 mb-1">
-                        1st Place College / Institution
-                      </label>
-                      <input
-                        type="text"
-                        value={record.firstPlace.college || ""}
-                        onChange={(e) =>
-                          updateWinner(record.id, "firstPlace", "college", e.target.value)
-                        }
-                        className="w-full px-3 py-1.5 rounded-lg bg-black/60 border border-white/20 text-xs text-white"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[10px] font-orbitron text-yellow-300 mb-1">
-                        Award / Prize Details
-                      </label>
-                      <input
-                        type="text"
-                        value={record.firstPlace.prize || ""}
-                        onChange={(e) =>
-                          updateWinner(record.id, "firstPlace", "prize", e.target.value)
-                        }
-                        className="w-full px-3 py-1.5 rounded-lg bg-black/60 border border-white/20 text-xs text-white"
-                      />
-                    </div>
-                  </div>
-
-                  {/* 2nd Place Inputs */}
-                  {record.secondPlace && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-xl bg-slate-900/40 border border-white/10">
-                      <div>
-                        <label className="block text-[10px] font-orbitron text-slate-300 mb-1">
-                          2nd Place Runner-Up Team
-                        </label>
-                        <input
-                          type="text"
-                          value={record.secondPlace.teamName || ""}
-                          onChange={(e) =>
-                            updateWinner(record.id, "secondPlace", "teamName", e.target.value)
-                          }
-                          className="w-full px-3 py-1.5 rounded-lg bg-black/60 border border-white/20 text-xs text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[10px] font-orbitron text-slate-300 mb-1">
-                          2nd Place College
-                        </label>
-                        <input
-                          type="text"
-                          value={record.secondPlace.college || ""}
-                          onChange={(e) =>
-                            updateWinner(record.id, "secondPlace", "college", e.target.value)
-                          }
-                          className="w-full px-3 py-1.5 rounded-lg bg-black/60 border border-white/20 text-xs text-white"
-                        />
-                      </div>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

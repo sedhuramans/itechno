@@ -2,7 +2,6 @@ import React from "react";
 import { CinematicHero } from "@/components/home/CinematicHero";
 import { EventMemoriesGallery } from "@/components/gallery/EventMemoriesGallery";
 import { VideoMemoriesSection } from "@/components/videos/VideoMemoriesSection";
-import { HallOfFameSection } from "@/components/hall-of-fame/HallOfFameSection";
 import { EventJourneyTimeline } from "@/components/timeline/EventJourneyTimeline";
 import { PeopleAppreciationSection } from "@/components/people/PeopleAppreciationSection";
 import { MemoryWallSection } from "@/components/memory-wall/MemoryWallSection";
@@ -10,7 +9,7 @@ import { NextYearTeaser } from "@/components/next-year/NextYearTeaser";
 import HomeContactSection from "@/components/home/HomeContactSection";
 
 export const metadata = {
-  title: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
+  title: "ITECHNO 2026 | Official Memories & Highlights",
   description:
     "Relive ITECHNO 2026 at Takshashila University through event photographs, competition highlights, memorable moments, and the people who made it special.",
 };
@@ -34,11 +33,6 @@ const Home = () => {
       {/* 3. VIDEO MEMORIES & AFTERMOVIE (EXCITEMENT) */}
       <section id="videos">
         <VideoMemoriesSection />
-      </section>
-
-      {/* 4. WINNERS & ACHIEVEMENTS (ACHIEVEMENTS) */}
-      <section id="hall-of-fame">
-        <HallOfFameSection />
       </section>
 
       {/* 5. EVENT JOURNEY TIMELINE (THE JOURNEY) */}
