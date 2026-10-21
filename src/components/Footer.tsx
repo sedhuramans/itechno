@@ -1,4 +1,4 @@
-import { MapPin, Sparkles, ExternalLink, Calendar, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Calendar, Mail, MessageCircle, Heart, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-6">
-              The premier Inter-College Technical Festival hosted at Takshashila University. Experience competitive web development, debugging, tech quizzes, visual puzzles, gaming squad matches, and VIRAL MINDS.
+              The official digital archive of ITECHNO 2026. Preserving the memories, victories, people, and unforgettable moments of Takshashila University&apos;s premier technical symposium.
             </p>
 
             <div className="flex flex-col items-center md:items-start gap-2">
@@ -56,29 +56,35 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Middle: Navigation & Registration */}
+          {/* Middle: Navigation */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-blue-400 font-orbitron tracking-widest text-lg font-bold mb-6">
-              NAVIGATION
+              MEMORIES ARCHIVE
             </h3>
             <div className="flex flex-col space-y-3 text-sm font-kodeMono">
               <Link href="/#home" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Home
-              </Link>
-              <Link href="/events" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Events
+                • Home Archive
               </Link>
               <Link href="/gallery" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 • Event Gallery
               </Link>
+              <Link href="/#videos" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • Video Memories
+              </Link>
+              <Link href="/#hall-of-fame" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • Hall of Fame &amp; Winners
+              </Link>
+              <Link href="/#journey" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • Event Timeline
+              </Link>
               <Link href="/teams" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Event Crew
+                • Our Team &amp; Crew
               </Link>
-              <Link href="/faq" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • FAQ & Guidelines
+              <Link href="/#memory-wall" className="text-slate-300 hover:text-yellow-300 transition-colors">
+                • The Memory Wall
               </Link>
-              <Link href="/contact" className="text-slate-300 hover:text-yellow-300 transition-colors">
-                • Contact Us
+              <Link href="/admin" className="text-slate-400 hover:text-yellow-300 transition-colors flex items-center gap-1">
+                • <Lock className="w-3 h-3" /> Organizer Portal
               </Link>
             </div>
           </div>
@@ -86,12 +92,12 @@ const Footer: React.FC = () => {
           {/* Right: Venue & Event Info */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-blue-400 font-orbitron tracking-widest text-lg font-bold mb-6">
-              EVENT VENUE & DATE
+              SYMPOSIUM INFO
             </h3>
             <div className="space-y-3 mb-6 text-sm text-slate-200 font-kodeMono">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <span>Date: October 9, 2026</span>
+                <span>Date: October 9, 2026 (Completed)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />
@@ -103,87 +109,44 @@ const Footer: React.FC = () => {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <a
-                  href={whatsappGroupUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 break-all"
+                  href="mailto:demontxt.01@gmail.com"
+                  className="hover:text-yellow-300 transition-colors break-all"
                 >
-                  <span>Official WhatsApp Group</span>
-                  <ExternalLink className="w-3 h-3" />
+                  demontxt.01@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
-                <span>Takshashila University, Ongur, Tamil Nadu, India</span>
-              </div>
-            </div>
-
-            {/* Embedded Google Map */}
-            <div className="w-full mb-6 rounded-2xl overflow-hidden border border-yellow-500/30 bg-[#050814]/90 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-              <div className="flex items-center justify-between px-3.5 py-2 bg-black/60 border-b border-yellow-500/20 text-[11px] font-kodeMono text-yellow-300">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-blue-400" />
-                  <span>CAMPUS LOCATION</span>
+                <MapPin className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                <span className="text-slate-300 leading-relaxed">
+                  Takshashila University, Ongur, Tindivanam Taluk, Villupuram District, Tamil Nadu — 604305, India
                 </span>
-                <a
-                  href="https://maps.google.com/?q=Takshashila+University+Ongur+Tamil+Nadu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors"
-                >
-                  <span>Open Maps</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
               </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.724718334563!2d79.78059162506578!3d12.334306287925552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a531501c8620677%3A0x57511cc958199077!2sTakshashila%20University!5e0!3m2!1sen!2sin!4v1788859238118!5m2!1sen!2sin"
-                width="100%"
-                height="180"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                className="w-full h-44 sm:h-48"
-                title="Takshashila University Campus Location"
-              />
             </div>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-orbitron font-bold text-xs text-black bg-gradient-to-r from-yellow-400 via-yellow-500 to-blue-600 hover:from-yellow-300 hover:to-blue-500 transition-all shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105"
-              >
-                <Sparkles className="w-4 h-4 text-black" />
-                <span>REGISTER NOW</span>
-              </Link>
-
-              <a
-                href={whatsappGroupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-orbitron font-bold text-xs text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 transition-all shadow-[0_0_18px_rgba(16,185,129,0.3)] hover:scale-105"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
-                <span>WHATSAPP GROUP</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
+            <a
+              href={whatsappGroupUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-900/40 transition-all font-kodeMono text-xs"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>Join ITECHNO WhatsApp</span>
+            </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-yellow-500/25 via-blue-500/25 to-transparent my-10" />
-
-        {/* Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-kodeMono text-slate-400 uppercase">
-          <p className="text-center md:text-left tracking-wider">
-            © 2026 ITECHNO • TAKSHASHILA UNIVERSITY. ALL RIGHTS RESERVED.
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 text-center md:text-left">
+          <p>
+            © 2026 ITECHNO • Takshashila University. All rights reserved. Official Event Archive.
           </p>
-          <p className="text-center md:text-right tracking-wider text-yellow-300/80">
-            CHIEF DIRECTORS: SEDHURAMAN & GOKUL
-          </p>
+          <div className="flex items-center gap-1 text-slate-400">
+            <span>Crafted with</span>
+            <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500 inline" />
+            <span>by the ITECHNO &apos;26 Crew</span>
+          </div>
         </div>
       </div>
     </footer>

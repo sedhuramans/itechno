@@ -57,30 +57,30 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Itechno 2026 | Takshashila University",
-    template: "%s | Itechno '26",
+    default: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
+    template: "%s | ITECHNO 2026 Memories",
   },
   description:
-    "Itechno 2026 is the official Inter-College Technical Festival of Takshashila University, featuring web development, debugging challenges, tech quizzes, visual puzzles, gaming squad matches, and creative reel competitions.",
+    "Relive ITECHNO 2026 at Takshashila University through event photographs, competition highlights, memorable moments, and the people who made it special.",
   keywords: [
     "itechno",
     "itechno 2026",
+    "itechno memories",
     "takshashila university",
-    "takshashila",
-    "tech fest",
-    "inter college tech fest",
-    "coding competition",
-    "hackathon",
-    "robotics event",
-    "esports tournament",
-    "workshops",
-    "innovation fest",
-    "college fest india",
+    "takshashila symposium",
+    "hall of fame",
+    "event photos",
+    "aftermovie",
+    "hackverse",
+    "codeathon",
+    "tech battle",
+    "free fire squad battle",
+    "college tech fest archive",
   ],
   metadataBase: new URL("https://itechno.takshashilauniv.ac.in/"),
-  applicationName: "Itechno",
+  applicationName: "ITECHNO 2026 Memories",
   category: "technology",
-  authors: [{ name: "Itechno Team" }],
+  authors: [{ name: "ITECHNO 2026 Organizing Committee" }],
   robots: {
     index: true,
     follow: true,
@@ -93,19 +93,19 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Itechno 2026 | Takshashila University",
+    title: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
     type: "website",
-    siteName: "Itechno",
+    siteName: "ITECHNO 2026 Memories",
     url: "https://itechno.takshashilauniv.ac.in/",
     description:
-      "Join Itechno 2026, the official inter-college tech fest of Takshashila University, for coding contests, esports, visual puzzles, and innovation-driven student events.",
+      "Relive ITECHNO 2026 at Takshashila University through event photographs, competition highlights, memorable moments, and the people who made it special.",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Itechno 2026 | Takshashila University",
+    title: "ITECHNO 2026 | Official Memories, Highlights & Hall of Fame",
     description:
-      "Explore events, competitions, workshops, and updates from Itechno 2026 at Takshashila University.",
+      "Relive ITECHNO 2026 at Takshashila University through event photographs, competition highlights, memorable moments, and the people who made it special.",
   },
   alternates: {
     canonical: "https://itechno.takshashilauniv.ac.in/"
